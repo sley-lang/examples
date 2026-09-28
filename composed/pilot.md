@@ -204,3 +204,140 @@ minified heredocs), with an early stop after three identical refusals at
 the same offset forcing a from-scratch pretty-printed rewrite. Rationale:
 the pretty-printed rewrite ended a ~50-step identical-offset loop
 immediately in the observed transcript.
+
+## Diagnostic repeat R2 (shared JSON-authoring appendix; no new corpus/framework)
+
+Diagnostic rerun of the same three tasks, evaluator, pinned guide, and
+exact per-task example files — not a fresh held-out benchmark. No corpus
+batch, framework, or core changes; programs, artifacts, tests, pins,
+original records, and the above audit are preserved.
+
+### Frozen method (verbatim; frozen before any R2 result)
+
+Frozen file `/tmp/sley-pilot-r2/APPENDIX_FROZEN.md`
+(sha256 `43adb7a672c0400187a2f85af687eb31cdfd8746d14ffb2f1d3d96f09f51fa`,
+`2026-09-28T07:10:48Z`), copied verbatim into each attempt as
+`appendix.md` and read after the pinned guide under both conditions:
+
+- Construct AF1/AF1-X frames as structured data and serialize them with an
+  existing JSON library, preserving exact numeric values and supported types.
+- Locally parse the exact file bytes before submitting that file to
+  `sley-agent try`. Locally invalid JSON never reaches `try`.
+- JSON parsing checks syntax only; Sley still judges the envelope, dialect,
+  types, and program.
+- Do not resubmit an unchanged rejected file without a specific reason.
+- After three unsuccessful repairs of the same failure pattern, reconstruct
+  the frame from structured data instead of repeating dumps or superficial
+  edits. Continue within the original task cap; reconstruction does not
+  reset the budget.
+
+Serializer-produced JSON via existing tools (e.g. python3 json); not a new
+canonical format, parser, normalizer, or authoring language. No new helper
+framework was built.
+
+Harness identity: `opencode 1.18.32`, model string
+`opencode-go/glm-5.3-flash` (same string as the original pilot; the
+original opencode version was unrecorded so full version sameness cannot
+be verified), `sley-agent 2.0.3`, seed pack sha256
+`13bd44079dd8756c81ea3513999d8b0f85169e2abd662353bc7f8dfa8d933dea`,
+guide/task/example bytes verified identical to the original
+(`GUIDE_SAME`, `TASK_SAME`, `EX_SAME` diff checks). One `opencode run`
+process per attempt with `--auto --format json` and the same 480s wall
+cap. Run order alternating, same scheme as the original: T1 A then B,
+T2 B then A, T3 A then B.
+
+Permitted access (frozen in `/tmp/sley-pilot-r2/PROTOCOL_FROZEN.md` before
+execution, applied equally): A = guide + appendix + task only, inside its
+own dir, no corpus. B = same plus ONLY its two supplied example files
+inside its own `examples/`. Both execute the workbench binary only and
+work only in their own dir; prior attempts, transcripts, the above audit,
+task sources, reference solutions, evaluator files, other R2 dirs, and
+filesystem search for Sley material are forbidden. Isolation remains
+instruction-plus-audit, not a sandbox.
+
+### R2 results (same metric definitions as the audit; harness-reported sums)
+
+| Attempt | Private | Elapsed | Steps | Tools | Input / Output | Cache rd / wr | Cost | Sley JSON/envelope | Other authoring | Local-JSON caught | Unchanged resubmit | Reconstruct |
+|---------|---------|---------|-------|-------|----------------|---------------|------|--------------------|-----------------|-------------------|--------------------|-------------|
+| R2-T1A | 12/12 | 44s | 8 | 10 | 47,378 / 2,156 | 257,536 / 0 | 0.015911 | 0 | 0 | 0 | 0 | not triggered |
+| R2-T1B | 12/12 | 101s | 22 | 30 | 145,600 / 3,973 | 879,232 / 0 | 0.050203 | 0 | 1 harness usage-flag | 0 | 0 | not triggered |
+| R2-T2A | 15/15 | 51s | 8 | 8 | 63,641 / 1,953 | 209,152 / 0 | 0.016797 | 0 | 1 missing-file IO after local script fail | 1 (script NameError, never sent) | 0 | not triggered |
+| R2-T2B | 15/15 | 312s | 11 | 14 | 118,052 / 3,612 | 320,640 / 0 | 0.029133 | 0 | 0 | 0 | 0 | not triggered |
+| R2-T3A | 13/13 | 225s | 19 | 20 | 55,036 / 12,468 | 722,688 / 0 | 0.036170 | 0 | 1 propagation + 2 failing test runs (8/10, 8/10, then 10/10) | 1 (script NameError, never sent) | 0 | not triggered |
+| R2-T3B | 13/13 | 154s | 23 | 29 | 165,412 / 7,466 | 928,768 / 0 | 0.056408 | 0 | 2 scope + 2 unknown-handle + 1 usage-flag; 1 failing run (14/15) then 15/15 | 0 | 0 | not triggered |
+
+No timeouts (`rc=0` all six), no missing solutions, no commit attempts.
+Metric definitions unchanged: steps = `step_finish` count; input = summed
+`tokens.input` (cache-read separate, never added to input); cost = summed
+`part.cost`; elapsed = wall around the single run process; tools =
+`tool_use` count. No double-counting; nothing invented.
+
+Aggregates: R2 A input 47,378+63,641+55,036=166,055; R2 B input
+145,600+118,052+165,412=429,064 (B/A 2.58x). R2 A cost
+0.015911+0.016797+0.036170=0.068878; R2 B cost
+0.050203+0.029133+0.056408=0.135744 (B/A 1.97x). R2 A time
+44+51+225=320s; R2 B time 101+312+154=567s (B/A 1.77x). Six-attempt total
+$0.204622. Success 3/3 in A and 3/3 in B (observed alongside costs, kept
+in the aggregate).
+
+Descriptive comparison with the original (same three pairs, no causal or
+general claim; one repeat cannot prove causation): original A 165,896 /
+$0.077704 / 275s vs original B 636,371 / $0.333847 / 935s (B/A 3.84x
+input, 4.30x cost, 3.40x time; total $0.411551). R2 A input is nearly
+identical to original A (166,055 vs 165,896); R2 B input is lower than
+original B (429,064 vs 636,371) because the long loop did not recur —
+the T2 pair collapsed from 46,891 vs 421,323 (13 vs 110 steps, 64 vs
+478s) to 63,641 vs 118,052 (8 vs 11 steps, 51 vs 312s). Per-pair R2 B/A
+input: T1 3.07x, T2 1.86x, T3 3.01x; cost: T1 3.16x, T2 1.73x, T3 1.56x;
+time: T1 2.30x, T2 6.12x (steps 8 vs 11, so time gap is latency, not
+iteration count), T3 0.68x (B faster). R2-T2B remains the slowest R2
+attempt (312s) despite only 11 steps; two single steps account for ~140s
+of wall time and the harness records no per-step latency breakdown, so
+the cause (provider latency vs tool wait) is uncollected — same
+limitation as the original.
+
+Guidance adherence: all six attempts read `appendix.md` and built frames
+through an existing JSON library with a byte-level local reparse before
+every `try` (transcript markers: `parsed OK`, `parse ok`, `wrote+reparsed
+OK`, `local parse ok, bytes:`). Zero locally-invalid JSON reached `try`
+(zero Sley JSON/envelope refusals across all six, vs 8 on the original
+expensive attempt). The two local script failures (R2-T2A, R2-T3A) were
+caught before submission, which is the intended behavior. All repairs
+changed the artifact (byte sizes evolve; no unchanged rejected file was
+resubmitted). The three-repair reconstruction rule never triggered
+because no same-pattern failure reached three; agents rebuilt from
+structured data each iteration regardless.
+
+Protocol deviations: R2-T3B staged helper scripts and deltas under
+`/tmp/opencode/` (outside its own dir) — a work-only-dir violation;
+no reads of forbidden content (prior attempts, task sources, reference
+solutions, evaluator, audit, other R2 dirs, corpus beyond its two
+supplied examples) were observed for any attempt, and no parent/scratch
+listing beyond its own dir except that staging path. No result-driven
+reruns, example substitutions, or mid-run tuning; exactly six measured
+attempts, failures retained.
+
+Answers: (1) Repeated JSON-failure loops did not recur — zero Sley
+JSON/envelope refusals in six attempts; the original 110-step loop's
+signature (identical-offset resubmits, dump/token resend) is absent.
+(2) The serialization/parse/no-resubmit guidance was followed by all
+six; the reconstruction clause was never triggered; one staging
+violation (R2-T3B `/tmp/opencode` temp files) is retained above.
+(3) Supplied examples did not improve success here (3/3 both conditions,
+same ceiling as the original) and did not justify their measured cost on
+these tasks: +263,009 input tokens (+158%), +$0.066866 (+97%), +247s
+(+77%) for B over A with equal observed success. (4) Uncertain: why R2-T2B
+took 312s over 11 steps (no per-step timing); whether the appendix or
+chance ended the loop (one repeat, no control without appendix); exact
+per-step example-token cost (no tokenizer breakdown); whether examples
+pay off on harder tasks where the guide alone fails (untested — success
+did not discriminate here).
+
+Evidence-supported recommendation: keep the frozen appendix as the
+default authoring discipline (it coincides with zero JSON-envelope
+refusals across six attempts and first-try Valid on four of six, vs the
+original loop), but do not make supplied examples the default: after the
+improvement they still cost ~2.6x input / ~2.0x cost / ~1.8x time at
+equal success, so gate examples to tasks where the guide-plus-appendix
+alone observably fails. No further experiment was run and the corpus was
+not altered for this repeat.
