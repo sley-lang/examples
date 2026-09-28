@@ -1,10 +1,10 @@
 # Sley Simple Tools
 
-Micro programs written in Sley: native `graph_authoring.v0` packages with bound portable artifacts and independently expected cases. The goal is ecosystem breadth plus real Sley code for future models to study — small, readable, verifiable programs.
+Primitive Sley examples: seven native `graph_authoring.v0` packages with bound portable artifacts and independently expected cases. These are primitive examples of single operations and small compositions — not substantial end-user tools. They exist to pin the verified 2.0.1 authoring baseline: one readable recipe per program, one executable artifact, and a round-trip check each.
 
-This repo complements the serious adoption toolkit in `sley-lang-tools` (Rust `sley-tools` CLI, Python/TypeScript/MCP SDKs, Playground, Repair Lab, Data Pipe, importers, Review). That toolkit is the machinery; this repo is the shelf of tiny native programs built with it. It does not duplicate the N01–N10 catalog (release-readiness, resource-admission, benchmark trio, tier-classifier, range-predicate, bounded-clamp, quota-remaining, generated-payload-validator).
+This repo complements the serious adoption toolkit in `sley-lang-tools` (Rust `sley-tools` CLI, Python/TypeScript/MCP SDKs, Playground, Repair Lab, Data Pipe, importers, Review). That toolkit is the machinery; this repo holds small native programs built with it. It does not duplicate the N01–N10 catalog (release-readiness, resource-admission, benchmark trio, tier-classifier, range-predicate, bounded-clamp, quota-remaining, generated-payload-validator).
 
-## Programs (14 total, 65 external assertions)
+## Primitive examples (7 total, 32 external assertions)
 
 | ID | Program | What runs natively | Cases |
 |----|---------|-------------------|-------|
@@ -15,13 +15,6 @@ This repo complements the serious adoption toolkit in `sley-lang-tools` (Rust `s
 | S05 | `programs/equals-answer` | `equal` vs 42 | 5 |
 | S06 | `programs/safe-add` | `int_add_checked` → `{sum: CheckedSInt64}` | 5 |
 | S07 | `programs/bool-status` | `bool_and`/`bool_or`/`bool_not` → `{both, either, neither}` | 4 |
-| S08 | `programs/safe-sub` | `int_sub_checked` → `{difference: CheckedSInt64}` | 5 |
-| S09 | `programs/safe-mul` | `int_mul_checked` → `{product: CheckedSInt64}` | 5 |
-| S10 | `programs/safe-neg` | `int_neg_checked` → `{negated: CheckedSInt64}` | 5 |
-| S11 | `programs/uint32-cap` | `less_equal` vs cap 100 | 5 |
-| S12 | `programs/is-nonzero` | `not_equal` vs 0 | 5 |
-| S13 | `programs/bool-nand` | `bool_and` + `bool_not` | 4 |
-| S14 | `programs/nonnegative-branch` | `cond_branch` on sign test (3 blocks) | 5 |
 
 Each package holds `build/graph.json` (authoring recipe), `tests/cases.json` (independently expected), `program.json` (manifest bound to the artifact by `sley-tools artifact export --bind-manifest`), and `artifact/native-graph.json` (portable native graph). Sley has no source syntax: the accepted SSMC1 graph is the program; the recipe is only the authoring input.
 
@@ -29,7 +22,8 @@ Each package holds `build/graph.json` (authoring recipe), `tests/cases.json` (in
 
 - Core: Sley `2.0.1` (`sley-2.0.1-linux-x86_64.tar.gz`, commit `c748dda`), binary sha `90f48df4…`.
 - Builder: `sley-lang-tools` `sley-tools` backend, `graph_authoring.v0`.
-- Native core test admission: `PENDING_CORE_EXECUTOR` on this core — all cases are external assertions against native execution, all PASS at build time, and every artifact reimports into a fresh workspace and re-passes.
+- External execution assertions: 32 total across the seven programs, all PASS at build time; every artifact reimports into a fresh workspace and re-passes.
+- Native test admission: `PENDING_CORE_EXECUTOR` on the selected 2.0.1 core (`NOT_RUN: production native executor unavailable`). This is reported separately and is not covered by the assertion counts above.
 
 ## Rebuild everything
 

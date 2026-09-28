@@ -40,7 +40,7 @@ if [ "$ALLOW_DIRTY" -eq 0 ] && [ -d "$REPO/.git" ]; then
   fi
 fi
 
-PROGRAMS="bool-and bool-nor uint32-minimum is-negative equals-answer safe-add bool-status safe-sub safe-mul safe-neg uint32-cap is-nonzero bool-nand nonnegative-branch"
+PROGRAMS="bool-and bool-nor uint32-minimum is-negative equals-answer safe-add bool-status"
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 
@@ -62,4 +62,4 @@ for p in $PROGRAMS; do
   echo "PASS $p"
 done
 
-echo "All 14 programs rebuilt, reimported, and re-tested."
+echo "All 7 programs rebuilt, reimported, and re-tested."
