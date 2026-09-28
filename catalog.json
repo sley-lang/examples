@@ -7,6 +7,16 @@
     "tools": "sley-lang-tools sley-tools backend (graph_authoring.v0)",
     "native_core_test_admission": "PENDING_CORE_EXECUTOR"
   },
+  "agent_toolchain_203": {
+    "core": "sley-2.0.3-linux-x86_64 (commit 69d57b1d8fac0ef9d9f639cb606ded9be6289760)",
+    "core_archive_sha256": "4a9aef6962795f49f6e9c13dfe2cd6815a9392106708cccbc491367c4ca3c2a3",
+    "agent_binary_sha256": "3f2a235bf86903066373b92ad26f3eab3b3e0fb4bbc6f35e52549b04c0250a23",
+    "core_binary_sha256": "3d4f20c43306724d25cf8b016858ea5f3be9813de3ba84b1dd71a297484af1e4",
+    "tools": "sley-agent 2.0.3 workbench (AF1-X frames)",
+    "identity": "composed/toolchain.json",
+    "native_core_test_admission": "NOT_RUN_UNAVAILABLE_IN_2.0",
+    "combined_commit": "REFUSED_TXN_TEST_EVIDENCE_UNSUPPORTED"
+  },
   "programs": [
     {
       "id": "S01",
@@ -84,6 +94,62 @@
       "cases": "programs/bool-status/tests/cases.json",
       "external_assertions": 4,
       "status": "verified_local_artifact_and_reimport"
+    }
+  ],
+  "composed": [
+    {
+      "id": "C01",
+      "program_id": "retry-decision",
+      "responsibility": "Decide retry vs exhaustion against an attempt budget, with declared input failures",
+      "package": "composed/retry-decision",
+      "entrypoint": "retry_decision",
+      "frames": "composed/retry-decision/frames",
+      "cases": "composed/retry-decision/tests/cases.json",
+      "workbench_checks": 11,
+      "external_assertions": 11,
+      "persistence": {
+        "combined_commit": "REFUSED_TXN_TEST_EVIDENCE_UNSUPPORTED",
+        "code_txn": "96994710",
+        "tests_txn": "8e8e8384"
+      },
+      "pack": "composed/retry-decision/packs/retry-committed.pack",
+      "status": "workbench_verified_and_reimported"
+    },
+    {
+      "id": "C02",
+      "program_id": "invoice-line-total",
+      "responsibility": "Price an invoice line with checked multiply-add, input guards, and a booking cap",
+      "package": "composed/invoice-line-total",
+      "entrypoint": "line_total",
+      "frames": "composed/invoice-line-total/frames",
+      "cases": "composed/invoice-line-total/tests/cases.json",
+      "workbench_checks": 12,
+      "external_assertions": 12,
+      "persistence": {
+        "combined_commit": "REFUSED_TXN_TEST_EVIDENCE_UNSUPPORTED",
+        "code_txn": "773fea0f",
+        "tests_txn": "81a8a6da"
+      },
+      "pack": "composed/invoice-line-total/packs/invoice-committed.pack",
+      "status": "workbench_verified_and_reimported"
+    },
+    {
+      "id": "C03",
+      "program_id": "duration-breakdown",
+      "responsibility": "Decompose non-negative seconds into days, hours, minutes, and seconds with a declared failure",
+      "package": "composed/duration-breakdown",
+      "entrypoint": "split_duration",
+      "frames": "composed/duration-breakdown/frames",
+      "cases": "composed/duration-breakdown/tests/cases.json",
+      "workbench_checks": 9,
+      "external_assertions": 9,
+      "persistence": {
+        "combined_commit": "REFUSED_TXN_TEST_EVIDENCE_UNSUPPORTED",
+        "code_txn": "fb236485",
+        "tests_txn": "a94779c9"
+      },
+      "pack": "composed/duration-breakdown/packs/duration-committed.pack",
+      "status": "workbench_verified_and_reimported"
     }
   ]
 }

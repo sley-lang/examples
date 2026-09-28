@@ -1,0 +1,58 @@
+# sley view (AV1, non-canonical) root=d2e6ba7d
+# focus line_total: context, not a completeness certificate
+fn line_total(qty: i64, unit_cents: i64, fee_cents: i64) -> Result<i64,InvoiceError>   [c37c6ff1]
+  entry:
+    entry__if0__a1 = const k_1 (1)
+    entry__if0 = lt qty, entry__if0__a1
+    cond entry__if0 -> __fail_BadQty, entry__if0
+  entry__if0:
+    entry__if1__a1 = const k_0 (0)
+    entry__if1 = lt unit_cents, entry__if1__a1
+    cond entry__if1 -> __fail_BadPrice, entry__if1
+  entry__if1:
+    entry__if2__a1 = const k_0 (0)
+    entry__if2 = lt fee_cents, entry__if2__a1
+    cond entry__if2 -> __fail_BadFee, entry__if2
+  entry__if2:
+    sub__r = mul qty, unit_cents
+    switch sub__r: Ok -> entry__sub($), Err -> __fail_Overflow
+  entry__sub(sub: i64):
+    total__r = add sub, fee_cents
+    switch total__r: Ok -> entry__total($), Err -> __fail_Overflow
+  entry__total(total: i64):
+    entry__if3__a1 = const k_1000000 (1000000)
+    entry__if3 = gt total, entry__if3__a1
+    cond entry__if3 -> __fail_OverLimit, entry__if3(total)
+  entry__if3(total: i64):
+    entry__ok = ok total
+    return entry__ok
+  __fail_BadQty:
+    v = variant InvoiceError.BadQty
+    r = err v
+    return r
+  __fail_BadPrice:
+    v = variant InvoiceError.BadPrice
+    r = err v
+    return r
+  __fail_BadFee:
+    v = variant InvoiceError.BadFee
+    r = err v
+    return r
+  __fail_Overflow:
+    v = variant InvoiceError.Overflow
+    r = err v
+    return r
+  __fail_OverLimit:
+    v = variant InvoiceError.OverLimit
+    r = err v
+    return r
+types: 1
+type InvoiceError = BadQty | BadPrice | BadFee | OverLimit | Overflow
+consts: 3
+const k_1: i64 = 1
+const k_0: i64 = 0
+const k_1000000: i64 = 1000000
+calls: none
+callers: none
+tests: 12: invoice_cases_0, invoice_cases_1, invoice_cases_10, invoice_cases_11, invoice_cases_2, invoice_cases_3, invoice_cases_4, invoice_cases_5, invoice_cases_6, invoice_cases_7, invoice_cases_8, invoice_cases_9
+boundary: exported; effects none; namespace none; callers outside it: none

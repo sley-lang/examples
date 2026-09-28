@@ -36,3 +36,37 @@ Each package holds `build/graph.json` (authoring recipe), `tests/cases.json` (in
 The script re-runs `init` + `test` + bound `artifact export` + fresh-workspace `artifact import` + re-`test` for all seven programs and refreshes `program.json` and `artifact/native-graph.json` in place. It refuses to run with uncommitted changes unless `--allow-dirty` is passed.
 
 License and any publication decision remain owner calls; nothing here is published yet.
+
+## Composed examples (C01–C03, sley-agent 2.0.3)
+
+Three composed programs authored with the official 2.0.3 `sley-agent`
+workbench, kept in `composed/` strictly separate from the seven 2.0.1
+primitives above. The 2.0.1 pin, the seven packages, and the rebuild script
+are unchanged by them.
+
+| ID | Example | Function | Workbench checks / External |
+|----|---------|----------|-----------------------------|
+| C01 | `composed/retry-decision` | `retry_decision` → `Result<RetryState,RetryError>` | 11 / 11 |
+| C02 | `composed/invoice-line-total` | `line_total` → `Result<i64,InvoiceError>` | 12 / 12 |
+| C03 | `composed/duration-breakdown` | `split_duration` → `Result<(d,h,m,s),DurationError>` | 9 / 9 |
+
+Each example holds exact authoring frames as run, a contract (parameter
+semantics, error precedence), independently expected cases, an external
+checker, a readable workbench view, the exported pack plus author name
+map, and a before/after record of one genuine program modification.
+`composed/corrections.md` retains one repaired authoring error and two
+independently justified expectation corrections.
+`composed/admission-probe.md` records the fresh-import edit/commit probe.
+
+Reproduce without the pilot directory (needs the 2.0.3 agent binary):
+
+```sh
+./composed/reproduce.sh --agent /path/to/sley-2.0.3-linux-x86_64/bin/sley-agent
+```
+
+Persistence limitation: a combined code+tests `commit` is refused
+(`TXN_TEST_EVIDENCE_UNSUPPORTED`), so each example was committed split —
+code-only, then tests-after (transactions in `catalog.json`). Code-only
+plus tests-after is two transactions, not a test-admitted atomic commit.
+Native test admission is not run — unavailable in 2.0 — and no count in
+`composed/` is test admission.

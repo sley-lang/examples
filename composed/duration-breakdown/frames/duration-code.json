@@ -1,0 +1,89 @@
+{
+ "af1": 1,
+ "afx": 1,
+ "types": [
+  {
+   "name": "DurationError",
+   "variant": [
+    "NegativeDuration",
+    "Overflow"
+   ]
+  }
+ ],
+ "fns": [
+  {
+   "fn": "split_duration",
+   "params": [
+    [
+     "total_seconds",
+     "i64"
+    ]
+   ],
+   "returns": "Result<(i64,i64,i64,i64),DurationError>",
+   "blocks": [
+    {
+     "name": "entry",
+     "ops": [
+      [
+       "!NegativeDuration",
+       "if",
+       [
+        "lt",
+        "total_seconds",
+        0
+       ]
+      ],
+      [
+       "d",
+       "div?Overflow",
+       "total_seconds",
+       86400
+      ],
+      [
+       "r1",
+       "rem?Overflow",
+       "total_seconds",
+       86400
+      ],
+      [
+       "h",
+       "div?Overflow",
+       "r1",
+       3600
+      ],
+      [
+       "r2",
+       "rem?Overflow",
+       "r1",
+       3600
+      ],
+      [
+       "m",
+       "div?Overflow",
+       "r2",
+       60
+      ],
+      [
+       "s",
+       "rem?Overflow",
+       "r2",
+       60
+      ],
+      [
+       "t",
+       "tuple",
+       "d",
+       "h",
+       "m",
+       "s"
+      ]
+     ],
+     "term": [
+      "ok",
+      "t"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+{"af1": 1, "afx": 1,
+ "types": [{"name": "RetryError", "variant": ["NegativeAttempt", "BadLimit"]},
+           {"name": "RetryState", "variant": ["Retry", "Exhausted"]}],
+ "fns": [{"fn": "retry_decision", "params": [["attempt", "i64"], ["limit", "i64"]],
+          "returns": "Result<RetryState,RetryError>",
+          "blocks": [
+            {"name": "entry",
+             "ops": [["!NegativeAttempt", "if", ["lt", "attempt", 0]],
+                     ["!BadLimit", "if", ["lt", "limit", 1]],
+                     ["go", "le", "attempt", "limit"]],
+             "term": ["cond", "go", ["yes"], ["no"]]},
+            {"name": "yes",
+             "ops": [["s", "variant", "RetryState.Retry"]],
+             "term": ["ok", "s"]},
+            {"name": "no",
+             "ops": [["s", "variant", "RetryState.Exhausted"]],
+             "term": ["ok", "s"]}]}]}

@@ -1,0 +1,54 @@
+# sley view (AV1, non-canonical) root=ad1f27fd
+# focus split_duration: context, not a completeness certificate
+fn split_duration(total_seconds: i64) -> Result<(i64,i64,i64,i64),DurationError>   [5b846739]
+  entry:
+    entry__if0__a1 = const k_0 (0)
+    entry__if0 = lt total_seconds, entry__if0__a1
+    cond entry__if0 -> __fail_NegativeDuration, entry__if0
+  entry__if0:
+    d__a1 = const k_86400 (86400)
+    d__r = div total_seconds, d__a1
+    switch d__r: Ok -> entry__d($), Err -> __fail_Overflow
+  entry__d(d: i64):
+    r1__a1 = const k_86400 (86400)
+    r1__r = rem total_seconds, r1__a1
+    switch r1__r: Ok -> entry__r1($, d), Err -> __fail_Overflow
+  entry__r1(r1: i64, d: i64):
+    h__a1 = const k_3600 (3600)
+    h__r = div r1, h__a1
+    switch h__r: Ok -> entry__h($, r1, d), Err -> __fail_Overflow
+  entry__h(h: i64, r1: i64, d: i64):
+    r2__a1 = const k_3600 (3600)
+    r2__r = rem r1, r2__a1
+    switch r2__r: Ok -> entry__r2($, d, h), Err -> __fail_Overflow
+  entry__r2(r2: i64, d: i64, h: i64):
+    m__a1 = const k_60 (60)
+    m__r = div r2, m__a1
+    switch m__r: Ok -> entry__m($, r2, d, h), Err -> __fail_Overflow
+  entry__m(m: i64, r2: i64, d: i64, h: i64):
+    s__a1 = const k_60 (60)
+    s__r = rem r2, s__a1
+    switch s__r: Ok -> entry__s($, d, h, m), Err -> __fail_Overflow
+  entry__s(s: i64, d: i64, h: i64, m: i64):
+    t = tuple d, h, m, s
+    entry__ok = ok t
+    return entry__ok
+  __fail_NegativeDuration:
+    v = variant DurationError.NegativeDuration
+    r = err v
+    return r
+  __fail_Overflow:
+    v = variant DurationError.Overflow
+    r = err v
+    return r
+types: 1
+type DurationError = NegativeDuration | Overflow
+consts: 4
+const k_0: i64 = 0
+const k_86400: i64 = 86400
+const k_3600: i64 = 3600
+const k_60: i64 = 60
+calls: none
+callers: none
+tests: 9: duration_cases_0, duration_cases_1, duration_cases_2, duration_cases_3, duration_cases_4, duration_cases_5, duration_cases_6, duration_cases_7, duration_cases_8
+boundary: exported; effects none; namespace none; callers outside it: none

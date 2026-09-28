@@ -1,0 +1,95 @@
+{
+ "af1": 1,
+ "afx": 1,
+ "types": [
+  {
+   "name": "InvoiceError",
+   "variant": [
+    "BadQty",
+    "BadPrice",
+    "BadFee",
+    "OverLimit",
+    "Overflow"
+   ]
+  }
+ ],
+ "fns": [
+  {
+   "fn": "line_total",
+   "params": [
+    [
+     "qty",
+     "i64"
+    ],
+    [
+     "unit_cents",
+     "i64"
+    ],
+    [
+     "fee_cents",
+     "i64"
+    ]
+   ],
+   "returns": "Result<i64,InvoiceError>",
+   "blocks": [
+    {
+     "name": "entry",
+     "ops": [
+      [
+       "!BadQty",
+       "if",
+       [
+        "lt",
+        "qty",
+        1
+       ]
+      ],
+      [
+       "!BadPrice",
+       "if",
+       [
+        "lt",
+        "unit_cents",
+        0
+       ]
+      ],
+      [
+       "!BadFee",
+       "if",
+       [
+        "lt",
+        "fee_cents",
+        0
+       ]
+      ],
+      [
+       "sub",
+       "mul?Overflow",
+       "qty",
+       "unit_cents"
+      ],
+      [
+       "total",
+       "add?Overflow",
+       "sub",
+       "fee_cents"
+      ],
+      [
+       "!OverLimit",
+       "if",
+       [
+        "gt",
+        "total",
+        1000000
+       ]
+      ]
+     ],
+     "term": [
+      "ok",
+      "total"
+     ]
+    }
+   ]
+  }
+ ]
+}

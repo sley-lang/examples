@@ -1,0 +1,40 @@
+# sley view (AV1, non-canonical) root=649fc814
+# focus retry_decision: context, not a completeness certificate
+fn retry_decision(attempt: i64, limit: i64) -> Result<RetryState,RetryError>   [d68f55c7]
+  entry:
+    entry__if0__a1 = const k_0 (0)
+    entry__if0 = lt attempt, entry__if0__a1
+    cond entry__if0 -> __fail_NegativeAttempt, entry__if0
+  yes:
+    s = variant RetryState.Retry
+    yes__ok = ok s
+    return yes__ok
+  no:
+    s = variant RetryState.Exhausted
+    no__ok = ok s
+    return no__ok
+  entry__if0:
+    entry__if1__a1 = const k_1 (1)
+    entry__if1 = lt limit, entry__if1__a1
+    cond entry__if1 -> __fail_BadLimit, entry__if1
+  entry__if1:
+    go = le attempt, limit
+    cond go -> yes, no
+  __fail_NegativeAttempt:
+    v = variant RetryError.NegativeAttempt
+    r = err v
+    return r
+  __fail_BadLimit:
+    v = variant RetryError.BadLimit
+    r = err v
+    return r
+types: 2
+type RetryState = Retry | Exhausted
+type RetryError = NegativeAttempt | BadLimit
+consts: 2
+const k_0: i64 = 0
+const k_1: i64 = 1
+calls: none
+callers: none
+tests: 11: retry_cases_0, retry_cases_1, retry_cases_10, retry_cases_2, retry_cases_3, retry_cases_4, retry_cases_5, retry_cases_6, retry_cases_7, retry_cases_8, retry_cases_9
+boundary: exported; effects none; namespace none; callers outside it: none

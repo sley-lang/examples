@@ -1,0 +1,111 @@
+{
+ "af1": 1,
+ "afx": 1,
+ "test_tables": [
+  {
+   "cases": [
+    {
+     "args": [
+      0,
+      3
+     ],
+     "expect": {
+      "Ok": "Retry"
+     }
+    },
+    {
+     "args": [
+      2,
+      3
+     ],
+     "expect": {
+      "Ok": "Retry"
+     }
+    },
+    {
+     "args": [
+      0,
+      1
+     ],
+     "expect": {
+      "Ok": "Retry"
+     }
+    },
+    {
+     "args": [
+      3,
+      3
+     ],
+     "expect": {
+      "Ok": "Retry"
+     }
+    },
+    {
+     "args": [
+      4,
+      3
+     ],
+     "expect": {
+      "Ok": "Exhausted"
+     }
+    },
+    {
+     "args": [
+      5,
+      3
+     ],
+     "expect": {
+      "Ok": "Exhausted"
+     }
+    },
+    {
+     "args": [
+      1,
+      1
+     ],
+     "expect": {
+      "Ok": "Retry"
+     }
+    },
+    {
+     "args": [
+      9223372036854775807,
+      9223372036854775807
+     ],
+     "expect": {
+      "Ok": "Retry"
+     }
+    },
+    {
+     "args": [
+      -1,
+      3
+     ],
+     "expect": {
+      "Err": "NegativeAttempt"
+     }
+    },
+    {
+     "args": [
+      0,
+      0
+     ],
+     "expect": {
+      "Err": "BadLimit"
+     }
+    },
+    {
+     "args": [
+      2,
+      -4
+     ],
+     "expect": {
+      "Err": "BadLimit"
+     }
+    }
+   ],
+   "fn": "retry_decision",
+   "name": "retry_cases"
+  }
+ ]
+}
