@@ -1,0 +1,62 @@
+{
+  "artifact": {
+    "contract": "sley-tools.native-graph-artifact.v1",
+    "path": "artifact/native-graph.json",
+    "sha256": "ab6ac11991c2847b61470f15509ea5b82a9211ddccbf4a63473f9cd5e88df0f9"
+  },
+  "authoring_profile": "graph_v0",
+  "contract": "sley-tools.program.v0",
+  "core": {
+    "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "profile": "extended_v1"
+  },
+  "entrypoint": {
+    "function_id": "7f4d12cd98b94a17b0c59e64b66fe19f9f12d565a5907d5e73705903ab46bf6e",
+    "name": "evaluate",
+    "state_root": "94ab1be6dda3decbfb7b66260f4881770076460c71fac4eb3069a5f1c651c55e"
+  },
+  "graph_recipe": {
+    "path": "build/graph.json",
+    "sha256": "f1d298c15758d61dd24ba1125c5eceec90c03602e286b189114c7e76c0175cb6"
+  },
+  "host_responsibility": "typed JSON input, local workspace lifecycle, and external assertions",
+  "inputs": {
+    "a": "SInt64",
+    "b": "SInt64"
+  },
+  "license_status": "owner decision pending",
+  "native_logic": "pure typed graph declared by the bound local recipe",
+  "output": {
+    "fields": {
+      "difference": "CheckedSInt64"
+    },
+    "type": "Record"
+  },
+  "program_id": "safe-sub",
+  "program_version": "0.1.0-local",
+  "purpose": "Subtract two signed values with native checked arithmetic and report overflow",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "difference",
+      "type": "CheckedSInt64"
+    }
+  ],
+  "result_type_id": "3744f8d21bb768562c04fdbae9ed1a9e615499fd72a09f42199b8fee86f88d09",
+  "source_provenance": {
+    "builder": "crates/backend/src/graph.rs",
+    "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+  },
+  "status": "portable_native_artifact",
+  "test_cases": {
+    "external_assertions": "sley-tools test --project PROJECT",
+    "independent_oracle": "tests/cases.json",
+    "native_core_test_admission": "PENDING_CORE_EXECUTOR"
+  },
+  "title": "Safe Sub",
+  "tools_contract": "sley-tools.cli.v0",
+  "worked_change": {
+    "status": "pending"
+  }
+}

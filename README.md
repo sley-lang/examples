@@ -4,7 +4,7 @@ Micro programs written in Sley: native `graph_authoring.v0` packages with bound 
 
 This repo complements the serious adoption toolkit in `sley-lang-tools` (Rust `sley-tools` CLI, Python/TypeScript/MCP SDKs, Playground, Repair Lab, Data Pipe, importers, Review). That toolkit is the machinery; this repo is the shelf of tiny native programs built with it. It does not duplicate the N01–N10 catalog (release-readiness, resource-admission, benchmark trio, tier-classifier, range-predicate, bounded-clamp, quota-remaining, generated-payload-validator).
 
-## Starter set (7 programs, 32 external assertions)
+## Programs (14 total, 65 external assertions)
 
 | ID | Program | What runs natively | Cases |
 |----|---------|-------------------|-------|
@@ -15,6 +15,13 @@ This repo complements the serious adoption toolkit in `sley-lang-tools` (Rust `s
 | S05 | `programs/equals-answer` | `equal` vs 42 | 5 |
 | S06 | `programs/safe-add` | `int_add_checked` → `{sum: CheckedSInt64}` | 5 |
 | S07 | `programs/bool-status` | `bool_and`/`bool_or`/`bool_not` → `{both, either, neither}` | 4 |
+| S08 | `programs/safe-sub` | `int_sub_checked` → `{difference: CheckedSInt64}` | 5 |
+| S09 | `programs/safe-mul` | `int_mul_checked` → `{product: CheckedSInt64}` | 5 |
+| S10 | `programs/safe-neg` | `int_neg_checked` → `{negated: CheckedSInt64}` | 5 |
+| S11 | `programs/uint32-cap` | `less_equal` vs cap 100 | 5 |
+| S12 | `programs/is-nonzero` | `not_equal` vs 0 | 5 |
+| S13 | `programs/bool-nand` | `bool_and` + `bool_not` | 4 |
+| S14 | `programs/nonnegative-branch` | `cond_branch` on sign test (3 blocks) | 5 |
 
 Each package holds `build/graph.json` (authoring recipe), `tests/cases.json` (independently expected), `program.json` (manifest bound to the artifact by `sley-tools artifact export --bind-manifest`), and `artifact/native-graph.json` (portable native graph). Sley has no source syntax: the accepted SSMC1 graph is the program; the recipe is only the authoring input.
 

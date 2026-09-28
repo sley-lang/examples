@@ -1,0 +1,70 @@
+{
+  "cases_json": "{\n  \"contract\": \"sley-tools.graph-cases.v0\",\n  \"cases\": [\n    {\"id\": \"small\", \"input\": [\"6\", \"7\"], \"expected\": {\"product\": {\"ok\": \"42\"}}},\n    {\"id\": \"negative\", \"input\": [\"-3\", \"7\"], \"expected\": {\"product\": {\"ok\": \"-21\"}}},\n    {\"id\": \"zero\", \"input\": [\"0\", \"9223372036854775807\"], \"expected\": {\"product\": {\"ok\": \"0\"}}},\n    {\"id\": \"overflow-high\", \"input\": [\"9223372036854775807\", \"2\"], \"expected\": {\"product\": {\"error\": {\"code\": 1}}}},\n    {\"id\": \"overflow-low\", \"input\": [\"-9223372036854775808\", \"2\"], \"expected\": {\"product\": {\"error\": {\"code\": 1}}}}\n  ]\n}\n",
+  "cases_sha256": "a6c99bd6b961ab0c98967bbb7f40afd812f76e0345d106421266ed2cde8be161",
+  "contract": "sley-tools.native-graph-artifact.v1",
+  "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+  "objects": [
+    {
+      "entity_id": "086e0abbaa9c1d347b213089806f50f37cecdb966addbe18e9a0da9033f276f4",
+      "kind": 5,
+      "object_id": "603fe8b5559a9d8f1c4e37e0c33bb8e731c6a20c1882ba991850f4d85c3751f4",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eeb01020120086e0abbaa9c1d347b213089806f50f37cecdb966addbe18e9a0da9033f276f402c50105c2010801010002430220c384511c80096a1c86c7e42cae08026a73d3b8f9cd8281181f1e1f023f74631a20d51ebb9b5d92adf9139d946dc99ef0ac93625d71ef77da4f1c4ab9e10690f40503280a26020120e7582c4cb0f57657c25fcd380673f951287c7379735e0c7613b13e3ad949bdc30201000401000520f3989954544b05646d24c90e0484f796d46315a7c683535a0585d0dccce604e706220120f3989954544b05646d24c90e0484f796d46315a7c683535a0585d0dccce604e7070100080101603fe8b5559a9d8f1c4e37e0c33bb8e731c6a20c1882ba991850f4d85c3751f4"
+    },
+    {
+      "entity_id": "2b519ae7bb1341f90f074c78c54cbd255f5f256696a2aed3a41cba1e6b46b738",
+      "kind": 8,
+      "object_id": "4bff90df13e4750e894c400c46a7fc8c9cc6260ab06f8916b52377c88a0ae410",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eb0010201202b519ae7bb1341f90f074c78c54cbd255f5f256696a2aed3a41cba1e6b46b738028a01088701060120f3989954544b05646d24c90e0484f796d46315a7c683535a0585d0dccce604e7020100030142044702220120c384511c80096a1c86c7e42cae08026a73d3b8f9cd8281181f1e1f023f74631a220120d51ebb9b5d92adf9139d946dc99ef0ac93625d71ef77da4f1c4ab9e10690f405050f010d0e0b0201030301400203140101060201004bff90df13e4750e894c400c46a7fc8c9cc6260ab06f8916b52377c88a0ae410"
+    },
+    {
+      "entity_id": "83045b9d192e2908d36da1bce75a074103fe8d0419d0ddc94636e64a66aff10f",
+      "kind": 8,
+      "object_id": "93711c411eb168801c6e7f945832225172e7d325b65a8dc60faac3c7dc82f60f",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ece0102012083045b9d192e2908d36da1bce75a074103fe8d0419d0ddc94636e64a66aff10f02a80108a501060120f3989954544b05646d24c90e0484f796d46315a7c683535a0585d0dccce604e7020101030112042a012802260201202b519ae7bb1341f90f074c78c54cbd255f5f256696a2aed3a41cba1e6b46b738020100052a01280a26020120e7582c4cb0f57657c25fcd380673f951287c7379735e0c7613b13e3ad949bdc302010006220220e7582c4cb0f57657c25fcd380673f951287c7379735e0c7613b13e3ad949bdc393711c411eb168801c6e7f945832225172e7d325b65a8dc60faac3c7dc82f60f"
+    },
+    {
+      "entity_id": "c384511c80096a1c86c7e42cae08026a73d3b8f9cd8281181f1e1f023f74631a",
+      "kind": 6,
+      "object_id": "989cf63517f78853a6e745bf95188a1488e338949dcf84c769f810d0281871de",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e55020120c384511c80096a1c86c7e42cae08026a73d3b8f9cd8281181f1e1f023f74631a0230062e040120086e0abbaa9c1d347b213089806f50f37cecdb966addbe18e9a0da9033f276f40201010301000403030140989cf63517f78853a6e745bf95188a1488e338949dcf84c769f810d0281871de"
+    },
+    {
+      "entity_id": "d51ebb9b5d92adf9139d946dc99ef0ac93625d71ef77da4f1c4ab9e10690f405",
+      "kind": 6,
+      "object_id": "9d93db8cf7217a36c60582dd3f61db976d70f60642bf3695f200d48bfd6211c0",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e55020120d51ebb9b5d92adf9139d946dc99ef0ac93625d71ef77da4f1c4ab9e10690f4050230062e040120086e0abbaa9c1d347b213089806f50f37cecdb966addbe18e9a0da9033f276f402010103010104030301409d93db8cf7217a36c60582dd3f61db976d70f60642bf3695f200d48bfd6211c0"
+    },
+    {
+      "entity_id": "e7582c4cb0f57657c25fcd380673f951287c7379735e0c7613b13e3ad949bdc3",
+      "kind": 4,
+      "object_id": "5eefeb12b38e29d3d9a7f1a29c43a7bb633ee6909bd6d9fcb8db4b5c0c97f77d",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e6c020120e7582c4cb0f57657c25fcd380673f951287c7379735e0c7613b13e3ad949bdc302470445040101000239013701350301200101010101010101010101010101010101010101010101010101010101010101020d0e0b02010303014002031401010301010301000401015eefeb12b38e29d3d9a7f1a29c43a7bb633ee6909bd6d9fcb8db4b5c0c97f77d"
+    },
+    {
+      "entity_id": "f3989954544b05646d24c90e0484f796d46315a7c683535a0585d0dccce604e7",
+      "kind": 7,
+      "object_id": "ebdb7a1eafc14b5484360a061abe682a0123d0dcfd6e0fad3a2bbd0569319584",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ec601020120f3989954544b05646d24c90e0484f796d46315a7c683535a0585d0dccce604e702a001079d01050120086e0abbaa9c1d347b213089806f50f37cecdb966addbe18e9a0da9033f276f4020100034302202b519ae7bb1341f90f074c78c54cbd255f5f256696a2aed3a41cba1e6b46b7382083045b9d192e2908d36da1bce75a074103fe8d0419d0ddc94636e64a66aff10f042d012b010128022602012083045b9d192e2908d36da1bce75a074103fe8d0419d0ddc94636e64a66aff10f020100050101ebdb7a1eafc14b5484360a061abe682a0123d0dcfd6e0fad3a2bbd0569319584"
+    }
+  ],
+  "program_id": "safe-mul",
+  "recipe_json": "{\n  \"contract\": \"sley-tools.graph-authoring.v0\",\n  \"program_id\": \"safe-mul\",\n  \"title\": \"Safe Mul\",\n  \"purpose\": \"Multiply two signed values with native checked arithmetic and report overflow\",\n  \"parameters\": [\n    {\"name\": \"a\", \"value_type\": \"SInt64\"},\n    {\"name\": \"b\", \"value_type\": \"SInt64\"}\n  ],\n  \"constants\": [],\n  \"result\": {\"kind\": \"record\", \"fields\": [\n    {\"name\": \"product\", \"value_type\": \"CheckedSInt64\"}\n  ]},\n  \"entry_block\": \"entry\",\n  \"blocks\": [{\n    \"name\": \"entry\",\n    \"operations\": [\n      {\"op\": \"int_mul_checked\", \"name\": \"prod\", \"left\": \"param.a\", \"right\": \"param.b\"},\n      {\"op\": \"record_new\", \"name\": \"result\", \"fields\": [\"op.prod\"]}\n    ],\n    \"terminator\": {\"kind\": \"return\", \"value\": \"op.result\"}\n  }]\n}\n",
+  "recipe_sha256": "d7bcfbca5b58f7fe537b26e45469c1494bfd8b0a44240168d7989d1165a52cdb",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "product",
+      "type": "CheckedSInt64"
+    }
+  ],
+  "schema_epoch_id": "a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e",
+  "source_constant_ids": {},
+  "source_function_id": "086e0abbaa9c1d347b213089806f50f37cecdb966addbe18e9a0da9033f276f4",
+  "source_result_type_id": "e7582c4cb0f57657c25fcd380673f951287c7379735e0c7613b13e3ad949bdc3",
+  "source_state_root": "5815dc7d83dd3061a00b938e0455e83850e5f0875830d2d7b688d21d24bef015",
+  "test_evidence": {
+    "count": 5,
+    "kind": "external_assertions_against_native_execution",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable"
+  }
+}

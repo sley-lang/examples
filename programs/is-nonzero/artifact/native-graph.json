@@ -1,0 +1,60 @@
+{
+  "cases_json": "{\n  \"contract\": \"sley-tools.graph-cases.v0\",\n  \"cases\": [\n    {\"id\": \"zero\", \"input\": [\"0\"], \"expected\": false},\n    {\"id\": \"one\", \"input\": [\"1\"], \"expected\": true},\n    {\"id\": \"minus-one\", \"input\": [\"-1\"], \"expected\": true},\n    {\"id\": \"minimum\", \"input\": [\"-9223372036854775808\"], \"expected\": true},\n    {\"id\": \"maximum\", \"input\": [\"9223372036854775807\"], \"expected\": true}\n  ]\n}\n",
+  "cases_sha256": "4530716f25e1b19b00b0ea9cd7c36fc4e43ed7eb9be3f79f504c8ee8f9c6d079",
+  "contract": "sley-tools.native-graph-artifact.v1",
+  "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+  "objects": [
+    {
+      "entity_id": "35aeb7849ec15deedbf3de7eeb88a75644925b34786272eb0c533993dfe7fc66",
+      "kind": 6,
+      "object_id": "39fe5f2c32d148701688a508cee4956764f6774d0042b10213e1f7e9a2c35dde",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e5502012035aeb7849ec15deedbf3de7eeb88a75644925b34786272eb0c533993dfe7fc660230062e040120ce4c87678bf937c8faa35a18d4124ae28dd6a254120a4f0050755a0594147396020101030100040303014039fe5f2c32d148701688a508cee4956764f6774d0042b10213e1f7e9a2c35dde"
+    },
+    {
+      "entity_id": "7052e8424cd2e725d7e810077a9e2308e9f2ff1a3ec4c6ffd7482a53dd22b1fe",
+      "kind": 7,
+      "object_id": "808e6b4f6044c256ff7491837e4dd8da58ab062c0fd29d4d5692d41ab07c1b40",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ec6010201207052e8424cd2e725d7e810077a9e2308e9f2ff1a3ec4c6ffd7482a53dd22b1fe02a001079d01050120ce4c87678bf937c8faa35a18d4124ae28dd6a254120a4f0050755a059414739602010003430220f2cc4d546057a8ddc4ea0d20fa4ade979477f7703b668daf107a1a174810e18d20bd2efe5ff4b7204868ecfbbd46e28d16d71d67f4ccf35fd2146fadd5e6787f42042d012b0101280226020120bd2efe5ff4b7204868ecfbbd46e28d16d71d67f4ccf35fd2146fadd5e6787f42020100050101808e6b4f6044c256ff7491837e4dd8da58ab062c0fd29d4d5692d41ab07c1b40"
+    },
+    {
+      "entity_id": "93a98025c5f06c5f847fdc900c722c098f89128f6d5161ce4ed773e7760d0949",
+      "kind": 9,
+      "object_id": "f94cebef981bb500d59a26288b503a9e1eebb113f99e4e8d56662732f875c282",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e3502012093a98025c5f06c5f847fdc900c722c098f89128f6d5161ce4ed773e7760d09490210090e01010b0201030301400203030100f94cebef981bb500d59a26288b503a9e1eebb113f99e4e8d56662732f875c282"
+    },
+    {
+      "entity_id": "bd2efe5ff4b7204868ecfbbd46e28d16d71d67f4ccf35fd2146fadd5e6787f42",
+      "kind": 8,
+      "object_id": "105d6cfba580b9a29aaf7dbe7002201612de2c258eab678f6bfccd44b394e54d",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eab01020120bd2efe5ff4b7204868ecfbbd46e28d16d71d67f4ccf35fd2146fadd5e6787f420285010882010601207052e8424cd2e725d7e810077a9e2308e9f2ff1a3ec4c6ffd7482a53dd22b1fe020101030161044d0222012035aeb7849ec15deedbf3de7eeb88a75644925b34786272eb0c533993dfe7fc66280226020120f2cc4d546057a8ddc4ea0d20fa4ade979477f7703b668daf107a1a174810e18d02010005040102020006020100105d6cfba580b9a29aaf7dbe7002201612de2c258eab678f6bfccd44b394e54d"
+    },
+    {
+      "entity_id": "ce4c87678bf937c8faa35a18d4124ae28dd6a254120a4f0050755a0594147396",
+      "kind": 5,
+      "object_id": "d8f89fd5a96e066e6948a03e8a8907596d1dd20e5165e3ae5513342a9a0a2e04",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ea201020120ce4c87678bf937c8faa35a18d4124ae28dd6a254120a4f0050755a0594147396027d057b080101000222012035aeb7849ec15deedbf3de7eeb88a75644925b34786272eb0c533993dfe7fc660302020004010005207052e8424cd2e725d7e810077a9e2308e9f2ff1a3ec4c6ffd7482a53dd22b1fe062201207052e8424cd2e725d7e810077a9e2308e9f2ff1a3ec4c6ffd7482a53dd22b1fe070100080101d8f89fd5a96e066e6948a03e8a8907596d1dd20e5165e3ae5513342a9a0a2e04"
+    },
+    {
+      "entity_id": "f2cc4d546057a8ddc4ea0d20fa4ade979477f7703b668daf107a1a174810e18d",
+      "kind": 8,
+      "object_id": "df369d82a31477a3d1d9a746445595b57c89eb21390386203023c957817d20c2",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7e020120f2cc4d546057a8ddc4ea0d20fa4ade979477f7703b668daf107a1a174810e18d025908570601207052e8424cd2e725d7e810077a9e2308e9f2ff1a3ec4c6ffd7482a53dd22b1fe020100030101040100050501030301400622022093a98025c5f06c5f847fdc900c722c098f89128f6d5161ce4ed773e7760d0949df369d82a31477a3d1d9a746445595b57c89eb21390386203023c957817d20c2"
+    }
+  ],
+  "program_id": "is-nonzero",
+  "recipe_json": "{\n  \"contract\": \"sley-tools.graph-authoring.v0\",\n  \"program_id\": \"is-nonzero\",\n  \"title\": \"Is Nonzero\",\n  \"purpose\": \"Decide whether a signed value differs from zero with native not_equal\",\n  \"parameters\": [{\"name\": \"value\", \"value_type\": \"SInt64\"}],\n  \"constants\": [{\"name\": \"zero\", \"value_type\": \"SInt64\", \"value\": \"0\"}],\n  \"result\": {\"kind\": \"primitive\", \"value_type\": \"Bool\"},\n  \"entry_block\": \"entry\",\n  \"blocks\": [{\n    \"name\": \"entry\",\n    \"operations\": [\n      {\"op\": \"constant_ref\", \"name\": \"origin\", \"constant\": \"zero\"},\n      {\"op\": \"not_equal\", \"name\": \"nonzero\", \"left\": \"param.value\", \"right\": \"op.origin\"}\n    ],\n    \"terminator\": {\"kind\": \"return\", \"value\": \"op.nonzero\"}\n  }]\n}\n",
+  "recipe_sha256": "3be484cf8ac19f0fb6aad7e39ee42ed847036effd0a7b2c06aecf203b128e55c",
+  "result_fields": [],
+  "schema_epoch_id": "a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e",
+  "source_constant_ids": {
+    "zero": "93a98025c5f06c5f847fdc900c722c098f89128f6d5161ce4ed773e7760d0949"
+  },
+  "source_function_id": "ce4c87678bf937c8faa35a18d4124ae28dd6a254120a4f0050755a0594147396",
+  "source_result_type_id": null,
+  "source_state_root": "05a7f3e975935d73d9236d20efc7096aab6478c73cb077e6faf164a4916f28ec",
+  "test_evidence": {
+    "count": 5,
+    "kind": "external_assertions_against_native_execution",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable"
+  }
+}

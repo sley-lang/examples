@@ -1,0 +1,10 @@
+{
+  "contract": "sley-tools.graph-cases.v0",
+  "cases": [
+    {"id": "small", "input": ["10", "4"], "expected": {"difference": {"ok": "6"}}},
+    {"id": "negative-result", "input": ["0", "5"], "expected": {"difference": {"ok": "-5"}}},
+    {"id": "zeros", "input": ["0", "0"], "expected": {"difference": {"ok": "0"}}},
+    {"id": "overflow-high", "input": ["9223372036854775807", "-1"], "expected": {"difference": {"error": {"code": 1}}}},
+    {"id": "overflow-low", "input": ["-9223372036854775808", "1"], "expected": {"difference": {"error": {"code": 1}}}}
+  ]
+}

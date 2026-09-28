@@ -84,6 +84,83 @@
       "cases": "programs/bool-status/tests/cases.json",
       "external_assertions": 4,
       "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S08",
+      "program_id": "safe-sub",
+      "responsibility": "Subtract two signed values with checked overflow report",
+      "package": "programs/safe-sub",
+      "artifact": "programs/safe-sub/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/safe-sub/tests/cases.json",
+      "external_assertions": 5,
+      "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S09",
+      "program_id": "safe-mul",
+      "responsibility": "Multiply two signed values with checked overflow report",
+      "package": "programs/safe-mul",
+      "artifact": "programs/safe-mul/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/safe-mul/tests/cases.json",
+      "external_assertions": 5,
+      "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S10",
+      "program_id": "safe-neg",
+      "responsibility": "Negate a signed value with checked overflow report",
+      "package": "programs/safe-neg",
+      "artifact": "programs/safe-neg/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/safe-neg/tests/cases.json",
+      "external_assertions": 5,
+      "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S11",
+      "program_id": "uint32-cap",
+      "responsibility": "Decide whether an unsigned count stays within cap 100",
+      "package": "programs/uint32-cap",
+      "artifact": "programs/uint32-cap/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/uint32-cap/tests/cases.json",
+      "external_assertions": 5,
+      "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S12",
+      "program_id": "is-nonzero",
+      "responsibility": "Decide whether a signed value differs from zero",
+      "package": "programs/is-nonzero",
+      "artifact": "programs/is-nonzero/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/is-nonzero/tests/cases.json",
+      "external_assertions": 5,
+      "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S13",
+      "program_id": "bool-nand",
+      "responsibility": "Negate the conjunction of two Boolean inputs",
+      "package": "programs/bool-nand",
+      "artifact": "programs/bool-nand/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/bool-nand/tests/cases.json",
+      "external_assertions": 4,
+      "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S14",
+      "program_id": "nonnegative-branch",
+      "responsibility": "Decide nonnegativity with an explicit two-way native branch",
+      "package": "programs/nonnegative-branch",
+      "artifact": "programs/nonnegative-branch/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/nonnegative-branch/tests/cases.json",
+      "external_assertions": 5,
+      "status": "verified_local_artifact_and_reimport"
     }
   ]
 }

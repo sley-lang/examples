@@ -1,0 +1,52 @@
+{
+  "artifact": {
+    "contract": "sley-tools.native-graph-artifact.v1",
+    "path": "artifact/native-graph.json",
+    "sha256": "e0465f51ddcdccac6049dbda3eb86a63714237dec986387395c96eed914fb7cc"
+  },
+  "authoring_profile": "graph_v0",
+  "contract": "sley-tools.program.v0",
+  "core": {
+    "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "profile": "extended_v1"
+  },
+  "entrypoint": {
+    "function_id": "ce4c87678bf937c8faa35a18d4124ae28dd6a254120a4f0050755a0594147396",
+    "name": "evaluate",
+    "state_root": "05a7f3e975935d73d9236d20efc7096aab6478c73cb077e6faf164a4916f28ec"
+  },
+  "graph_recipe": {
+    "path": "build/graph.json",
+    "sha256": "3be484cf8ac19f0fb6aad7e39ee42ed847036effd0a7b2c06aecf203b128e55c"
+  },
+  "host_responsibility": "typed JSON input, local workspace lifecycle, and external assertions",
+  "inputs": {
+    "value": "SInt64"
+  },
+  "license_status": "owner decision pending",
+  "native_logic": "pure typed graph declared by the bound local recipe",
+  "output": {
+    "type": "Bool"
+  },
+  "program_id": "is-nonzero",
+  "program_version": "0.1.0-local",
+  "purpose": "Decide whether a signed value differs from zero with native not_equal",
+  "result_fields": [],
+  "result_type_id": null,
+  "source_provenance": {
+    "builder": "crates/backend/src/graph.rs",
+    "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+  },
+  "status": "portable_native_artifact",
+  "test_cases": {
+    "external_assertions": "sley-tools test --project PROJECT",
+    "independent_oracle": "tests/cases.json",
+    "native_core_test_admission": "PENDING_CORE_EXECUTOR"
+  },
+  "title": "Is Nonzero",
+  "tools_contract": "sley-tools.cli.v0",
+  "worked_change": {
+    "status": "pending"
+  }
+}

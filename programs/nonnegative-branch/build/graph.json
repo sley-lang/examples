@@ -1,0 +1,38 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "nonnegative-branch",
+  "title": "Nonnegative Branch",
+  "purpose": "Decide nonnegativity with an explicit two-way native branch on the sign test",
+  "parameters": [{"name": "value", "value_type": "SInt64"}],
+  "constants": [
+    {"name": "zero", "value_type": "SInt64", "value": "0"},
+    {"name": "yes", "value_type": "Bool", "value": true},
+    {"name": "no", "value_type": "Bool", "value": false}
+  ],
+  "result": {"kind": "primitive", "value_type": "Bool"},
+  "entry_block": "entry",
+  "blocks": [
+    {
+      "name": "entry",
+      "operations": [
+        {"op": "constant_ref", "name": "origin", "constant": "zero"},
+        {"op": "less_than", "name": "is_negative", "left": "param.value", "right": "op.origin"}
+      ],
+      "terminator": {"kind": "cond_branch", "condition": "op.is_negative", "if_true": "negative", "if_false": "nonnegative"}
+    },
+    {
+      "name": "negative",
+      "operations": [
+        {"op": "constant_ref", "name": "neg_out", "constant": "no"}
+      ],
+      "terminator": {"kind": "return", "value": "op.neg_out"}
+    },
+    {
+      "name": "nonnegative",
+      "operations": [
+        {"op": "constant_ref", "name": "pos_out", "constant": "yes"}
+      ],
+      "terminator": {"kind": "return", "value": "op.pos_out"}
+    }
+  ]
+}

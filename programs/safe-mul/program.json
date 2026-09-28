@@ -1,0 +1,62 @@
+{
+  "artifact": {
+    "contract": "sley-tools.native-graph-artifact.v1",
+    "path": "artifact/native-graph.json",
+    "sha256": "c7779bf43f384327371f02f2d4bf58f1403642bd59b395ad5651f4058edce024"
+  },
+  "authoring_profile": "graph_v0",
+  "contract": "sley-tools.program.v0",
+  "core": {
+    "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "profile": "extended_v1"
+  },
+  "entrypoint": {
+    "function_id": "086e0abbaa9c1d347b213089806f50f37cecdb966addbe18e9a0da9033f276f4",
+    "name": "evaluate",
+    "state_root": "5815dc7d83dd3061a00b938e0455e83850e5f0875830d2d7b688d21d24bef015"
+  },
+  "graph_recipe": {
+    "path": "build/graph.json",
+    "sha256": "d7bcfbca5b58f7fe537b26e45469c1494bfd8b0a44240168d7989d1165a52cdb"
+  },
+  "host_responsibility": "typed JSON input, local workspace lifecycle, and external assertions",
+  "inputs": {
+    "a": "SInt64",
+    "b": "SInt64"
+  },
+  "license_status": "owner decision pending",
+  "native_logic": "pure typed graph declared by the bound local recipe",
+  "output": {
+    "fields": {
+      "product": "CheckedSInt64"
+    },
+    "type": "Record"
+  },
+  "program_id": "safe-mul",
+  "program_version": "0.1.0-local",
+  "purpose": "Multiply two signed values with native checked arithmetic and report overflow",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "product",
+      "type": "CheckedSInt64"
+    }
+  ],
+  "result_type_id": "e7582c4cb0f57657c25fcd380673f951287c7379735e0c7613b13e3ad949bdc3",
+  "source_provenance": {
+    "builder": "crates/backend/src/graph.rs",
+    "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+  },
+  "status": "portable_native_artifact",
+  "test_cases": {
+    "external_assertions": "sley-tools test --project PROJECT",
+    "independent_oracle": "tests/cases.json",
+    "native_core_test_admission": "PENDING_CORE_EXECUTOR"
+  },
+  "title": "Safe Mul",
+  "tools_contract": "sley-tools.cli.v0",
+  "worked_change": {
+    "status": "pending"
+  }
+}
