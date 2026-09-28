@@ -1,0 +1,13 @@
+Sley Examples
+Copyright 2026 Greyforge Labs
+
+Project-owned material in this repository — the original examples,
+documentation, supporting scripts, and project-owned artifacts, except
+where another license or notice is expressly identified — is licensed
+under the Apache License, Version 2.0. See LICENSE for the full text.
+
+This project makes no ownership claim over third-party material, and
+does not change the license of any third-party component. The Sley
+language toolchain used to build and verify these examples is an
+external dependency referenced by path; it is not distributed in this
+repository.

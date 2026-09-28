@@ -45,7 +45,12 @@ Each package holds `build/graph.json` (authoring recipe), `tests/cases.json` (in
 
 The script re-runs `init` + `test` + bound `artifact export` + fresh-workspace `artifact import` + re-`test` for all seven programs and refreshes `program.json` and `artifact/native-graph.json` in place. It refuses to run with uncommitted changes unless `--allow-dirty` is passed.
 
-License and any publication decision remain owner calls; nothing here is published yet.
+## License
+
+This repository is licensed under the [Apache License, Version 2.0](LICENSE).
+That covers the original examples, documentation, supporting scripts, and
+project-owned artifacts, except where another license or notice is
+expressly identified. See [NOTICE](NOTICE) for attribution.
 
 ## Composed examples (C01–C09, sley-agent 2.0.3)
 
