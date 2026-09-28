@@ -1,0 +1,16 @@
+{"cases": [
+  {"id": "clear-pass", "input": [5, 3, 0, 1], "expected": {"Ok": "Pass"}},
+  {"id": "clear-fail", "input": [3, 5, 0, 1], "expected": {"Ok": "Fail"}},
+  {"id": "lone-yes-with-abstentions", "input": [1, 0, 3, 1], "expected": {"Ok": "Pass"}},
+  {"id": "tie-no-abstentions", "input": [2, 2, 0, 1], "expected": {"Ok": "Tie"}},
+  {"id": "below-quorum", "input": [2, 1, 0, 9], "expected": {"Ok": "NoQuorum"}},
+  {"id": "all-abstain-quorum-met", "input": [0, 0, 1, 1], "expected": {"Ok": "Tie"}},
+  {"id": "all-abstain-larger", "input": [0, 0, 5, 5], "expected": {"Ok": "Tie"}},
+  {"id": "tie-with-abstentions", "input": [3, 3, 4, 2], "expected": {"Ok": "Tie"}},
+  {"id": "negative-yes", "input": [-1, 0, 0, 0], "expected": {"Err": "NegativeVotes"}},
+  {"id": "zero-quorum", "input": [1, 1, 1, 0], "expected": {"Err": "BadQuorum"}},
+  {"id": "bad-quorum-guarded", "input": [0, 13, 0, 0], "expected": {"Err": "BadQuorum"}},
+  {"id": "cast-overflow", "input": [9223372036854775807, 1, 0, 1], "expected": {"Err": "Overflow"}},
+  {"id": "present-overflow", "input": [9223372036854775807, 0, 1, 1], "expected": {"Err": "Overflow"}},
+  {"id": "present-equals-quorum-tie", "input": [4, 4, 4, 12], "expected": {"Ok": "Tie"}}
+]}

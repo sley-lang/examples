@@ -1,0 +1,17 @@
+{"cases": [
+  {"id": "leap-feb", "input": [2024, 2], "expected": {"Ok": 29}},
+  {"id": "common-feb", "input": [2023, 2], "expected": {"Ok": 28}},
+  {"id": "century-not-leap", "input": [1900, 2], "expected": {"Ok": 28}},
+  {"id": "quad-century-leap", "input": [2000, 2], "expected": {"Ok": 29}},
+  {"id": "century-not-leap-2100", "input": [2100, 2], "expected": {"Ok": 28}},
+  {"id": "quad-century-leap-2400", "input": [2400, 2], "expected": {"Ok": 29}},
+  {"id": "july-31", "input": [2024, 7], "expected": {"Ok": 31}},
+  {"id": "april-30", "input": [2024, 4], "expected": {"Ok": 30}},
+  {"id": "january-31", "input": [2024, 1], "expected": {"Ok": 31}},
+  {"id": "year-zero", "input": [0, 13], "expected": {"Err": "BadYear"}},
+  {"id": "month-13", "input": [2024, 13], "expected": {"Err": "BadMonth"}},
+  {"id": "month-zero", "input": [2024, 0], "expected": {"Err": "BadMonth"}},
+  {"id": "negative-year", "input": [-5, 2], "expected": {"Err": "BadYear"}},
+  {"id": "december-31", "input": [2023, 12], "expected": {"Ok": 31}},
+  {"id": "november-30", "input": [2023, 11], "expected": {"Ok": 30}}
+]}

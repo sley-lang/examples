@@ -204,6 +204,60 @@
       },
       "pack": "composed/window-overlap/packs/overlap-committed.pack",
       "status": "workbench_verified_and_reimported"
+    },
+    {
+      "id": "C07",
+      "program_id": "quorum-decision",
+      "responsibility": "Decide a governance vote from yes/no/abstain counts against a quorum floor, with majority-of-votes-cast, tie, and no-quorum outcomes",
+      "package": "composed/quorum-decision",
+      "entrypoint": "quorum_decision",
+      "frames": "composed/quorum-decision/frames",
+      "cases": "composed/quorum-decision/tests/cases.json",
+      "workbench_checks": 14,
+      "external_assertions": 14,
+      "persistence": {
+        "combined_commit": "REFUSED_TXN_TEST_EVIDENCE_UNSUPPORTED",
+        "code_txn": "73c40f0b",
+        "tests_txn": "0d2b561b"
+      },
+      "pack": "composed/quorum-decision/packs/quorum-committed.pack",
+      "status": "workbench_verified_and_reimported"
+    },
+    {
+      "id": "C08",
+      "program_id": "cooldown-gate",
+      "responsibility": "Report a Closed/Open/HalfOpen breaker gate from failure count, threshold, and clock times, with checked remaining cooldown in the Open state",
+      "package": "composed/cooldown-gate",
+      "entrypoint": "cooldown_gate",
+      "frames": "composed/cooldown-gate/frames",
+      "cases": "composed/cooldown-gate/tests/cases.json",
+      "workbench_checks": 15,
+      "external_assertions": 15,
+      "persistence": {
+        "combined_commit": "REFUSED_TXN_TEST_EVIDENCE_UNSUPPORTED",
+        "code_txn": "3be8a5b0",
+        "tests_txn": "b4e51dd4"
+      },
+      "pack": "composed/cooldown-gate/packs/gate-committed.pack",
+      "status": "workbench_verified_and_reimported"
+    },
+    {
+      "id": "C09",
+      "program_id": "days-in-month",
+      "responsibility": "Return a proleptic Gregorian month's length with the full leap-year rule via checked remainders and an infallible-remainder trap handler",
+      "package": "composed/days-in-month",
+      "entrypoint": "days_in_month",
+      "frames": "composed/days-in-month/frames",
+      "cases": "composed/days-in-month/tests/cases.json",
+      "workbench_checks": 15,
+      "external_assertions": 15,
+      "persistence": {
+        "combined_commit": "REFUSED_TXN_TEST_EVIDENCE_UNSUPPORTED",
+        "code_txn": "10e4887c",
+        "tests_txn": "cf4e4cab"
+      },
+      "pack": "composed/days-in-month/packs/month-committed.pack",
+      "status": "workbench_verified_and_reimported"
     }
   ]
 }

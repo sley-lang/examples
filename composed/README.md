@@ -1,6 +1,6 @@
-# Composed examples (C01–C06, sley-agent 2.0.3)
+# Composed examples (C01–C09, sley-agent 2.0.3)
 
-Six composed Sley programs authored with the official 2.0.3 `sley-agent`
+Nine composed Sley programs authored with the official 2.0.3 `sley-agent`
 workbench, kept strictly separate from the seven 2.0.1 primitive examples
 in `programs/`. Nothing here changes the 2.0.1 pin, the seven primitives,
 or the serious toolkit — and no new framework was introduced: each example
@@ -15,10 +15,20 @@ with an exported pack for reimport.
 | C04 | `page-window` | `page_window(total,page,per_page) -> Result<(start,count,has_more),PageError>` | 16 / 16 |
 | C05 | `ledger-post` | `post_ledger(balance,debit,credit,overdraft) -> Result<i64,LedgerError>` | 15 / 15 |
 | C06 | `window-overlap` | `window_overlap(s1,e1,s2,e2) -> Result<(overlap,gap),WindowError>` | 15 / 15 |
+| C07 | `quorum-decision` | `quorum_decision(yes,no,abstain,quorum) -> Result<QuorumOutcome,QuorumError>` | 14 / 14 |
+| C08 | `cooldown-gate` | `cooldown_gate(failures,threshold,now,tripped_at,cooldown) -> Result<(GateState,i64),GateError>` | 15 / 15 |
+| C09 | `days-in-month` | `days_in_month(year,month) -> Result<i64,DateError>` | 15 / 15 |
 
 Toolchain identity: `toolchain.json` (release archive, sha256, binary
 shas, build commit). The release documentation's own composition sketches
 were starting points only; every claim below was observed by execution.
+
+## Authoring discipline
+
+New examples are authored under `authoring.md` (single authoritative
+copy): pinned guide plus the frozen serializer/parse/recovery appendix
+first, no preloaded example packages; a small relevant example is
+consulted only when a specific unresolved problem warrants it.
 
 ## Reproduce (no pilot directory needed)
 
@@ -45,6 +55,9 @@ Each example was therefore persisted split: a code-only commit
 - C04: code `8da11225`, tests `7f14f6e7`
 - C05: code `84d85be1`, tests `235440e4`
 - C06: code `ff526edf`, tests `65a093d7`
+- C07: code `73c40f0b`, tests `0d2b561b`
+- C08: code `3be8a5b0`, tests `b4e51dd4`
+- C09: code `10e4887c`, tests `cf4e4cab`
 
 Code-only plus tests-after is two transactions, **not** a test-admitted
 atomic commit. See `admission-probe.md` for the fresh-import edit/commit
@@ -53,10 +66,11 @@ probe.
 ## Outcome ledger (kept separate)
 
 - **Advisory workbench checks**: `try`/`test` kernel-executed checks —
-  11/11, 12/12, 9/9, 16/16, 15/15, 15/15. Advisory only; they do not admit tests to any core.
+  11/11, 12/12, 9/9, 16/16, 15/15, 15/15, 14/14, 15/15, 15/15. Advisory only; they do not admit tests to any core.
 - **External assertions**: `tests/check_external.py` per example invokes
   the committed function through the agent CLI and compares against
-  independently listed cases — 11/11, 12/12, 9/9, 16/16, 15/15, 15/15 at commit time.
+  independently listed cases — 11/11, 12/12, 9/9, 16/16, 15/15, 15/15,
+  14/14, 15/15, 15/15 at commit time.
 - **Persistence**: split commits above, plus export packs that reimport
   into fresh workspaces and re-pass (verified again by `reproduce.sh`).
 - **Native test admission**: not run — unavailable in 2.0

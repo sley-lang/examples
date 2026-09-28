@@ -1,0 +1,112 @@
+# sley view (AV1, non-canonical) root=86b5f7bf
+# focus days_in_month: context, not a completeness certificate
+fn days_in_month(year: i64, month: i64) -> Result<i64,DateError>   [f836a98a]
+  entry:
+    entry__if0__a1 = const k_1 (1)
+    entry__if0 = lt year, entry__if0__a1
+    cond entry__if0 -> __fail_BadYear, entry__if0
+  g31:
+    g31__t0__a0__a0__a0__a1 = const k_1 (1)
+    g31__t0__a0__a0__a0 = eq month, g31__t0__a0__a0__a0__a1
+    g31__t0__a0__a0__a1__a1 = const k_3 (3)
+    g31__t0__a0__a0__a1 = eq month, g31__t0__a0__a0__a1__a1
+    g31__t0__a0__a0 = or g31__t0__a0__a0__a0, g31__t0__a0__a0__a1
+    g31__t0__a0__a1__a0__a1 = const k_5 (5)
+    g31__t0__a0__a1__a0 = eq month, g31__t0__a0__a1__a0__a1
+    g31__t0__a0__a1__a1__a1 = const k_7 (7)
+    g31__t0__a0__a1__a1 = eq month, g31__t0__a0__a1__a1__a1
+    g31__t0__a0__a1 = or g31__t0__a0__a1__a0, g31__t0__a0__a1__a1
+    g31__t0__a0 = or g31__t0__a0__a0, g31__t0__a0__a1
+    g31__t0__a1__a0__a0__a1 = const k_8 (8)
+    g31__t0__a1__a0__a0 = eq month, g31__t0__a1__a0__a0__a1
+    g31__t0__a1__a0__a1__a1 = const k_10 (10)
+    g31__t0__a1__a0__a1 = eq month, g31__t0__a1__a0__a1__a1
+    g31__t0__a1__a0 = or g31__t0__a1__a0__a0, g31__t0__a1__a0__a1
+    g31__t0__a1__a1__a1 = const k_12 (12)
+    g31__t0__a1__a1 = eq month, g31__t0__a1__a1__a1
+    g31__t0__a1 = or g31__t0__a1__a0, g31__t0__a1__a1
+    g31__t0 = or g31__t0__a0, g31__t0__a1
+    cond g31__t0 -> r31, r30
+  feb:
+    r4__a1 = const k_4 (4)
+    r4__r = rem year, r4__a1
+    switch r4__r: Ok -> feb__r4($), Err -> remtrap
+  r31:
+    r31__t0 = const k_31 (31)
+    r31__ok = ok r31__t0
+    return r31__ok
+  r30:
+    r30__t0 = const k_30 (30)
+    r30__ok = ok r30__t0
+    return r30__ok
+  r29:
+    r29__t0 = const k_29 (29)
+    r29__ok = ok r29__t0
+    return r29__ok
+  r28:
+    r28__t0 = const k_28 (28)
+    r28__ok = ok r28__t0
+    return r28__ok
+  remtrap:
+    trap unreachable
+  entry__if0:
+    entry__if1__a1 = const k_1 (1)
+    entry__if1 = lt month, entry__if1__a1
+    cond entry__if1 -> __fail_BadMonth, entry__if1
+  entry__if1:
+    entry__if2__a1 = const k_12 (12)
+    entry__if2 = gt month, entry__if2__a1
+    cond entry__if2 -> __fail_BadMonth, entry__if2
+  entry__if2:
+    entry__t0__a1 = const k_2 (2)
+    entry__t0 = eq month, entry__t0__a1
+    cond entry__t0 -> feb, g31
+  feb__r4(r4: i64):
+    r100__a1 = const k_100 (100)
+    r100__r = rem year, r100__a1
+    switch r100__r: Ok -> feb__r100($, r4), Err -> remtrap
+  feb__r100(r100: i64, r4: i64):
+    r400__a1 = const k_400 (400)
+    r400__r = rem year, r400__a1
+    switch r400__r: Ok -> feb__r400($, r4, r100), Err -> remtrap
+  feb__r400(r400: i64, r4: i64, r100: i64):
+    leap__a0__a1 = const k_0 (0)
+    leap__a0 = eq r4, leap__a0__a1
+    leap__a1__a0__a1 = const k_0 (0)
+    leap__a1__a0 = ne r100, leap__a1__a0__a1
+    leap__a1__a1__a1 = const k_0 (0)
+    leap__a1__a1 = eq r400, leap__a1__a1__a1
+    leap__a1 = or leap__a1__a0, leap__a1__a1
+    leap = and leap__a0, leap__a1
+    cond leap -> r29, r28
+  __fail_BadYear:
+    v = variant DateError.BadYear
+    r = err v
+    return r
+  __fail_BadMonth:
+    v = variant DateError.BadMonth
+    r = err v
+    return r
+types: 1
+type DateError = BadYear | BadMonth
+consts: 16
+const k_1: i64 = 1
+const k_3: i64 = 3
+const k_5: i64 = 5
+const k_7: i64 = 7
+const k_8: i64 = 8
+const k_10: i64 = 10
+const k_12: i64 = 12
+const k_4: i64 = 4
+const k_31: i64 = 31
+const k_30: i64 = 30
+const k_29: i64 = 29
+const k_28: i64 = 28
+const k_2: i64 = 2
+const k_100: i64 = 100
+const k_400: i64 = 400
+const k_0: i64 = 0
+calls: none
+callers: none
+tests: 15: month_cases_0, month_cases_1, month_cases_10, month_cases_11, month_cases_12, month_cases_13, month_cases_14, month_cases_2, month_cases_3, month_cases_4, month_cases_5, month_cases_6, month_cases_7, month_cases_8, month_cases_9
+boundary: exported; effects none; namespace none; callers outside it: none

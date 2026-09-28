@@ -37,9 +37,9 @@ The script re-runs `init` + `test` + bound `artifact export` + fresh-workspace `
 
 License and any publication decision remain owner calls; nothing here is published yet.
 
-## Composed examples (C01–C06, sley-agent 2.0.3)
+## Composed examples (C01–C09, sley-agent 2.0.3)
 
-Six composed programs authored with the official 2.0.3 `sley-agent`
+Nine composed programs authored with the official 2.0.3 `sley-agent`
 workbench, kept in `composed/` strictly separate from the seven 2.0.1
 primitives above. The 2.0.1 pin, the seven packages, and the rebuild script
 are unchanged by them.
@@ -52,6 +52,9 @@ are unchanged by them.
 | C04 | `composed/page-window` | `page_window` → `Result<(start,count,has_more),PageError>` | 16 / 16 |
 | C05 | `composed/ledger-post` | `post_ledger` → `Result<i64,LedgerError>` | 15 / 15 |
 | C06 | `composed/window-overlap` | `window_overlap` → `Result<(overlap,gap),WindowError>` | 15 / 15 |
+| C07 | `composed/quorum-decision` | `quorum_decision` → `Result<QuorumOutcome,QuorumError>` | 14 / 14 |
+| C08 | `composed/cooldown-gate` | `cooldown_gate` → `Result<(GateState,i64),GateError>` | 15 / 15 |
+| C09 | `composed/days-in-month` | `days_in_month` → `Result<i64,DateError>` | 15 / 15 |
 
 Each example holds exact authoring frames as run, a contract (parameter
 semantics, error precedence), independently expected cases, an external

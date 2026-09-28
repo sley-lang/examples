@@ -1,0 +1,72 @@
+# sley view (AV1, non-canonical) root=1a44613f
+# focus quorum_decision: context, not a completeness certificate
+fn quorum_decision(yes: i64, no: i64, abstain: i64, quorum: i64) -> Result<QuorumOutcome,QuorumError>   [3dafeb7f]
+  entry:
+    entry__if0__a1 = const k_0 (0)
+    entry__if0 = lt yes, entry__if0__a1
+    cond entry__if0 -> __fail_NegativeVotes, entry__if0
+  nq:
+    o = variant QuorumOutcome.NoQuorum
+    nq__ok = ok o
+    return nq__ok
+  cmp:
+    cmp__t0 = gt yes, no
+    cond cmp__t0 -> pass, cmp2
+  cmp2:
+    cmp2__t0 = lt yes, no
+    cond cmp2__t0 -> failb, tie
+  pass:
+    o = variant QuorumOutcome.Pass
+    pass__ok = ok o
+    return pass__ok
+  failb:
+    o = variant QuorumOutcome.Fail
+    failb__ok = ok o
+    return failb__ok
+  tie:
+    o = variant QuorumOutcome.Tie
+    tie__ok = ok o
+    return tie__ok
+  entry__if0:
+    entry__if1__a1 = const k_0 (0)
+    entry__if1 = lt no, entry__if1__a1
+    cond entry__if1 -> __fail_NegativeVotes, entry__if1
+  entry__if1:
+    entry__if2__a1 = const k_0 (0)
+    entry__if2 = lt abstain, entry__if2__a1
+    cond entry__if2 -> __fail_NegativeVotes, entry__if2
+  entry__if2:
+    entry__if3__a1 = const k_1 (1)
+    entry__if3 = lt quorum, entry__if3__a1
+    cond entry__if3 -> __fail_BadQuorum, entry__if3
+  entry__if3:
+    cast__r = add yes, no
+    switch cast__r: Ok -> entry__cast($), Err -> __fail_Overflow
+  entry__cast(cast: i64):
+    present__r = add cast, abstain
+    switch present__r: Ok -> entry__present($), Err -> __fail_Overflow
+  entry__present(present: i64):
+    entry__t0 = lt present, quorum
+    cond entry__t0 -> nq, cmp
+  __fail_NegativeVotes:
+    v = variant QuorumError.NegativeVotes
+    r = err v
+    return r
+  __fail_BadQuorum:
+    v = variant QuorumError.BadQuorum
+    r = err v
+    return r
+  __fail_Overflow:
+    v = variant QuorumError.Overflow
+    r = err v
+    return r
+types: 2
+type QuorumOutcome = Pass | Fail | Tie | NoQuorum
+type QuorumError = NegativeVotes | BadQuorum | Overflow
+consts: 2
+const k_0: i64 = 0
+const k_1: i64 = 1
+calls: none
+callers: none
+tests: 14: quorum_cases_0, quorum_cases_1, quorum_cases_10, quorum_cases_11, quorum_cases_12, quorum_cases_13, quorum_cases_2, quorum_cases_3, quorum_cases_4, quorum_cases_5, quorum_cases_6, quorum_cases_7, quorum_cases_8, quorum_cases_9
+boundary: exported; effects none; namespace none; callers outside it: none

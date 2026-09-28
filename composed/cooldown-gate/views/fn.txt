@@ -1,0 +1,77 @@
+# sley view (AV1, non-canonical) root=35a55ee7
+# focus cooldown_gate: context, not a completeness certificate
+fn cooldown_gate(failures: i64, threshold: i64, now: i64, tripped_at: i64, cooldown: i64) -> Result<(GateState,i64),GateError>   [f0020cb2]
+  entry:
+    entry__if0__a1 = const k_0 (0)
+    entry__if0 = lt failures, entry__if0__a1
+    cond entry__if0 -> __fail_NegativeFailures, entry__if0
+  closed:
+    s = variant GateState.Closed
+    w__a1 = const k_0 (0)
+    w = tuple s, w__a1
+    closed__ok = ok w
+    return closed__ok
+  trip:
+    elapsed__r = sub now, tripped_at
+    switch elapsed__r: Ok -> trip__elapsed($), Err -> __fail_Overflow
+  half:
+    s = variant GateState.HalfOpen
+    w__a1_2 = const k_0 (0)
+    w = tuple s, w__a1_2
+    half__ok = ok w
+    return half__ok
+  open(elapsed: i64):
+    r__r = sub cooldown, elapsed
+    switch r__r: Ok -> open__r($), Err -> __fail_Overflow
+  entry__if0:
+    entry__if1__a1 = const k_1 (1)
+    entry__if1 = lt threshold, entry__if1__a1
+    cond entry__if1 -> __fail_BadThreshold, entry__if1
+  entry__if1:
+    entry__if2__a1 = const k_0 (0)
+    entry__if2 = lt cooldown, entry__if2__a1
+    cond entry__if2 -> __fail_BadCooldown, entry__if2
+  entry__if2:
+    entry__if3 = lt now, tripped_at
+    cond entry__if3 -> __fail_BadClock, entry__if3
+  entry__if3:
+    entry__t0 = lt failures, threshold
+    cond entry__t0 -> closed, trip
+  trip__elapsed(elapsed: i64):
+    trip__t0 = ge elapsed, cooldown
+    cond trip__t0 -> half, open(elapsed)
+  open__r(r: i64):
+    s = variant GateState.Open
+    w = tuple s, r
+    open__ok = ok w
+    return open__ok
+  __fail_NegativeFailures:
+    v = variant GateError.NegativeFailures
+    r = err v
+    return r
+  __fail_BadThreshold:
+    v = variant GateError.BadThreshold
+    r = err v
+    return r
+  __fail_BadCooldown:
+    v = variant GateError.BadCooldown
+    r = err v
+    return r
+  __fail_BadClock:
+    v = variant GateError.BadClock
+    r = err v
+    return r
+  __fail_Overflow:
+    v = variant GateError.Overflow
+    r = err v
+    return r
+types: 2
+type GateState = Closed | Open | HalfOpen
+type GateError = NegativeFailures | BadThreshold | BadCooldown | BadClock | Overflow
+consts: 2
+const k_0: i64 = 0
+const k_1: i64 = 1
+calls: none
+callers: none
+tests: 15: gate_cases_0, gate_cases_1, gate_cases_10, gate_cases_11, gate_cases_12, gate_cases_13, gate_cases_14, gate_cases_2, gate_cases_3, gate_cases_4, gate_cases_5, gate_cases_6, gate_cases_7, gate_cases_8, gate_cases_9
+boundary: exported; effects none; namespace none; callers outside it: none

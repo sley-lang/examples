@@ -1,0 +1,17 @@
+{"cases": [
+  {"id": "below-threshold-closed", "input": [2, 5, 100, 90, 30], "expected": {"Ok": ["Closed", 0]}},
+  {"id": "open-with-remaining", "input": [5, 5, 100, 90, 30], "expected": {"Ok": ["Open", 20]}},
+  {"id": "open-mostly-fresh", "input": [5, 5, 95, 90, 30], "expected": {"Ok": ["Open", 25]}},
+  {"id": "open-one-tick-left", "input": [5, 5, 119, 90, 30], "expected": {"Ok": ["Open", 1]}},
+  {"id": "expired-half-open", "input": [5, 5, 120, 90, 30], "expected": {"Ok": ["HalfOpen", 0]}},
+  {"id": "zero-cooldown-immediate", "input": [5, 5, 90, 90, 0], "expected": {"Ok": ["HalfOpen", 0]}},
+  {"id": "just-tripped", "input": [3, 3, 50, 50, 10], "expected": {"Ok": ["Open", 10]}},
+  {"id": "negative-failures", "input": [-1, 0, 0, 0, -5], "expected": {"Err": "NegativeFailures"}},
+  {"id": "zero-threshold", "input": [0, 0, 5, 0, 0], "expected": {"Err": "BadThreshold"}},
+  {"id": "negative-cooldown", "input": [1, 1, 0, 0, -1], "expected": {"Err": "BadCooldown"}},
+  {"id": "clock-regression", "input": [5, 5, 80, 90, 30], "expected": {"Err": "BadClock"}},
+  {"id": "elapsed-overflow", "input": [5, 5, 9223372036854775807, -1, 30], "expected": {"Err": "Overflow"}},
+  {"id": "above-threshold-expired", "input": [9, 5, 200, 100, 50], "expected": {"Ok": ["HalfOpen", 0]}},
+  {"id": "zero-failures-closed", "input": [0, 1, 0, 0, 0], "expected": {"Ok": ["Closed", 0]}},
+  {"id": "exact-expiry", "input": [7, 7, 1000, 0, 1000], "expected": {"Ok": ["HalfOpen", 0]}}
+]}
