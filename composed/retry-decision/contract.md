@@ -8,21 +8,23 @@ Decides whether a bounded operation may be attempted again.
 
 - `attempt` = attempts consumed so far. Must be `>= 0`; a negative value
   returns `Err(NegativeAttempt)`.
-- `limit` = attempts budgeted. Must be `>= 1`; anything less returns
+- `limit` = inclusive retry cutoff. Must be `>= 1`; anything less returns
   `Err(BadLimit)`. Note `limit = 0` is rejected — there is no "zero retries
-  allowed" configuration; the smallest budget is one attempt.
+  allowed" configuration; the smallest cutoff is one. `limit` is not a
+  count of permitted attempts: it is the largest consumed-attempt value at
+  which another retry is still granted.
 
 ## Policy (final, v2)
 
-Retry while consumed attempts do not exceed the budget:
+Retry while consumed attempts do not exceed the cutoff:
 
 - `attempt <= limit` → `Ok(Retry)`
 - `attempt > limit` → `Ok(Exhausted)`
 
-So `(3, 3)` → `Retry` (budget exactly consumed, one more try is still
-covered) and `(4, 3)` → `Exhausted`. The initial v1 policy used strict
-`attempt < limit`; the worked modification changed it to `<=`
-(see `modifications.md`).
+Equality permits another retry: `(3, 3)` → `Retry` (consumed attempts sit
+exactly on the cutoff, so one more try is still covered) and `(4, 3)` →
+`Exhausted`. The initial v1 policy used strict `attempt < limit`; the
+worked modification changed it to `<=` (see `modifications.md`).
 
 ## Error precedence (evaluation order in `entry`)
 

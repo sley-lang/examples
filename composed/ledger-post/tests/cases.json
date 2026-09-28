@@ -1,0 +1,17 @@
+{"cases": [
+  {"id": "normal-post", "input": [1000, 200, 50, 100], "expected": {"Ok": 850}},
+  {"id": "rest-on-floor", "input": [0, 100, 0, 100], "expected": {"Ok": -100}},
+  {"id": "one-below-floor", "input": [0, 101, 0, 100], "expected": {"Err": "InsufficientFunds"}},
+  {"id": "zero-at-zero-floor", "input": [0, 0, 0, 0], "expected": {"Ok": 0}},
+  {"id": "negative-balance-above-floor", "input": [-50, 0, 0, 100], "expected": {"Ok": -50}},
+  {"id": "stuck-below-floor", "input": [-150, 0, 0, 100], "expected": {"Err": "InsufficientFunds"}},
+  {"id": "negative-debit", "input": [0, -5, 0, 0], "expected": {"Err": "NegativeDebit"}},
+  {"id": "negative-credit", "input": [0, 0, -5, 0], "expected": {"Err": "NegativeCredit"}},
+  {"id": "negative-overdraft", "input": [0, 0, 0, -1], "expected": {"Err": "NegativeOverdraft"}},
+  {"id": "guard-precedence", "input": [0, -1, -2, -3], "expected": {"Err": "NegativeDebit"}},
+  {"id": "credit-add-overflow", "input": [9223372036854775807, 0, 1, 0], "expected": {"Err": "Overflow"}},
+  {"id": "debit-sub-underflow", "input": [-9223372036854775808, 1, 0, 0], "expected": {"Err": "Overflow"}},
+  {"id": "extreme-ok", "input": [0, 0, 9223372036854775807, 9223372036854775807], "expected": {"Ok": 9223372036854775807}},
+  {"id": "wash-post", "input": [500, 300, 300, 0], "expected": {"Ok": 500}},
+  {"id": "extreme-rest-on-floor", "input": [9223372036854775807, 9223372036854775807, 0, 0], "expected": {"Ok": 0}}
+]}

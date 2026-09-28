@@ -1,0 +1,282 @@
+{
+ "af1": 1,
+ "afx": 1,
+ "types": [
+  {
+   "name": "WindowError",
+   "variant": [
+    "BadFirst",
+    "BadSecond",
+    "Overflow"
+   ]
+  }
+ ],
+ "fns": [
+  {
+   "fn": "window_overlap",
+   "params": [
+    [
+     "s1",
+     "i64"
+    ],
+    [
+     "e1",
+     "i64"
+    ],
+    [
+     "s2",
+     "i64"
+    ],
+    [
+     "e2",
+     "i64"
+    ]
+   ],
+   "returns": "Result<(i64,i64),WindowError>",
+   "blocks": [
+    {
+     "name": "entry",
+     "ops": [
+      [
+       "!BadFirst",
+       "if",
+       [
+        "gt",
+        "s1",
+        "e1"
+       ]
+      ],
+      [
+       "!BadSecond",
+       "if",
+       [
+        "gt",
+        "s2",
+        "e2"
+       ]
+      ]
+     ],
+     "term": [
+      "cond",
+      [
+       "ge",
+       "s1",
+       "s2"
+      ],
+      [
+       "os_a"
+      ],
+      [
+       "os_b"
+      ]
+     ]
+    },
+    {
+     "name": "os_a",
+     "ops": [],
+     "term": [
+      "cond",
+      [
+       "le",
+       "e1",
+       "e2"
+      ],
+      [
+       "m11"
+      ],
+      [
+       "m12"
+      ]
+     ]
+    },
+    {
+     "name": "os_b",
+     "ops": [],
+     "term": [
+      "cond",
+      [
+       "le",
+       "e1",
+       "e2"
+      ],
+      [
+       "m21"
+      ],
+      [
+       "m22"
+      ]
+     ]
+    },
+    {
+     "name": "m11",
+     "ops": [
+      [
+       "d",
+       "sub?Overflow",
+       "e1",
+       "s1"
+      ],
+      [
+       "pos",
+       "gt",
+       "d",
+       0
+      ]
+     ],
+     "term": [
+      "cond",
+      "pos",
+      [
+       "ovl",
+       "d"
+      ],
+      [
+       "dis",
+       "d"
+      ]
+     ]
+    },
+    {
+     "name": "m12",
+     "ops": [
+      [
+       "d",
+       "sub?Overflow",
+       "e2",
+       "s1"
+      ],
+      [
+       "pos",
+       "gt",
+       "d",
+       0
+      ]
+     ],
+     "term": [
+      "cond",
+      "pos",
+      [
+       "ovl",
+       "d"
+      ],
+      [
+       "dis",
+       "d"
+      ]
+     ]
+    },
+    {
+     "name": "m21",
+     "ops": [
+      [
+       "d",
+       "sub?Overflow",
+       "e1",
+       "s2"
+      ],
+      [
+       "pos",
+       "gt",
+       "d",
+       0
+      ]
+     ],
+     "term": [
+      "cond",
+      "pos",
+      [
+       "ovl",
+       "d"
+      ],
+      [
+       "dis",
+       "d"
+      ]
+     ]
+    },
+    {
+     "name": "m22",
+     "ops": [
+      [
+       "d",
+       "sub?Overflow",
+       "e2",
+       "s2"
+      ],
+      [
+       "pos",
+       "gt",
+       "d",
+       0
+      ]
+     ],
+     "term": [
+      "cond",
+      "pos",
+      [
+       "ovl",
+       "d"
+      ],
+      [
+       "dis",
+       "d"
+      ]
+     ]
+    },
+    {
+     "name": "ovl",
+     "params": [
+      [
+       "d",
+       "i64"
+      ]
+     ],
+     "ops": [
+      [
+       "w",
+       "tuple",
+       "d",
+       {
+        "type": "i64",
+        "value": 0
+       }
+      ]
+     ],
+     "term": [
+      "ok",
+      "w"
+     ]
+    },
+    {
+     "name": "dis",
+     "params": [
+      [
+       "d",
+       "i64"
+      ]
+     ],
+     "ops": [
+      [
+       "g",
+       "neg?Overflow",
+       "d"
+      ],
+      [
+       "w",
+       "tuple",
+       {
+        "type": "i64",
+        "value": 0
+       },
+       "g"
+      ]
+     ],
+     "term": [
+      "ok",
+      "w"
+     ]
+    }
+   ]
+  }
+ ]
+}

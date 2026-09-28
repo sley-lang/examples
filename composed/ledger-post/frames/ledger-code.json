@@ -1,0 +1,127 @@
+{
+ "af1": 1,
+ "afx": 1,
+ "types": [
+  {
+   "name": "LedgerError",
+   "variant": [
+    "NegativeDebit",
+    "NegativeCredit",
+    "NegativeOverdraft",
+    "InsufficientFunds",
+    "Overflow"
+   ]
+  }
+ ],
+ "fns": [
+  {
+   "fn": "post_ledger",
+   "params": [
+    [
+     "balance",
+     "i64"
+    ],
+    [
+     "debit",
+     "i64"
+    ],
+    [
+     "credit",
+     "i64"
+    ],
+    [
+     "overdraft",
+     "i64"
+    ]
+   ],
+   "returns": "Result<i64,LedgerError>",
+   "blocks": [
+    {
+     "name": "entry",
+     "ops": [
+      [
+       "!NegativeDebit",
+       "if",
+       [
+        "lt",
+        "debit",
+        0
+       ]
+      ],
+      [
+       "!NegativeCredit",
+       "if",
+       [
+        "lt",
+        "credit",
+        0
+       ]
+      ],
+      [
+       "!NegativeOverdraft",
+       "if",
+       [
+        "lt",
+        "overdraft",
+        0
+       ]
+      ],
+      [
+       "tmp",
+       "add?Overflow",
+       "balance",
+       "credit"
+      ],
+      [
+       "new",
+       "sub?Overflow",
+       "tmp",
+       "debit"
+      ],
+      [
+       "floor",
+       "neg?Overflow",
+       "overdraft"
+      ]
+     ],
+     "term": [
+      "cond",
+      [
+       "lt",
+       "new",
+       "floor"
+      ],
+      [
+       "decline"
+      ],
+      [
+       "post"
+      ]
+     ]
+    },
+    {
+     "name": "decline",
+     "ops": [],
+     "term": [
+      "fail",
+      "InsufficientFunds"
+     ]
+    },
+    {
+     "name": "post",
+     "params": [
+      [
+       "new",
+       "i64"
+      ]
+     ],
+     "ops": [],
+     "term": [
+      "ok",
+      "new"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,71 @@
+# sley view (AV1, non-canonical) root=f70091b5
+# focus page_window: context, not a completeness certificate
+fn page_window(total: i64, page: i64, per_page: i64) -> Result<(i64,i64,bool),PageError>   [c72c0b72]
+  entry:
+    entry__if0__a1 = const k_0 (0)
+    entry__if0 = lt total, entry__if0__a1
+    cond entry__if0 -> __fail_NegativeTotal, entry__if0
+  past_end:
+    w__a1 = const k_0 (0)
+    w__a2 = const k_false (false)
+    w = tuple total, w__a1, w__a2
+    past_end__ok = ok w
+    return past_end__ok
+  window(start: i64):
+    end__r = add start, per_page
+    switch end__r: Ok -> window__end($, start), Err -> __fail_Overflow
+  full(start: i64):
+    w = tuple start, per_page, window__rem.more
+    full__ok = ok w
+    return full__ok
+  part(start: i64, rem: i64):
+    w = tuple start, rem, window__rem.more
+    part__ok = ok w
+    return part__ok
+  entry__if0:
+    entry__if1__a1 = const k_0 (0)
+    entry__if1 = lt page, entry__if1__a1
+    cond entry__if1 -> __fail_NegativePage, entry__if1
+  entry__if1:
+    entry__if2__a1 = const k_1 (1)
+    entry__if2 = lt per_page, entry__if2__a1
+    cond entry__if2 -> __fail_BadPerPage, entry__if2
+  entry__if2:
+    start__r = mul page, per_page
+    switch start__r: Ok -> entry__start($), Err -> __fail_Overflow
+  entry__start(start: i64):
+    entry__t0 = ge start, total
+    cond entry__t0 -> past_end, window(start)
+  window__end(end: i64, start: i64):
+    rem__r = sub total, start
+    switch rem__r: Ok -> window__rem($, end, start), Err -> __fail_Overflow
+  window__rem(rem: i64, end: i64, start: i64):
+    more = lt end, total
+    window__t0 = le per_page, rem
+    cond window__t0 -> full(start), part(start, rem)
+  __fail_NegativeTotal:
+    v = variant PageError.NegativeTotal
+    r = err v
+    return r
+  __fail_NegativePage:
+    v = variant PageError.NegativePage
+    r = err v
+    return r
+  __fail_BadPerPage:
+    v = variant PageError.BadPerPage
+    r = err v
+    return r
+  __fail_Overflow:
+    v = variant PageError.Overflow
+    r = err v
+    return r
+types: 1
+type PageError = NegativeTotal | NegativePage | BadPerPage | Overflow
+consts: 3
+const k_0: i64 = 0
+const k_false: bool = false
+const k_1: i64 = 1
+calls: none
+callers: none
+tests: 16: page_cases_0, page_cases_1, page_cases_10, page_cases_11, page_cases_12, page_cases_13, page_cases_14, page_cases_15, page_cases_2, page_cases_3, page_cases_4, page_cases_5, page_cases_6, page_cases_7, page_cases_8, page_cases_9
+boundary: exported; effects none; namespace none; callers outside it: none

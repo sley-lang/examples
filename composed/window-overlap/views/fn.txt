@@ -1,0 +1,79 @@
+# sley view (AV1, non-canonical) root=964d58da
+# focus window_overlap: context, not a completeness certificate
+fn window_overlap(s1: i64, e1: i64, s2: i64, e2: i64) -> Result<(i64,i64),WindowError>   [9a976cd1]
+  entry:
+    entry__if0 = gt s1, e1
+    cond entry__if0 -> __fail_BadFirst, entry__if0
+  os_a:
+    os_a__t0 = le e1, e2
+    cond os_a__t0 -> m11, m12
+  os_b:
+    os_b__t0 = le e1, e2
+    cond os_b__t0 -> m21, m22
+  m11:
+    d__r = sub e1, s1
+    switch d__r: Ok -> m11__d($), Err -> __fail_Overflow
+  m12:
+    d__r_2 = sub e2, s1
+    switch d__r_2: Ok -> m12__d($), Err -> __fail_Overflow
+  m21:
+    d__r_3 = sub e1, s2
+    switch d__r_3: Ok -> m21__d($), Err -> __fail_Overflow
+  m22:
+    d__r_4 = sub e2, s2
+    switch d__r_4: Ok -> m22__d($), Err -> __fail_Overflow
+  ovl(d: i64):
+    w__a1 = const k_0 (0)
+    w = tuple d, w__a1
+    ovl__ok = ok w
+    return ovl__ok
+  dis(d: i64):
+    g__r = neg d
+    switch g__r: Ok -> dis__g($), Err -> __fail_Overflow
+  entry__if0:
+    entry__if1 = gt s2, e2
+    cond entry__if1 -> __fail_BadSecond, entry__if1
+  entry__if1:
+    entry__t0 = ge s1, s2
+    cond entry__t0 -> os_a, os_b
+  m11__d(d: i64):
+    pos__a1 = const k_0 (0)
+    pos = gt d, pos__a1
+    cond pos -> ovl(d), dis(d)
+  m12__d(d: i64):
+    pos__a1_2 = const k_0 (0)
+    pos = gt d, pos__a1_2
+    cond pos -> ovl(d), dis(d)
+  m21__d(d: i64):
+    pos__a1_3 = const k_0 (0)
+    pos = gt d, pos__a1_3
+    cond pos -> ovl(d), dis(d)
+  m22__d(d: i64):
+    pos__a1_4 = const k_0 (0)
+    pos = gt d, pos__a1_4
+    cond pos -> ovl(d), dis(d)
+  dis__g(g: i64):
+    w__a0 = const k_0 (0)
+    w = tuple w__a0, g
+    dis__ok = ok w
+    return dis__ok
+  __fail_BadFirst:
+    v = variant WindowError.BadFirst
+    r = err v
+    return r
+  __fail_BadSecond:
+    v = variant WindowError.BadSecond
+    r = err v
+    return r
+  __fail_Overflow:
+    v = variant WindowError.Overflow
+    r = err v
+    return r
+types: 1
+type WindowError = BadFirst | BadSecond | Overflow
+consts: 1
+const k_0: i64 = 0
+calls: none
+callers: none
+tests: 15: overlap_cases_0, overlap_cases_1, overlap_cases_10, overlap_cases_11, overlap_cases_12, overlap_cases_13, overlap_cases_14, overlap_cases_2, overlap_cases_3, overlap_cases_4, overlap_cases_5, overlap_cases_6, overlap_cases_7, overlap_cases_8, overlap_cases_9
+boundary: exported; effects none; namespace none; callers outside it: none

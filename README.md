@@ -37,9 +37,9 @@ The script re-runs `init` + `test` + bound `artifact export` + fresh-workspace `
 
 License and any publication decision remain owner calls; nothing here is published yet.
 
-## Composed examples (C01–C03, sley-agent 2.0.3)
+## Composed examples (C01–C06, sley-agent 2.0.3)
 
-Three composed programs authored with the official 2.0.3 `sley-agent`
+Six composed programs authored with the official 2.0.3 `sley-agent`
 workbench, kept in `composed/` strictly separate from the seven 2.0.1
 primitives above. The 2.0.1 pin, the seven packages, and the rebuild script
 are unchanged by them.
@@ -49,6 +49,9 @@ are unchanged by them.
 | C01 | `composed/retry-decision` | `retry_decision` → `Result<RetryState,RetryError>` | 11 / 11 |
 | C02 | `composed/invoice-line-total` | `line_total` → `Result<i64,InvoiceError>` | 12 / 12 |
 | C03 | `composed/duration-breakdown` | `split_duration` → `Result<(d,h,m,s),DurationError>` | 9 / 9 |
+| C04 | `composed/page-window` | `page_window` → `Result<(start,count,has_more),PageError>` | 16 / 16 |
+| C05 | `composed/ledger-post` | `post_ledger` → `Result<i64,LedgerError>` | 15 / 15 |
+| C06 | `composed/window-overlap` | `window_overlap` → `Result<(overlap,gap),WindowError>` | 15 / 15 |
 
 Each example holds exact authoring frames as run, a contract (parameter
 semantics, error precedence), independently expected cases, an external
@@ -57,6 +60,8 @@ map, and a before/after record of one genuine program modification.
 `composed/corrections.md` retains one repaired authoring error and two
 independently justified expectation corrections.
 `composed/admission-probe.md` records the fresh-import edit/commit probe.
+`composed/pilot.md` records the example-assisted learning smoke test
+(methodology and aggregates only).
 
 Reproduce without the pilot directory (needs the 2.0.3 agent binary):
 

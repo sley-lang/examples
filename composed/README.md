@@ -1,6 +1,6 @@
-# Composed examples (C01–C03, sley-agent 2.0.3)
+# Composed examples (C01–C06, sley-agent 2.0.3)
 
-Three composed Sley programs authored with the official 2.0.3 `sley-agent`
+Six composed Sley programs authored with the official 2.0.3 `sley-agent`
 workbench, kept strictly separate from the seven 2.0.1 primitive examples
 in `programs/`. Nothing here changes the 2.0.1 pin, the seven primitives,
 or the serious toolkit — and no new framework was introduced: each example
@@ -12,6 +12,9 @@ with an exported pack for reimport.
 | C01 | `retry-decision` | `retry_decision(attempt,limit) -> Result<RetryState,RetryError>` | 11 / 11 |
 | C02 | `invoice-line-total` | `line_total(qty,unit,fee) -> Result<i64,InvoiceError>` | 12 / 12 |
 | C03 | `duration-breakdown` | `split_duration(total) -> Result<(d,h,m,s),DurationError>` | 9 / 9 |
+| C04 | `page-window` | `page_window(total,page,per_page) -> Result<(start,count,has_more),PageError>` | 16 / 16 |
+| C05 | `ledger-post` | `post_ledger(balance,debit,credit,overdraft) -> Result<i64,LedgerError>` | 15 / 15 |
+| C06 | `window-overlap` | `window_overlap(s1,e1,s2,e2) -> Result<(overlap,gap),WindowError>` | 15 / 15 |
 
 Toolchain identity: `toolchain.json` (release archive, sha256, binary
 shas, build commit). The release documentation's own composition sketches
@@ -39,6 +42,9 @@ Each example was therefore persisted split: a code-only commit
 - C01: code `96994710`, tests `8e8e8384`
 - C02: code `773fea0f`, tests `81a8a6da`
 - C03: code `fb236485`, tests `a94779c9`
+- C04: code `8da11225`, tests `7f14f6e7`
+- C05: code `84d85be1`, tests `235440e4`
+- C06: code `ff526edf`, tests `65a093d7`
 
 Code-only plus tests-after is two transactions, **not** a test-admitted
 atomic commit. See `admission-probe.md` for the fresh-import edit/commit
@@ -47,10 +53,10 @@ probe.
 ## Outcome ledger (kept separate)
 
 - **Advisory workbench checks**: `try`/`test` kernel-executed checks —
-  11/11, 12/12, 9/9. Advisory only; they do not admit tests to any core.
+  11/11, 12/12, 9/9, 16/16, 15/15, 15/15. Advisory only; they do not admit tests to any core.
 - **External assertions**: `tests/check_external.py` per example invokes
   the committed function through the agent CLI and compares against
-  independently listed cases — 11/11, 12/12, 9/9 at commit time.
+  independently listed cases — 11/11, 12/12, 9/9, 16/16, 15/15, 15/15 at commit time.
 - **Persistence**: split commits above, plus export packs that reimport
   into fresh workspaces and re-pass (verified again by `reproduce.sh`).
 - **Native test admission**: not run — unavailable in 2.0
@@ -64,4 +70,6 @@ Each example mirrors the `programs/` package shape where practical:
 (independently expected cases) + `tests/check_external.py`, `views/`
 (readable workbench view), `packs/` (export + name map), `modifications.md`
 (before/after inputs and observed results), `README.md`. `corrections.md`
-collects the three retained corrections with their justifications.
+collects the retained corrections with their justifications. `pilot.md`
+records the example-assisted learning smoke test (methodology and
+aggregates only; held-out material stays out of the repo).

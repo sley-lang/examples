@@ -150,6 +150,60 @@
       },
       "pack": "composed/duration-breakdown/packs/duration-committed.pack",
       "status": "workbench_verified_and_reimported"
+    },
+    {
+      "id": "C04",
+      "program_id": "page-window",
+      "responsibility": "Compute a pagination window (start offset, item count, further-page flag) with checked offset arithmetic and an explicit beyond-end policy",
+      "package": "composed/page-window",
+      "entrypoint": "page_window",
+      "frames": "composed/page-window/frames",
+      "cases": "composed/page-window/tests/cases.json",
+      "workbench_checks": 16,
+      "external_assertions": 16,
+      "persistence": {
+        "combined_commit": "REFUSED_TXN_TEST_EVIDENCE_UNSUPPORTED",
+        "code_txn": "8da11225",
+        "tests_txn": "7f14f6e7"
+      },
+      "pack": "composed/page-window/packs/page-committed.pack",
+      "status": "workbench_verified_and_reimported"
+    },
+    {
+      "id": "C05",
+      "program_id": "ledger-post",
+      "responsibility": "Post one debit and one credit against a signed balance under an overdraft floor, returning the exact new balance or a decline",
+      "package": "composed/ledger-post",
+      "entrypoint": "post_ledger",
+      "frames": "composed/ledger-post/frames",
+      "cases": "composed/ledger-post/tests/cases.json",
+      "workbench_checks": 15,
+      "external_assertions": 15,
+      "persistence": {
+        "combined_commit": "REFUSED_TXN_TEST_EVIDENCE_UNSUPPORTED",
+        "code_txn": "84d85be1",
+        "tests_txn": "235440e4"
+      },
+      "pack": "composed/ledger-post/packs/ledger-committed.pack",
+      "status": "workbench_verified_and_reimported"
+    },
+    {
+      "id": "C06",
+      "program_id": "window-overlap",
+      "responsibility": "Measure two validated intervals as an (overlap, gap) pair with max-of-starts/min-of-ends selection and a touching-at-a-point collapse",
+      "package": "composed/window-overlap",
+      "entrypoint": "window_overlap",
+      "frames": "composed/window-overlap/frames",
+      "cases": "composed/window-overlap/tests/cases.json",
+      "workbench_checks": 15,
+      "external_assertions": 15,
+      "persistence": {
+        "combined_commit": "REFUSED_TXN_TEST_EVIDENCE_UNSUPPORTED",
+        "code_txn": "ff526edf",
+        "tests_txn": "65a093d7"
+      },
+      "pack": "composed/window-overlap/packs/overlap-committed.pack",
+      "status": "workbench_verified_and_reimported"
     }
   ]
 }

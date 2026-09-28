@@ -1,0 +1,17 @@
+{"cases": [
+  {"id": "partial-overlap", "input": [0, 10, 5, 15], "expected": {"Ok": [5, 0]}},
+  {"id": "partial-overlap-swapped", "input": [5, 15, 0, 10], "expected": {"Ok": [5, 0]}},
+  {"id": "identical", "input": [0, 10, 0, 10], "expected": {"Ok": [10, 0]}},
+  {"id": "contained", "input": [0, 30, 10, 20], "expected": {"Ok": [10, 0]}},
+  {"id": "disjoint", "input": [0, 10, 20, 30], "expected": {"Ok": [0, 10]}},
+  {"id": "touching", "input": [0, 10, 10, 20], "expected": {"Ok": [0, 0]}},
+  {"id": "disjoint-points", "input": [0, 0, 5, 5], "expected": {"Ok": [0, 5]}},
+  {"id": "bad-first", "input": [10, 0, 0, 5], "expected": {"Err": "BadFirst"}},
+  {"id": "bad-second", "input": [0, 5, 10, 3], "expected": {"Err": "BadSecond"}},
+  {"id": "guard-precedence", "input": [5, 0, 9, 2], "expected": {"Err": "BadFirst"}},
+  {"id": "full-range-overflow", "input": [-9223372036854775808, 9223372036854775807, -9223372036854775808, 9223372036854775807], "expected": {"Err": "Overflow"}},
+  {"id": "gap-negation-overflow", "input": [9223372036854775807, 9223372036854775807, -1, -1], "expected": {"Err": "Overflow"}},
+  {"id": "coincident-points", "input": [5, 5, 5, 5], "expected": {"Ok": [0, 0]}},
+  {"id": "negative-intervals", "input": [-30, -10, -20, -5], "expected": {"Ok": [10, 0]}},
+  {"id": "point-inside", "input": [7, 7, 0, 10], "expected": {"Ok": [0, 0]}}
+]}

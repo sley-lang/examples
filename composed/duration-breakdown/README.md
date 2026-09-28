@@ -17,7 +17,7 @@ cp packs/names.json /tmp/c03/names.json
 python3 tests/check_external.py --agent "$AGENT" --workspace /tmp/c03  # 9/9
 ```
 
-Or run all three examples at once: `../reproduce.sh --agent "$AGENT"`.
+Or run all six composed examples at once: `../reproduce.sh --agent "$AGENT"`.
 
 ## Contents
 

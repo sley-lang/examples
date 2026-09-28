@@ -1,0 +1,177 @@
+{
+ "af1": 1,
+ "afx": 1,
+ "test_tables": [
+  {
+   "name": "ledger_cases",
+   "fn": "post_ledger",
+   "cases": [
+    {
+     "args": [
+      1000,
+      200,
+      50,
+      100
+     ],
+     "expect": {
+      "Ok": 850
+     }
+    },
+    {
+     "args": [
+      0,
+      100,
+      0,
+      100
+     ],
+     "expect": {
+      "Ok": -100
+     }
+    },
+    {
+     "args": [
+      0,
+      101,
+      0,
+      100
+     ],
+     "expect": {
+      "Err": "InsufficientFunds"
+     }
+    },
+    {
+     "args": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "expect": {
+      "Ok": 0
+     }
+    },
+    {
+     "args": [
+      -50,
+      0,
+      0,
+      100
+     ],
+     "expect": {
+      "Ok": -50
+     }
+    },
+    {
+     "args": [
+      -150,
+      0,
+      0,
+      100
+     ],
+     "expect": {
+      "Err": "InsufficientFunds"
+     }
+    },
+    {
+     "args": [
+      0,
+      -5,
+      0,
+      0
+     ],
+     "expect": {
+      "Err": "NegativeDebit"
+     }
+    },
+    {
+     "args": [
+      0,
+      0,
+      -5,
+      0
+     ],
+     "expect": {
+      "Err": "NegativeCredit"
+     }
+    },
+    {
+     "args": [
+      0,
+      0,
+      0,
+      -1
+     ],
+     "expect": {
+      "Err": "NegativeOverdraft"
+     }
+    },
+    {
+     "args": [
+      0,
+      -1,
+      -2,
+      -3
+     ],
+     "expect": {
+      "Err": "NegativeDebit"
+     }
+    },
+    {
+     "args": [
+      9223372036854775807,
+      0,
+      1,
+      0
+     ],
+     "expect": {
+      "Err": "Overflow"
+     }
+    },
+    {
+     "args": [
+      -9223372036854775808,
+      1,
+      0,
+      0
+     ],
+     "expect": {
+      "Err": "Overflow"
+     }
+    },
+    {
+     "args": [
+      0,
+      0,
+      9223372036854775807,
+      9223372036854775807
+     ],
+     "expect": {
+      "Ok": 9223372036854775807
+     }
+    },
+    {
+     "args": [
+      500,
+      300,
+      300,
+      0
+     ],
+     "expect": {
+      "Ok": 500
+     }
+    },
+    {
+     "args": [
+      9223372036854775807,
+      9223372036854775807,
+      0,
+      0
+     ],
+     "expect": {
+      "Ok": 0
+     }
+    }
+   ]
+  }
+ ]
+}

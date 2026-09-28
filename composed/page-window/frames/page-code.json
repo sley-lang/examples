@@ -1,0 +1,199 @@
+{
+ "af1": 1,
+ "afx": 1,
+ "types": [
+  {
+   "name": "PageError",
+   "variant": [
+    "NegativeTotal",
+    "NegativePage",
+    "BadPerPage",
+    "Overflow"
+   ]
+  }
+ ],
+ "fns": [
+  {
+   "fn": "page_window",
+   "params": [
+    [
+     "total",
+     "i64"
+    ],
+    [
+     "page",
+     "i64"
+    ],
+    [
+     "per_page",
+     "i64"
+    ]
+   ],
+   "returns": "Result<(i64,i64,bool),PageError>",
+   "blocks": [
+    {
+     "name": "entry",
+     "ops": [
+      [
+       "!NegativeTotal",
+       "if",
+       [
+        "lt",
+        "total",
+        0
+       ]
+      ],
+      [
+       "!NegativePage",
+       "if",
+       [
+        "lt",
+        "page",
+        0
+       ]
+      ],
+      [
+       "!BadPerPage",
+       "if",
+       [
+        "lt",
+        "per_page",
+        1
+       ]
+      ],
+      [
+       "start",
+       "mul?Overflow",
+       "page",
+       "per_page"
+      ]
+     ],
+     "term": [
+      "cond",
+      [
+       "ge",
+       "start",
+       "total"
+      ],
+      [
+       "past_end"
+      ],
+      [
+       "window"
+      ]
+     ]
+    },
+    {
+     "name": "past_end",
+     "ops": [
+      [
+       "w",
+       "tuple",
+       "total",
+       {
+        "type": "i64",
+        "value": 0
+       },
+       false
+      ]
+     ],
+     "term": [
+      "ok",
+      "w"
+     ]
+    },
+    {
+     "name": "window",
+     "params": [
+      [
+       "start",
+       "i64"
+      ]
+     ],
+     "ops": [
+      [
+       "end",
+       "add?Overflow",
+       "start",
+       "per_page"
+      ],
+      [
+       "rem",
+       "sub?Overflow",
+       "total",
+       "start"
+      ],
+      [
+       "more",
+       "lt",
+       "end",
+       "total"
+      ]
+     ],
+     "term": [
+      "cond",
+      [
+       "le",
+       "per_page",
+       "rem"
+      ],
+      [
+       "full"
+      ],
+      [
+       "part"
+      ]
+     ]
+    },
+    {
+     "name": "full",
+     "params": [
+      [
+       "start",
+       "i64"
+      ]
+     ],
+     "ops": [
+      [
+       "w",
+       "tuple",
+       "start",
+       "per_page",
+       "more"
+      ]
+     ],
+     "term": [
+      "ok",
+      "w"
+     ]
+    },
+    {
+     "name": "part",
+     "params": [
+      [
+       "start",
+       "i64"
+      ],
+      [
+       "rem",
+       "i64"
+      ]
+     ],
+     "ops": [
+      [
+       "w",
+       "tuple",
+       "start",
+       "rem",
+       "more"
+      ]
+     ],
+     "term": [
+      "ok",
+      "w"
+     ]
+    }
+   ]
+  }
+ ]
+}

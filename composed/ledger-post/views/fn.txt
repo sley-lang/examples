@@ -1,0 +1,60 @@
+# sley view (AV1, non-canonical) root=b28a1f4b
+# focus post_ledger: context, not a completeness certificate
+fn post_ledger(balance: i64, debit: i64, credit: i64, overdraft: i64) -> Result<i64,LedgerError>   [b565910b]
+  entry:
+    entry__if0__a1 = const k_0 (0)
+    entry__if0 = lt debit, entry__if0__a1
+    cond entry__if0 -> __fail_NegativeDebit, entry__if0
+  decline:
+    br __fail_InsufficientFunds
+  post(new: i64):
+    post__ok = ok new
+    return post__ok
+  entry__if0:
+    entry__if1__a1 = const k_0 (0)
+    entry__if1 = lt credit, entry__if1__a1
+    cond entry__if1 -> __fail_NegativeCredit, entry__if1
+  entry__if1:
+    entry__if2__a1 = const k_0 (0)
+    entry__if2 = lt overdraft, entry__if2__a1
+    cond entry__if2 -> __fail_NegativeOverdraft, entry__if2
+  entry__if2:
+    tmp__r = add balance, credit
+    switch tmp__r: Ok -> entry__tmp($), Err -> __fail_Overflow
+  entry__tmp(tmp: i64):
+    new__r = sub tmp, debit
+    switch new__r: Ok -> entry__new($), Err -> __fail_Overflow
+  entry__new(new: i64):
+    floor__r = neg overdraft
+    switch floor__r: Ok -> entry__floor($, new), Err -> __fail_Overflow
+  entry__floor(floor: i64, new: i64):
+    entry__t0 = lt new, floor
+    cond entry__t0 -> decline, post(new)
+  __fail_NegativeDebit:
+    v = variant LedgerError.NegativeDebit
+    r = err v
+    return r
+  __fail_NegativeCredit:
+    v = variant LedgerError.NegativeCredit
+    r = err v
+    return r
+  __fail_NegativeOverdraft:
+    v = variant LedgerError.NegativeOverdraft
+    r = err v
+    return r
+  __fail_Overflow:
+    v = variant LedgerError.Overflow
+    r = err v
+    return r
+  __fail_InsufficientFunds:
+    v = variant LedgerError.InsufficientFunds
+    r = err v
+    return r
+types: 1
+type LedgerError = NegativeDebit | NegativeCredit | NegativeOverdraft | InsufficientFunds | Overflow
+consts: 1
+const k_0: i64 = 0
+calls: none
+callers: none
+tests: 15: ledger_cases_0, ledger_cases_1, ledger_cases_10, ledger_cases_11, ledger_cases_12, ledger_cases_13, ledger_cases_14, ledger_cases_2, ledger_cases_3, ledger_cases_4, ledger_cases_5, ledger_cases_6, ledger_cases_7, ledger_cases_8, ledger_cases_9
+boundary: exported; effects none; namespace none; callers outside it: none

@@ -1,0 +1,18 @@
+{"cases": [
+  {"id": "first-full-page", "input": [100, 0, 10], "expected": {"Ok": [0, 10, true]}},
+  {"id": "last-page-exact-end", "input": [100, 9, 10], "expected": {"Ok": [90, 10, false]}},
+  {"id": "last-page-partial", "input": [95, 9, 10], "expected": {"Ok": [90, 5, false]}},
+  {"id": "page-at-end", "input": [100, 10, 10], "expected": {"Ok": [100, 0, false]}},
+  {"id": "page-past-end", "input": [100, 11, 10], "expected": {"Ok": [100, 0, false]}},
+  {"id": "empty-first-page", "input": [0, 0, 10], "expected": {"Ok": [0, 0, false]}},
+  {"id": "empty-later-page", "input": [0, 5, 10], "expected": {"Ok": [0, 0, false]}},
+  {"id": "short-first-page", "input": [7, 0, 10], "expected": {"Ok": [0, 7, false]}},
+  {"id": "single-page-exact", "input": [10, 0, 10], "expected": {"Ok": [0, 10, false]}},
+  {"id": "negative-total", "input": [-1, 0, 10], "expected": {"Err": "NegativeTotal"}},
+  {"id": "negative-page", "input": [100, -1, 10], "expected": {"Err": "NegativePage"}},
+  {"id": "zero-per-page", "input": [100, 0, 0], "expected": {"Err": "BadPerPage"}},
+  {"id": "negative-per-page", "input": [100, 0, -3], "expected": {"Err": "BadPerPage"}},
+  {"id": "guard-precedence", "input": [-5, -2, 0], "expected": {"Err": "NegativeTotal"}},
+  {"id": "offset-multiply-overflow", "input": [10, 9223372036854775807, 10], "expected": {"Err": "Overflow"}},
+  {"id": "window-end-add-overflow", "input": [9223372036854775807, 1, 9223372036854775806], "expected": {"Err": "Overflow"}}
+]}
