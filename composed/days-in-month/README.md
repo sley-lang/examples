@@ -6,6 +6,33 @@ See `contract.md` for the leap-year rule and error precedence,
 `modifications.md` for the worked century-rule fix and the retained
 trap-handler repair for the infallible remainders.
 
+## Why the remainder trap cannot fire
+
+Deductive argument from the pinned 2.0.3 operation semantics plus the
+frame — not from the 15 passing cases, which exercise the policy only.
+
+Pinned semantics (`sley-agent help opcodes`, `help types`): `rem` is
+`int_rem_checked`, returning `Result<T,ArithmeticError>` whose only error
+cases are `Overflow`, `DivideByZero`, and `InvalidShift` (the last applies
+to shift operations, never to `rem`).
+
+At the remainder sites (`frames/month-v2.json`, block `feb`):
+
+- `entry` runs `!BadYear` (`year < 1`) before the `cond` dispatch, so
+  `feb` executes only with `year >= 1` (i64). The month guards run before
+  dispatch too; `month` is not a remainder operand.
+- The divisors are the literals 4, 100, 400 — nonzero by construction, so
+  `DivideByZero` is excluded with no runtime check needed.
+- A remainder result is bounded by its divisor in magnitude; with positive
+  divisors and a dividend `>= 1`, each result lies in `[0, divisor)` and is
+  always representable, so `Overflow` is excluded by the operands.
+
+The `remtrap` handler (`["trap","unreachable"]`) therefore records a
+deduction, and can fire only if the kernel ever contradicts its documented
+checked-remainder semantics. Spot check at the domain extreme, in a fresh
+import (illustration only, not a retained case): `(9223372036854775807, 2)`
+→ `Ok(28)`, `(1, 2)` → `Ok(28)`.
+
 ## Reproduce from this directory (needs the 2.0.3 agent binary)
 
 ```sh

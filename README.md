@@ -4,6 +4,16 @@ Primitive Sley examples: seven native `graph_authoring.v0` packages with bound p
 
 This repo complements the serious adoption toolkit in `sley-lang-tools` (Rust `sley-tools` CLI, Python/TypeScript/MCP SDKs, Playground, Repair Lab, Data Pipe, importers, Review). That toolkit is the machinery; this repo holds small native programs built with it. It does not duplicate the N01–N10 catalog (release-readiness, resource-admission, benchmark trio, tier-classifier, range-predicate, bounded-clamp, quota-remaining, generated-payload-validator).
 
+Corpus: 16 native examples — the seven 2.0.1 primitives below plus nine
+2.0.3 compositions in `composed/`. Version-pinned authoring inputs,
+readable views, executable artifacts, boundary checks, and one worked
+modification per composed example. Counts, kept as separate categories:
+154 external assertions across the corpus (32 primitive + 122 composed)
+and 122 advisory workbench checks in the composed collection. Native
+test-admitted maintenance remains unavailable through the documented
+route (`PENDING_CORE_EXECUTOR` / `NOT_RUN`); the split code-then-tests
+persistence does not close that limitation.
+
 ## Primitive examples (7 total, 32 external assertions)
 
 | ID | Program | What runs natively | Cases |
@@ -71,6 +81,18 @@ Reproduce without the pilot directory (needs the 2.0.3 agent binary):
 ```sh
 ./composed/reproduce.sh --agent /path/to/sley-2.0.3-linux-x86_64/bin/sley-agent
 ```
+
+The workbench and scripts need writable scratch space. If the default
+temporary directory is small or quota-limited, point `TMPDIR` at a
+writable directory before running (the scripts and the agent honor it);
+no path is hardcoded and no cleanup infrastructure is provided.
+
+Authoring workflow: `composed/authoring.md` is the default — pinned guide
+plus the frozen serializer/parse/recovery appendix first, with targeted
+consultation of a small relevant example only when a specific problem
+warrants it. `composed/pilot.md` preserves the learning smoke test
+including its unfavorable preload result (supplying examples raised
+input-token spend and did not help).
 
 Persistence limitation: a combined code+tests `commit` is refused
 (`TXN_TEST_EVIDENCE_UNSUPPORTED`), so each example was committed split —

@@ -42,6 +42,11 @@ The script verifies the tarball sha256 against `toolchain.json` (for
 (`base.pack` + author `names.json`), runs workbench `test` and the
 example's external checker, and refreshes `views/fn.txt`.
 
+Scratch space: the script uses a temporary work directory and the agent
+needs writable scratch. If the default temporary directory is small or
+quota-limited, export `TMPDIR` to a writable directory first; both the
+script (`mktemp`) and the agent honor it.
+
 ## Persistence limitation (explicit)
 
 A combined code+tests `commit` is refused on every workspace with

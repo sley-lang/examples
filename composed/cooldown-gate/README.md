@@ -6,6 +6,13 @@ See `contract.md` for the Closed/Open/HalfOpen policy, remaining-time
 semantics, and error precedence, `modifications.md` for the worked
 remaining-time fix.
 
+Scope: this is a pure cooldown *decision function* over caller-supplied
+counts, clock readings, and durations — not a complete stateful or
+concurrency-safe circuit-breaker service. It keeps no state between calls,
+performs no timing or synchronization itself, and its `now`/`tripped_at`
+inputs are trusted caller values guarded only by the documented
+`BadClock` ordering check.
+
 ## Reproduce from this directory (needs the 2.0.3 agent binary)
 
 ```sh
