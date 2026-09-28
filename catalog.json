@@ -1,0 +1,89 @@
+{
+  "contract": "sley-simple-tools.catalog.v0",
+  "toolchain": {
+    "core": "sley-2.0.1-linux-x86_64 (commit c748dda18c1276687cc3b0d1ef9b7f257eb09b24)",
+    "core_archive_sha256": "34b3b56957a9ddf9a4edc35c2a961c89928d8e78dc74c76b23f1f5378e975e44",
+    "core_binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "tools": "sley-lang-tools sley-tools backend (graph_authoring.v0)",
+    "native_core_test_admission": "PENDING_CORE_EXECUTOR"
+  },
+  "programs": [
+    {
+      "id": "S01",
+      "program_id": "bool-and",
+      "responsibility": "Conjoin two Boolean inputs",
+      "package": "programs/bool-and",
+      "artifact": "programs/bool-and/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/bool-and/tests/cases.json",
+      "external_assertions": 4,
+      "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S02",
+      "program_id": "bool-nor",
+      "responsibility": "Negate the disjunction of two Boolean inputs",
+      "package": "programs/bool-nor",
+      "artifact": "programs/bool-nor/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/bool-nor/tests/cases.json",
+      "external_assertions": 4,
+      "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S03",
+      "program_id": "uint32-minimum",
+      "responsibility": "Decide whether an unsigned level meets minimum 5",
+      "package": "programs/uint32-minimum",
+      "artifact": "programs/uint32-minimum/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/uint32-minimum/tests/cases.json",
+      "external_assertions": 5,
+      "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S04",
+      "program_id": "is-negative",
+      "responsibility": "Decide whether a signed value is below zero",
+      "package": "programs/is-negative",
+      "artifact": "programs/is-negative/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/is-negative/tests/cases.json",
+      "external_assertions": 5,
+      "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S05",
+      "program_id": "equals-answer",
+      "responsibility": "Decide whether a signed value equals 42",
+      "package": "programs/equals-answer",
+      "artifact": "programs/equals-answer/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/equals-answer/tests/cases.json",
+      "external_assertions": 5,
+      "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S06",
+      "program_id": "safe-add",
+      "responsibility": "Add two signed values with checked overflow report",
+      "package": "programs/safe-add",
+      "artifact": "programs/safe-add/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/safe-add/tests/cases.json",
+      "external_assertions": 5,
+      "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S07",
+      "program_id": "bool-status",
+      "responsibility": "Report conjunction, disjunction, and joint negation in one record",
+      "package": "programs/bool-status",
+      "artifact": "programs/bool-status/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/bool-status/tests/cases.json",
+      "external_assertions": 4,
+      "status": "verified_local_artifact_and_reimport"
+    }
+  ]
+}

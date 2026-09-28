@@ -1,0 +1,21 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "bool-nor",
+  "title": "Boolean Nor",
+  "purpose": "Negate the disjunction of two Boolean inputs with native bool_or and bool_not",
+  "parameters": [
+    {"name": "a", "value_type": "Bool"},
+    {"name": "b", "value_type": "Bool"}
+  ],
+  "constants": [],
+  "result": {"kind": "primitive", "value_type": "Bool"},
+  "entry_block": "entry",
+  "blocks": [{
+    "name": "entry",
+    "operations": [
+      {"op": "bool_or", "name": "either", "left": "param.a", "right": "param.b"},
+      {"op": "bool_not", "name": "neither", "operand": "op.either"}
+    ],
+    "terminator": {"kind": "return", "value": "op.neither"}
+  }]
+}

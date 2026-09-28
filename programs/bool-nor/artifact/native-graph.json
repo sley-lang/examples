@@ -1,0 +1,58 @@
+{
+  "cases_json": "{\n  \"contract\": \"sley-tools.graph-cases.v0\",\n  \"cases\": [\n    {\"id\": \"both-false\", \"input\": [false, false], \"expected\": true},\n    {\"id\": \"first-true\", \"input\": [true, false], \"expected\": false},\n    {\"id\": \"second-true\", \"input\": [false, true], \"expected\": false},\n    {\"id\": \"both-true\", \"input\": [true, true], \"expected\": false}\n  ]\n}\n",
+  "cases_sha256": "ffa344205a08ca62bd487399d9e6d780c47c0b3450d8ee884658dd361fe68773",
+  "contract": "sley-tools.native-graph-artifact.v1",
+  "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+  "objects": [
+    {
+      "entity_id": "377570342af38f55d37baf967a7aa919e37df7847c9bba53c1492db89df69ba5",
+      "kind": 5,
+      "object_id": "f3e01dcfc7bde53957a579557107c8a95ca732d63dcd0b1ad14374fc38c89341",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ec501020120377570342af38f55d37baf967a7aa919e37df7847c9bba53c1492db89df69ba5029f01059c0108010100024302209a01f215e068437c879b8db321cebb392c03b27b14869673929f7f946615c2e72053096a06dbd66d7c36e3f869d85d0effaa45f1d1c64fb36c00d11d5366ae3dba0302020004010005205923d05182a514c88f6462258817f64bb21b34e6585e0092d5704e0787e8fedf062201205923d05182a514c88f6462258817f64bb21b34e6585e0092d5704e0787e8fedf070100080101f3e01dcfc7bde53957a579557107c8a95ca732d63dcd0b1ad14374fc38c89341"
+    },
+    {
+      "entity_id": "53096a06dbd66d7c36e3f869d85d0effaa45f1d1c64fb36c00d11d5366ae3dba",
+      "kind": 6,
+      "object_id": "a6b78d6c483983bf5337dfd1dd83132effebf81b771aafb19265f04851846cd1",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e5402012053096a06dbd66d7c36e3f869d85d0effaa45f1d1c64fb36c00d11d5366ae3dba022f062d040120377570342af38f55d37baf967a7aa919e37df7847c9bba53c1492db89df69ba502010103010104020200a6b78d6c483983bf5337dfd1dd83132effebf81b771aafb19265f04851846cd1"
+    },
+    {
+      "entity_id": "5923d05182a514c88f6462258817f64bb21b34e6585e0092d5704e0787e8fedf",
+      "kind": 7,
+      "object_id": "19b0f9f3b2a926463bfbec799588dc861597d0875b4623cbfb7ac5d60e76c3ae",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ec6010201205923d05182a514c88f6462258817f64bb21b34e6585e0092d5704e0787e8fedf02a001079d01050120377570342af38f55d37baf967a7aa919e37df7847c9bba53c1492db89df69ba502010003430220fe87644cfb6254741673c20494ecc54270c4a1aa3229f71da59aea174748835520d53d26dbff4aef6a9ffd7c324fc9a43873c785d99f8d46ac46a06d993db88cd8042d012b0101280226020120d53d26dbff4aef6a9ffd7c324fc9a43873c785d99f8d46ac46a06d993db88cd802010005010119b0f9f3b2a926463bfbec799588dc861597d0875b4623cbfb7ac5d60e76c3ae"
+    },
+    {
+      "entity_id": "9a01f215e068437c879b8db321cebb392c03b27b14869673929f7f946615c2e7",
+      "kind": 6,
+      "object_id": "cb90c2442d872cc30d0c36f1f4b83f2a172a652f87d138eeee5465d20b130997",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e540201209a01f215e068437c879b8db321cebb392c03b27b14869673929f7f946615c2e7022f062d040120377570342af38f55d37baf967a7aa919e37df7847c9bba53c1492db89df69ba502010103010004020200cb90c2442d872cc30d0c36f1f4b83f2a172a652f87d138eeee5465d20b130997"
+    },
+    {
+      "entity_id": "d53d26dbff4aef6a9ffd7c324fc9a43873c785d99f8d46ac46a06d993db88cd8",
+      "kind": 8,
+      "object_id": "23ed2faa5582240e8b025adc4069bf2f31f6d6b4175f2437a08075d678e6b41e",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e8601020120d53d26dbff4aef6a9ffd7c324fc9a43873c785d99f8d46ac46a06d993db88cd80261085f0601205923d05182a514c88f6462258817f64bb21b34e6585e0092d5704e0787e8fedf020101030166042a01280226020120fe87644cfb6254741673c20494ecc54270c4a1aa3229f71da59aea17474883550201000504010202000602010023ed2faa5582240e8b025adc4069bf2f31f6d6b4175f2437a08075d678e6b41e"
+    },
+    {
+      "entity_id": "fe87644cfb6254741673c20494ecc54270c4a1aa3229f71da59aea1747488355",
+      "kind": 8,
+      "object_id": "76556d77f4eaf6f8b59daf940283f4fb9fc17c9f16b2656180c65ac5f518844d",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ea301020120fe87644cfb6254741673c20494ecc54270c4a1aa3229f71da59aea1747488355027e087c0601205923d05182a514c88f6462258817f64bb21b34e6585e0092d5704e0787e8fedf0201000301680447022201209a01f215e068437c879b8db321cebb392c03b27b14869673929f7f946615c2e722012053096a06dbd66d7c36e3f869d85d0effaa45f1d1c64fb36c00d11d5366ae3dba0504010202000602010076556d77f4eaf6f8b59daf940283f4fb9fc17c9f16b2656180c65ac5f518844d"
+    }
+  ],
+  "program_id": "bool-nor",
+  "recipe_json": "{\n  \"contract\": \"sley-tools.graph-authoring.v0\",\n  \"program_id\": \"bool-nor\",\n  \"title\": \"Boolean Nor\",\n  \"purpose\": \"Negate the disjunction of two Boolean inputs with native bool_or and bool_not\",\n  \"parameters\": [\n    {\"name\": \"a\", \"value_type\": \"Bool\"},\n    {\"name\": \"b\", \"value_type\": \"Bool\"}\n  ],\n  \"constants\": [],\n  \"result\": {\"kind\": \"primitive\", \"value_type\": \"Bool\"},\n  \"entry_block\": \"entry\",\n  \"blocks\": [{\n    \"name\": \"entry\",\n    \"operations\": [\n      {\"op\": \"bool_or\", \"name\": \"either\", \"left\": \"param.a\", \"right\": \"param.b\"},\n      {\"op\": \"bool_not\", \"name\": \"neither\", \"operand\": \"op.either\"}\n    ],\n    \"terminator\": {\"kind\": \"return\", \"value\": \"op.neither\"}\n  }]\n}\n",
+  "recipe_sha256": "c902467735ff7734bf7fee537eda33ef90e1eae2bef1e0df6aaa8b7211bc60f5",
+  "result_fields": [],
+  "schema_epoch_id": "a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e",
+  "source_constant_ids": {},
+  "source_function_id": "377570342af38f55d37baf967a7aa919e37df7847c9bba53c1492db89df69ba5",
+  "source_result_type_id": null,
+  "source_state_root": "bf9d68db627cc0edd60c5f15b58bdf40bb78740390cc11f2df65ac4d576f75c1",
+  "test_evidence": {
+    "count": 4,
+    "kind": "external_assertions_against_native_execution",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable"
+  }
+}

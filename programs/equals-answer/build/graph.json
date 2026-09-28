@@ -1,0 +1,18 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "equals-answer",
+  "title": "Equals Answer",
+  "purpose": "Decide whether a signed value equals 42 with native equal",
+  "parameters": [{"name": "value", "value_type": "SInt64"}],
+  "constants": [{"name": "answer", "value_type": "SInt64", "value": "42"}],
+  "result": {"kind": "primitive", "value_type": "Bool"},
+  "entry_block": "entry",
+  "blocks": [{
+    "name": "entry",
+    "operations": [
+      {"op": "constant_ref", "name": "target", "constant": "answer"},
+      {"op": "equal", "name": "matches", "left": "param.value", "right": "op.target"}
+    ],
+    "terminator": {"kind": "return", "value": "op.matches"}
+  }]
+}

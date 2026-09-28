@@ -1,0 +1,20 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "bool-and",
+  "title": "Boolean And",
+  "purpose": "Conjoin two Boolean inputs with native bool_and",
+  "parameters": [
+    {"name": "a", "value_type": "Bool"},
+    {"name": "b", "value_type": "Bool"}
+  ],
+  "constants": [],
+  "result": {"kind": "primitive", "value_type": "Bool"},
+  "entry_block": "entry",
+  "blocks": [{
+    "name": "entry",
+    "operations": [
+      {"op": "bool_and", "name": "both", "left": "param.a", "right": "param.b"}
+    ],
+    "terminator": {"kind": "return", "value": "op.both"}
+  }]
+}

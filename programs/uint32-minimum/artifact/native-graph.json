@@ -1,0 +1,60 @@
+{
+  "cases_json": "{\n  \"contract\": \"sley-tools.graph-cases.v0\",\n  \"cases\": [\n    {\"id\": \"zero\", \"input\": [\"0\"], \"expected\": false},\n    {\"id\": \"below\", \"input\": [\"4\"], \"expected\": false},\n    {\"id\": \"at-minimum\", \"input\": [\"5\"], \"expected\": true},\n    {\"id\": \"above\", \"input\": [\"6\"], \"expected\": true},\n    {\"id\": \"maximum\", \"input\": [\"4294967295\"], \"expected\": true}\n  ]\n}\n",
+  "cases_sha256": "c9b16b0459d305f1d8291856b4c34f4b3211ac43995a51dc172a07cdf1f72f70",
+  "contract": "sley-tools.native-graph-artifact.v1",
+  "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+  "objects": [
+    {
+      "entity_id": "0ce27c025c3dc0b945faf4770cbca95165fa5dba83de82049191d8f2a0e299d9",
+      "kind": 8,
+      "object_id": "df92c65975b020040163321bad9144e59f68d20acde469f1f7b066fc5fffbf90",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7e0201200ce27c025c3dc0b945faf4770cbca95165fa5dba83de82049191d8f2a0e299d90259085706012095dbb09895a620e8dbde85dda609b3f6ec803491bb0a5f13a26f667b80a6b9bc0201000301010401000505010304012006220220dee1d01e777efb596aab9731c99eaa6450b79401b1f70f904d5151f96bda7461df92c65975b020040163321bad9144e59f68d20acde469f1f7b066fc5fffbf90"
+    },
+    {
+      "entity_id": "4dab5aff8da08868d892afac88dfaf29f9d1b5082777ee5dfcda327f7075cb5d",
+      "kind": 8,
+      "object_id": "bc200c1d744244a585e88a5d2222ca9f59b8c7c411d690fd639b1709a3af4fd6",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eab010201204dab5aff8da08868d892afac88dfaf29f9d1b5082777ee5dfcda327f7075cb5d02850108820106012095dbb09895a620e8dbde85dda609b3f6ec803491bb0a5f13a26f667b80a6b9bc020101030165044d022201207182a2a92edc557d200e95512d3f131ffcc2562a136f1c12b1a3c7f8ef6930d02802260201200ce27c025c3dc0b945faf4770cbca95165fa5dba83de82049191d8f2a0e299d902010005040102020006020100bc200c1d744244a585e88a5d2222ca9f59b8c7c411d690fd639b1709a3af4fd6"
+    },
+    {
+      "entity_id": "7182a2a92edc557d200e95512d3f131ffcc2562a136f1c12b1a3c7f8ef6930d0",
+      "kind": 6,
+      "object_id": "014a9c819b4e1605b850099f561143635f0671622ba099bc811e105e1b852dd6",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e550201207182a2a92edc557d200e95512d3f131ffcc2562a136f1c12b1a3c7f8ef6930d00230062e040120f3291e31b08c30cb216dcafeafee3a451afbf584a5f3185cabbda6fcc3c0db110201010301000403040120014a9c819b4e1605b850099f561143635f0671622ba099bc811e105e1b852dd6"
+    },
+    {
+      "entity_id": "95dbb09895a620e8dbde85dda609b3f6ec803491bb0a5f13a26f667b80a6b9bc",
+      "kind": 7,
+      "object_id": "231b084c12e0acd97cce8000f63970ac097dcc1a6cb4ecaaf65e00909df5f742",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ec60102012095dbb09895a620e8dbde85dda609b3f6ec803491bb0a5f13a26f667b80a6b9bc02a001079d01050120f3291e31b08c30cb216dcafeafee3a451afbf584a5f3185cabbda6fcc3c0db11020100034302200ce27c025c3dc0b945faf4770cbca95165fa5dba83de82049191d8f2a0e299d9204dab5aff8da08868d892afac88dfaf29f9d1b5082777ee5dfcda327f7075cb5d042d012b01012802260201204dab5aff8da08868d892afac88dfaf29f9d1b5082777ee5dfcda327f7075cb5d020100050101231b084c12e0acd97cce8000f63970ac097dcc1a6cb4ecaaf65e00909df5f742"
+    },
+    {
+      "entity_id": "dee1d01e777efb596aab9731c99eaa6450b79401b1f70f904d5151f96bda7461",
+      "kind": 9,
+      "object_id": "dc390cdf9dd8a4257b5fa4cc8ee2fa328370fe8ca511318e3c4c28ac2646f87e",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e35020120dee1d01e777efb596aab9731c99eaa6450b79401b1f70f904d5151f96bda74610210090e01010b0201030401200203040105dc390cdf9dd8a4257b5fa4cc8ee2fa328370fe8ca511318e3c4c28ac2646f87e"
+    },
+    {
+      "entity_id": "f3291e31b08c30cb216dcafeafee3a451afbf584a5f3185cabbda6fcc3c0db11",
+      "kind": 5,
+      "object_id": "a5ec92361b3527fe6eab955f0a105c77d05631e6fe2dfa51db559c6237fa5565",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ea201020120f3291e31b08c30cb216dcafeafee3a451afbf584a5f3185cabbda6fcc3c0db11027d057b08010100022201207182a2a92edc557d200e95512d3f131ffcc2562a136f1c12b1a3c7f8ef6930d003020200040100052095dbb09895a620e8dbde85dda609b3f6ec803491bb0a5f13a26f667b80a6b9bc0622012095dbb09895a620e8dbde85dda609b3f6ec803491bb0a5f13a26f667b80a6b9bc070100080101a5ec92361b3527fe6eab955f0a105c77d05631e6fe2dfa51db559c6237fa5565"
+    }
+  ],
+  "program_id": "uint32-minimum",
+  "recipe_json": "{\n  \"contract\": \"sley-tools.graph-authoring.v0\",\n  \"program_id\": \"uint32-minimum\",\n  \"title\": \"UInt32 Minimum\",\n  \"purpose\": \"Decide whether an unsigned level meets a configured minimum of 5\",\n  \"parameters\": [{\"name\": \"level\", \"value_type\": \"UInt32\"}],\n  \"constants\": [{\"name\": \"minimum\", \"value_type\": \"UInt32\", \"value\": \"5\"}],\n  \"result\": {\"kind\": \"primitive\", \"value_type\": \"Bool\"},\n  \"entry_block\": \"entry\",\n  \"blocks\": [{\n    \"name\": \"entry\",\n    \"operations\": [\n      {\"op\": \"constant_ref\", \"name\": \"floor\", \"constant\": \"minimum\"},\n      {\"op\": \"greater_equal\", \"name\": \"meets\", \"left\": \"param.level\", \"right\": \"op.floor\"}\n    ],\n    \"terminator\": {\"kind\": \"return\", \"value\": \"op.meets\"}\n  }]\n}\n",
+  "recipe_sha256": "d693fb1bd8f400889bac466158cc9b9a17a045a38d4925adcb19d099f4c7b8c9",
+  "result_fields": [],
+  "schema_epoch_id": "a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e",
+  "source_constant_ids": {
+    "minimum": "dee1d01e777efb596aab9731c99eaa6450b79401b1f70f904d5151f96bda7461"
+  },
+  "source_function_id": "f3291e31b08c30cb216dcafeafee3a451afbf584a5f3185cabbda6fcc3c0db11",
+  "source_result_type_id": null,
+  "source_state_root": "7fcf50ff7ab8ee94a03dde56361ea1635a125a652980a776e38193af25c88604",
+  "test_evidence": {
+    "count": 5,
+    "kind": "external_assertions_against_native_execution",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable"
+  }
+}

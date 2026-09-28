@@ -1,0 +1,52 @@
+{
+  "cases_json": "{\n  \"contract\": \"sley-tools.graph-cases.v0\",\n  \"cases\": [\n    {\"id\": \"both-true\", \"input\": [true, true], \"expected\": true},\n    {\"id\": \"first-true\", \"input\": [true, false], \"expected\": false},\n    {\"id\": \"second-true\", \"input\": [false, true], \"expected\": false},\n    {\"id\": \"both-false\", \"input\": [false, false], \"expected\": false}\n  ]\n}\n",
+  "cases_sha256": "10dd36f2b73754d258b5779d7038021bc6c91e38bde7cde61fdd8ba187d7d36b",
+  "contract": "sley-tools.native-graph-artifact.v1",
+  "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+  "objects": [
+    {
+      "entity_id": "35039b487209988d6b0c7a0dbc3c1f826abf6ac95c6aeb863d61f84b64fabc72",
+      "kind": 6,
+      "object_id": "1df3119bd9b1b14c824d8102b1748db3dcedf1e008fe7fc7b11982bf9a86bfbb",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e5402012035039b487209988d6b0c7a0dbc3c1f826abf6ac95c6aeb863d61f84b64fabc72022f062d04012050e3edc5aee46edd055bd3b4894ecebba84026f15e1a42365a7440ba8d297f6c020101030100040202001df3119bd9b1b14c824d8102b1748db3dcedf1e008fe7fc7b11982bf9a86bfbb"
+    },
+    {
+      "entity_id": "3944739667ce97371ca91b2625868ffa439b05f811dbef8ebfbc9788964bdc31",
+      "kind": 7,
+      "object_id": "4977b6e89cf44b5fc5987d38fe77704afdad8e9c0053baec737cf04a22020756",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ea3010201203944739667ce97371ca91b2625868ffa439b05f811dbef8ebfbc9788964bdc31027e077c05012050e3edc5aee46edd055bd3b4894ecebba84026f15e1a42365a7440ba8d297f6c02010003220120d3a1d78ee8385d91db1f34d21ceb206e49419df1ce203dff187d515a9240b93c042d012b0101280226020120d3a1d78ee8385d91db1f34d21ceb206e49419df1ce203dff187d515a9240b93c0201000501014977b6e89cf44b5fc5987d38fe77704afdad8e9c0053baec737cf04a22020756"
+    },
+    {
+      "entity_id": "50e3edc5aee46edd055bd3b4894ecebba84026f15e1a42365a7440ba8d297f6c",
+      "kind": 5,
+      "object_id": "db5e4798a811f4c9bc1318aed1c296124e9befabfe1c3719aff96ad8c6396daa",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ec50102012050e3edc5aee46edd055bd3b4894ecebba84026f15e1a42365a7440ba8d297f6c029f01059c01080101000243022035039b487209988d6b0c7a0dbc3c1f826abf6ac95c6aeb863d61f84b64fabc7220b351dae1772fc1f369a282062cc004af4bb83de6cfc7eca90739d27d8c64618e0302020004010005203944739667ce97371ca91b2625868ffa439b05f811dbef8ebfbc9788964bdc31062201203944739667ce97371ca91b2625868ffa439b05f811dbef8ebfbc9788964bdc31070100080101db5e4798a811f4c9bc1318aed1c296124e9befabfe1c3719aff96ad8c6396daa"
+    },
+    {
+      "entity_id": "b351dae1772fc1f369a282062cc004af4bb83de6cfc7eca90739d27d8c64618e",
+      "kind": 6,
+      "object_id": "83960f020f523aa5f0d69097cdc1dd8eb913ffa506b331f4b53ad52b0ed4448b",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e54020120b351dae1772fc1f369a282062cc004af4bb83de6cfc7eca90739d27d8c64618e022f062d04012050e3edc5aee46edd055bd3b4894ecebba84026f15e1a42365a7440ba8d297f6c0201010301010402020083960f020f523aa5f0d69097cdc1dd8eb913ffa506b331f4b53ad52b0ed4448b"
+    },
+    {
+      "entity_id": "d3a1d78ee8385d91db1f34d21ceb206e49419df1ce203dff187d515a9240b93c",
+      "kind": 8,
+      "object_id": "7e5479cdd7c3cc637d5e5497edc256e9fde1a64c302000d1f4f1596a0de107da",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ea301020120d3a1d78ee8385d91db1f34d21ceb206e49419df1ce203dff187d515a9240b93c027e087c0601203944739667ce97371ca91b2625868ffa439b05f811dbef8ebfbc9788964bdc3102010003016704470222012035039b487209988d6b0c7a0dbc3c1f826abf6ac95c6aeb863d61f84b64fabc72220120b351dae1772fc1f369a282062cc004af4bb83de6cfc7eca90739d27d8c64618e050401020200060201007e5479cdd7c3cc637d5e5497edc256e9fde1a64c302000d1f4f1596a0de107da"
+    }
+  ],
+  "program_id": "bool-and",
+  "recipe_json": "{\n  \"contract\": \"sley-tools.graph-authoring.v0\",\n  \"program_id\": \"bool-and\",\n  \"title\": \"Boolean And\",\n  \"purpose\": \"Conjoin two Boolean inputs with native bool_and\",\n  \"parameters\": [\n    {\"name\": \"a\", \"value_type\": \"Bool\"},\n    {\"name\": \"b\", \"value_type\": \"Bool\"}\n  ],\n  \"constants\": [],\n  \"result\": {\"kind\": \"primitive\", \"value_type\": \"Bool\"},\n  \"entry_block\": \"entry\",\n  \"blocks\": [{\n    \"name\": \"entry\",\n    \"operations\": [\n      {\"op\": \"bool_and\", \"name\": \"both\", \"left\": \"param.a\", \"right\": \"param.b\"}\n    ],\n    \"terminator\": {\"kind\": \"return\", \"value\": \"op.both\"}\n  }]\n}\n",
+  "recipe_sha256": "e6ec2ac1e2782c90245ac31781b58788b85028b6415c1b2e723a71ab6b8f8912",
+  "result_fields": [],
+  "schema_epoch_id": "a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e",
+  "source_constant_ids": {},
+  "source_function_id": "50e3edc5aee46edd055bd3b4894ecebba84026f15e1a42365a7440ba8d297f6c",
+  "source_result_type_id": null,
+  "source_state_root": "01e46b407458d6e9a2e8ba9783f9eb455a6e71b2039f70e78dd7c5d7b0f5c2fe",
+  "test_evidence": {
+    "count": 4,
+    "kind": "external_assertions_against_native_execution",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable"
+  }
+}

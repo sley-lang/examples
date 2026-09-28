@@ -1,0 +1,27 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "bool-status",
+  "title": "Boolean Status",
+  "purpose": "Report conjunction, disjunction, and joint negation of two Boolean inputs in one record",
+  "parameters": [
+    {"name": "a", "value_type": "Bool"},
+    {"name": "b", "value_type": "Bool"}
+  ],
+  "constants": [],
+  "result": {"kind": "record", "fields": [
+    {"name": "both", "value_type": "Bool"},
+    {"name": "either", "value_type": "Bool"},
+    {"name": "neither", "value_type": "Bool"}
+  ]},
+  "entry_block": "entry",
+  "blocks": [{
+    "name": "entry",
+    "operations": [
+      {"op": "bool_and", "name": "both", "left": "param.a", "right": "param.b"},
+      {"op": "bool_or", "name": "either", "left": "param.a", "right": "param.b"},
+      {"op": "bool_not", "name": "neither", "operand": "op.either"},
+      {"op": "record_new", "name": "result", "fields": ["op.both", "op.either", "op.neither"]}
+    ],
+    "terminator": {"kind": "return", "value": "op.result"}
+  }]
+}

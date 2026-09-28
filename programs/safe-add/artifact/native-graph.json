@@ -1,0 +1,70 @@
+{
+  "cases_json": "{\n  \"contract\": \"sley-tools.graph-cases.v0\",\n  \"cases\": [\n    {\"id\": \"small\", \"input\": [\"2\", \"3\"], \"expected\": {\"sum\": {\"ok\": \"5\"}}},\n    {\"id\": \"cancels\", \"input\": [\"-5\", \"5\"], \"expected\": {\"sum\": {\"ok\": \"0\"}}},\n    {\"id\": \"zeros\", \"input\": [\"0\", \"0\"], \"expected\": {\"sum\": {\"ok\": \"0\"}}},\n    {\"id\": \"overflow-high\", \"input\": [\"9223372036854775807\", \"1\"], \"expected\": {\"sum\": {\"error\": {\"code\": 1}}}},\n    {\"id\": \"overflow-low\", \"input\": [\"-9223372036854775808\", \"-1\"], \"expected\": {\"sum\": {\"error\": {\"code\": 1}}}}\n  ]\n}\n",
+  "cases_sha256": "7a177c9b6526b3a13db9fae192d89fa6e4dff81fe439277187de5d7192ac0832",
+  "contract": "sley-tools.native-graph-artifact.v1",
+  "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+  "objects": [
+    {
+      "entity_id": "3a9b0afe9cc4ebd9573b5ddeb621db66365c852f005988a1529ab5f2e7acd717",
+      "kind": 4,
+      "object_id": "231e5161644c3d405c05dbcba186854c7161c447eecd4cca68cc620e2f1dcb50",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e6c0201203a9b0afe9cc4ebd9573b5ddeb621db66365c852f005988a1529ab5f2e7acd71702470445040101000239013701350301200101010101010101010101010101010101010101010101010101010101010101020d0e0b0201030301400203140101030101030100040101231e5161644c3d405c05dbcba186854c7161c447eecd4cca68cc620e2f1dcb50"
+    },
+    {
+      "entity_id": "4008b2c39c19ca5d377e93b73da96e455ca087b78654d57993821f3f66e645e6",
+      "kind": 8,
+      "object_id": "51e9d0c0a87c50ce78778b481110e7674012b0d87ab33e3697eb1cad8137ffa1",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ece010201204008b2c39c19ca5d377e93b73da96e455ca087b78654d57993821f3f66e645e602a80108a501060120790e9969623270a4e7f7cd34b8ead1b5e7b25e177a3985f273ed450b12dbe93b020101030112042a012802260201204d7588de5996f5f3b8c2e635a7ec18eb9ba5da027e11129cbf1fd2582d3f652c020100052a01280a260201203a9b0afe9cc4ebd9573b5ddeb621db66365c852f005988a1529ab5f2e7acd717020100062202203a9b0afe9cc4ebd9573b5ddeb621db66365c852f005988a1529ab5f2e7acd71751e9d0c0a87c50ce78778b481110e7674012b0d87ab33e3697eb1cad8137ffa1"
+    },
+    {
+      "entity_id": "4c73d30c2f52ff7e8221e8a89e512916be0e925a4dc4811ca85fffe5b94e0b22",
+      "kind": 5,
+      "object_id": "49ec3652e00b873c732f94ac1b621bc65ff8fe1d543338fc69ffc8f5b3b5bcc2",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eeb010201204c73d30c2f52ff7e8221e8a89e512916be0e925a4dc4811ca85fffe5b94e0b2202c50105c20108010100024302205f7194d81daebbe6e6ca341f134aa2b7449bba5155aa7c8a8a9e7e80e789694b20e725f19a42b84a12e7d2c1a1fdb9e0b4a8186ce79512143291fd6e6f61208ee003280a260201203a9b0afe9cc4ebd9573b5ddeb621db66365c852f005988a1529ab5f2e7acd7170201000401000520790e9969623270a4e7f7cd34b8ead1b5e7b25e177a3985f273ed450b12dbe93b06220120790e9969623270a4e7f7cd34b8ead1b5e7b25e177a3985f273ed450b12dbe93b07010008010149ec3652e00b873c732f94ac1b621bc65ff8fe1d543338fc69ffc8f5b3b5bcc2"
+    },
+    {
+      "entity_id": "4d7588de5996f5f3b8c2e635a7ec18eb9ba5da027e11129cbf1fd2582d3f652c",
+      "kind": 8,
+      "object_id": "63f25fc5fad17082617cc740abd0628a00d2e2567c708e5990a461457eb5dbd9",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eb0010201204d7588de5996f5f3b8c2e635a7ec18eb9ba5da027e11129cbf1fd2582d3f652c028a01088701060120790e9969623270a4e7f7cd34b8ead1b5e7b25e177a3985f273ed450b12dbe93b0201000301400447022201205f7194d81daebbe6e6ca341f134aa2b7449bba5155aa7c8a8a9e7e80e789694b220120e725f19a42b84a12e7d2c1a1fdb9e0b4a8186ce79512143291fd6e6f61208ee0050f010d0e0b02010303014002031401010602010063f25fc5fad17082617cc740abd0628a00d2e2567c708e5990a461457eb5dbd9"
+    },
+    {
+      "entity_id": "5f7194d81daebbe6e6ca341f134aa2b7449bba5155aa7c8a8a9e7e80e789694b",
+      "kind": 6,
+      "object_id": "478d0d0caf23dc0fe83f630a5dc2ba7987e57228f44c59f8c5dbec1d85d955ca",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e550201205f7194d81daebbe6e6ca341f134aa2b7449bba5155aa7c8a8a9e7e80e789694b0230062e0401204c73d30c2f52ff7e8221e8a89e512916be0e925a4dc4811ca85fffe5b94e0b220201010301000403030140478d0d0caf23dc0fe83f630a5dc2ba7987e57228f44c59f8c5dbec1d85d955ca"
+    },
+    {
+      "entity_id": "790e9969623270a4e7f7cd34b8ead1b5e7b25e177a3985f273ed450b12dbe93b",
+      "kind": 7,
+      "object_id": "694701097d4985da85a1fca3ee31cec5f337dca5a52946b5f1a0962148c5b5dc",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ec601020120790e9969623270a4e7f7cd34b8ead1b5e7b25e177a3985f273ed450b12dbe93b02a001079d010501204c73d30c2f52ff7e8221e8a89e512916be0e925a4dc4811ca85fffe5b94e0b22020100034302204d7588de5996f5f3b8c2e635a7ec18eb9ba5da027e11129cbf1fd2582d3f652c204008b2c39c19ca5d377e93b73da96e455ca087b78654d57993821f3f66e645e6042d012b01012802260201204008b2c39c19ca5d377e93b73da96e455ca087b78654d57993821f3f66e645e6020100050101694701097d4985da85a1fca3ee31cec5f337dca5a52946b5f1a0962148c5b5dc"
+    },
+    {
+      "entity_id": "e725f19a42b84a12e7d2c1a1fdb9e0b4a8186ce79512143291fd6e6f61208ee0",
+      "kind": 6,
+      "object_id": "284fcb4e516b023ae3639ea3c6e3c1a31bd559b605f00ee8e435e17351f25d91",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e55020120e725f19a42b84a12e7d2c1a1fdb9e0b4a8186ce79512143291fd6e6f61208ee00230062e0401204c73d30c2f52ff7e8221e8a89e512916be0e925a4dc4811ca85fffe5b94e0b220201010301010403030140284fcb4e516b023ae3639ea3c6e3c1a31bd559b605f00ee8e435e17351f25d91"
+    }
+  ],
+  "program_id": "safe-add",
+  "recipe_json": "{\n  \"contract\": \"sley-tools.graph-authoring.v0\",\n  \"program_id\": \"safe-add\",\n  \"title\": \"Safe Add\",\n  \"purpose\": \"Add two signed values with native checked arithmetic and report overflow\",\n  \"parameters\": [\n    {\"name\": \"a\", \"value_type\": \"SInt64\"},\n    {\"name\": \"b\", \"value_type\": \"SInt64\"}\n  ],\n  \"constants\": [],\n  \"result\": {\"kind\": \"record\", \"fields\": [\n    {\"name\": \"sum\", \"value_type\": \"CheckedSInt64\"}\n  ]},\n  \"entry_block\": \"entry\",\n  \"blocks\": [{\n    \"name\": \"entry\",\n    \"operations\": [\n      {\"op\": \"int_add_checked\", \"name\": \"total\", \"left\": \"param.a\", \"right\": \"param.b\"},\n      {\"op\": \"record_new\", \"name\": \"result\", \"fields\": [\"op.total\"]}\n    ],\n    \"terminator\": {\"kind\": \"return\", \"value\": \"op.result\"}\n  }]\n}\n",
+  "recipe_sha256": "ce46be86957d8174fe28ea1d5b7eda29b0539e3f0b454da927340ef6780bec3c",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "sum",
+      "type": "CheckedSInt64"
+    }
+  ],
+  "schema_epoch_id": "a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e",
+  "source_constant_ids": {},
+  "source_function_id": "4c73d30c2f52ff7e8221e8a89e512916be0e925a4dc4811ca85fffe5b94e0b22",
+  "source_result_type_id": "3a9b0afe9cc4ebd9573b5ddeb621db66365c852f005988a1529ab5f2e7acd717",
+  "source_state_root": "772ed2393276915d1fcd1651957d64a0d7c627c709e5b258653f5b917a190e35",
+  "test_evidence": {
+    "count": 5,
+    "kind": "external_assertions_against_native_execution",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable"
+  }
+}

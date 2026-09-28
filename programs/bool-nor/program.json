@@ -1,0 +1,53 @@
+{
+  "artifact": {
+    "contract": "sley-tools.native-graph-artifact.v1",
+    "path": "artifact/native-graph.json",
+    "sha256": "b0843df10466bc9c64b9ef0ee49a858061e7c2830f7ee4333d273bd455efc68c"
+  },
+  "authoring_profile": "graph_v0",
+  "contract": "sley-tools.program.v0",
+  "core": {
+    "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "profile": "extended_v1"
+  },
+  "entrypoint": {
+    "function_id": "377570342af38f55d37baf967a7aa919e37df7847c9bba53c1492db89df69ba5",
+    "name": "evaluate",
+    "state_root": "bf9d68db627cc0edd60c5f15b58bdf40bb78740390cc11f2df65ac4d576f75c1"
+  },
+  "graph_recipe": {
+    "path": "build/graph.json",
+    "sha256": "c902467735ff7734bf7fee537eda33ef90e1eae2bef1e0df6aaa8b7211bc60f5"
+  },
+  "host_responsibility": "typed JSON input, local workspace lifecycle, and external assertions",
+  "inputs": {
+    "a": "Bool",
+    "b": "Bool"
+  },
+  "license_status": "owner decision pending",
+  "native_logic": "pure typed graph declared by the bound local recipe",
+  "output": {
+    "type": "Bool"
+  },
+  "program_id": "bool-nor",
+  "program_version": "0.1.0-local",
+  "purpose": "Negate the disjunction of two Boolean inputs with native bool_or and bool_not",
+  "result_fields": [],
+  "result_type_id": null,
+  "source_provenance": {
+    "builder": "crates/backend/src/graph.rs",
+    "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+  },
+  "status": "portable_native_artifact",
+  "test_cases": {
+    "external_assertions": "sley-tools test --project PROJECT",
+    "independent_oracle": "tests/cases.json",
+    "native_core_test_admission": "PENDING_CORE_EXECUTOR"
+  },
+  "title": "Boolean Nor",
+  "tools_contract": "sley-tools.cli.v0",
+  "worked_change": {
+    "status": "pending"
+  }
+}

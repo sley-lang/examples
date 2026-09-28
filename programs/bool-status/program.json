@@ -1,0 +1,74 @@
+{
+  "artifact": {
+    "contract": "sley-tools.native-graph-artifact.v1",
+    "path": "artifact/native-graph.json",
+    "sha256": "104d6f4e11e97d57411a8b684bcc5ad8be2a5b1c889c545c9879b2fc925b9856"
+  },
+  "authoring_profile": "graph_v0",
+  "contract": "sley-tools.program.v0",
+  "core": {
+    "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "profile": "extended_v1"
+  },
+  "entrypoint": {
+    "function_id": "918253b28db69d817a3ff427f73e1efb3cd17b0861193521dc2c57249461fc0a",
+    "name": "evaluate",
+    "state_root": "a0625ea538c502303c26553db09e19978cb0a0a80028443618984aecff627c1e"
+  },
+  "graph_recipe": {
+    "path": "build/graph.json",
+    "sha256": "6978c38624d27872feffe675b0a362b8c23e95d896964134f10cc55a75432aef"
+  },
+  "host_responsibility": "typed JSON input, local workspace lifecycle, and external assertions",
+  "inputs": {
+    "a": "Bool",
+    "b": "Bool"
+  },
+  "license_status": "owner decision pending",
+  "native_logic": "pure typed graph declared by the bound local recipe",
+  "output": {
+    "fields": {
+      "both": "Bool",
+      "either": "Bool",
+      "neither": "Bool"
+    },
+    "type": "Record"
+  },
+  "program_id": "bool-status",
+  "program_version": "0.1.0-local",
+  "purpose": "Report conjunction, disjunction, and joint negation of two Boolean inputs in one record",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "both",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0202020202020202020202020202020202020202020202020202020202020202",
+      "name": "either",
+      "type": "Bool"
+    },
+    {
+      "member_id": "0303030303030303030303030303030303030303030303030303030303030303",
+      "name": "neither",
+      "type": "Bool"
+    }
+  ],
+  "result_type_id": "ea255e19cea03375ff5ca44e1c5b3ff1315b9252f5132d769fca9102b160ad41",
+  "source_provenance": {
+    "builder": "crates/backend/src/graph.rs",
+    "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+  },
+  "status": "portable_native_artifact",
+  "test_cases": {
+    "external_assertions": "sley-tools test --project PROJECT",
+    "independent_oracle": "tests/cases.json",
+    "native_core_test_admission": "PENDING_CORE_EXECUTOR"
+  },
+  "title": "Boolean Status",
+  "tools_contract": "sley-tools.cli.v0",
+  "worked_change": {
+    "status": "pending"
+  }
+}

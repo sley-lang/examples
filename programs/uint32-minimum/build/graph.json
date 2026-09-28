@@ -1,0 +1,18 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "uint32-minimum",
+  "title": "UInt32 Minimum",
+  "purpose": "Decide whether an unsigned level meets a configured minimum of 5",
+  "parameters": [{"name": "level", "value_type": "UInt32"}],
+  "constants": [{"name": "minimum", "value_type": "UInt32", "value": "5"}],
+  "result": {"kind": "primitive", "value_type": "Bool"},
+  "entry_block": "entry",
+  "blocks": [{
+    "name": "entry",
+    "operations": [
+      {"op": "constant_ref", "name": "floor", "constant": "minimum"},
+      {"op": "greater_equal", "name": "meets", "left": "param.level", "right": "op.floor"}
+    ],
+    "terminator": {"kind": "return", "value": "op.meets"}
+  }]
+}

@@ -1,0 +1,60 @@
+{
+  "cases_json": "{\n  \"contract\": \"sley-tools.graph-cases.v0\",\n  \"cases\": [\n    {\"id\": \"answer\", \"input\": [\"42\"], \"expected\": true},\n    {\"id\": \"below\", \"input\": [\"41\"], \"expected\": false},\n    {\"id\": \"above\", \"input\": [\"43\"], \"expected\": false},\n    {\"id\": \"zero\", \"input\": [\"0\"], \"expected\": false},\n    {\"id\": \"negated\", \"input\": [\"-42\"], \"expected\": false}\n  ]\n}\n",
+  "cases_sha256": "d9dfc1e428c818bcaa29c2458f980c0f95af771d171cb367932ac8454d75afe0",
+  "contract": "sley-tools.native-graph-artifact.v1",
+  "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+  "objects": [
+    {
+      "entity_id": "12947c5e1412802a5b9711fb2975670d3aed38d75aaa94744669bbe74c876200",
+      "kind": 5,
+      "object_id": "0bdb4e2b60c6da4341f013b4ceb872d0a3cdf4b2b04f05876035ba5312c480c5",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ea20102012012947c5e1412802a5b9711fb2975670d3aed38d75aaa94744669bbe74c876200027d057b080101000222012051b69df6dc2bb05bbaed68e7f11850f5648dacf05da92dcb0816309d52d70a28030202000401000520d9765fb354a6b738d2afd07b751dbb2b1404cc19f2d446b09a971cced017836506220120d9765fb354a6b738d2afd07b751dbb2b1404cc19f2d446b09a971cced01783650701000801010bdb4e2b60c6da4341f013b4ceb872d0a3cdf4b2b04f05876035ba5312c480c5"
+    },
+    {
+      "entity_id": "2b3e1cad8c39ad52b8d3a422ee82fa56063c4cddb8564bb9074fa1af98529bd6",
+      "kind": 8,
+      "object_id": "6a11f30e5475cc0c40f78c48653004593f6c1941bf5356efd179518fec6acc47",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7e0201202b3e1cad8c39ad52b8d3a422ee82fa56063c4cddb8564bb9074fa1af98529bd602590857060120d9765fb354a6b738d2afd07b751dbb2b1404cc19f2d446b09a971cced01783650201000301010401000505010303014006220220c065ee5401e4293aaf08a79a78004f0ec874d0750253b08b5155fb0fcfbf38db6a11f30e5475cc0c40f78c48653004593f6c1941bf5356efd179518fec6acc47"
+    },
+    {
+      "entity_id": "3fc79b497d7f862d7634c41f42d7cc1071767b6e74985c40352dfc92ed0db291",
+      "kind": 8,
+      "object_id": "3f9123d807848f10a4d10cd0b11c3aba254729347cb92879ba839ea8b6baa272",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eab010201203fc79b497d7f862d7634c41f42d7cc1071767b6e74985c40352dfc92ed0db291028501088201060120d9765fb354a6b738d2afd07b751dbb2b1404cc19f2d446b09a971cced0178365020101030160044d0222012051b69df6dc2bb05bbaed68e7f11850f5648dacf05da92dcb0816309d52d70a282802260201202b3e1cad8c39ad52b8d3a422ee82fa56063c4cddb8564bb9074fa1af98529bd6020100050401020200060201003f9123d807848f10a4d10cd0b11c3aba254729347cb92879ba839ea8b6baa272"
+    },
+    {
+      "entity_id": "51b69df6dc2bb05bbaed68e7f11850f5648dacf05da92dcb0816309d52d70a28",
+      "kind": 6,
+      "object_id": "ab56ffa512ed6a3c4343b8b9187187bc05942e120248d21278ba20f531660057",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e5502012051b69df6dc2bb05bbaed68e7f11850f5648dacf05da92dcb0816309d52d70a280230062e04012012947c5e1412802a5b9711fb2975670d3aed38d75aaa94744669bbe74c8762000201010301000403030140ab56ffa512ed6a3c4343b8b9187187bc05942e120248d21278ba20f531660057"
+    },
+    {
+      "entity_id": "c065ee5401e4293aaf08a79a78004f0ec874d0750253b08b5155fb0fcfbf38db",
+      "kind": 9,
+      "object_id": "57b4e531a34ae33f4649de59bf470e72a3ed77d12ccd263eccdd7ac901d00d88",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e35020120c065ee5401e4293aaf08a79a78004f0ec874d0750253b08b5155fb0fcfbf38db0210090e01010b020103030140020303015457b4e531a34ae33f4649de59bf470e72a3ed77d12ccd263eccdd7ac901d00d88"
+    },
+    {
+      "entity_id": "d9765fb354a6b738d2afd07b751dbb2b1404cc19f2d446b09a971cced0178365",
+      "kind": 7,
+      "object_id": "68057a3a52c0aa253c25ca491ef4fd36e1f2f8b7612f581bbe2c9d32ad3f5294",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ec601020120d9765fb354a6b738d2afd07b751dbb2b1404cc19f2d446b09a971cced017836502a001079d0105012012947c5e1412802a5b9711fb2975670d3aed38d75aaa94744669bbe74c876200020100034302202b3e1cad8c39ad52b8d3a422ee82fa56063c4cddb8564bb9074fa1af98529bd6203fc79b497d7f862d7634c41f42d7cc1071767b6e74985c40352dfc92ed0db291042d012b01012802260201203fc79b497d7f862d7634c41f42d7cc1071767b6e74985c40352dfc92ed0db29102010005010168057a3a52c0aa253c25ca491ef4fd36e1f2f8b7612f581bbe2c9d32ad3f5294"
+    }
+  ],
+  "program_id": "equals-answer",
+  "recipe_json": "{\n  \"contract\": \"sley-tools.graph-authoring.v0\",\n  \"program_id\": \"equals-answer\",\n  \"title\": \"Equals Answer\",\n  \"purpose\": \"Decide whether a signed value equals 42 with native equal\",\n  \"parameters\": [{\"name\": \"value\", \"value_type\": \"SInt64\"}],\n  \"constants\": [{\"name\": \"answer\", \"value_type\": \"SInt64\", \"value\": \"42\"}],\n  \"result\": {\"kind\": \"primitive\", \"value_type\": \"Bool\"},\n  \"entry_block\": \"entry\",\n  \"blocks\": [{\n    \"name\": \"entry\",\n    \"operations\": [\n      {\"op\": \"constant_ref\", \"name\": \"target\", \"constant\": \"answer\"},\n      {\"op\": \"equal\", \"name\": \"matches\", \"left\": \"param.value\", \"right\": \"op.target\"}\n    ],\n    \"terminator\": {\"kind\": \"return\", \"value\": \"op.matches\"}\n  }]\n}\n",
+  "recipe_sha256": "e1120fd1b0478d97213477494f63d6e3e1ff7d7499f058d05f12878786eb14fb",
+  "result_fields": [],
+  "schema_epoch_id": "a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e",
+  "source_constant_ids": {
+    "answer": "c065ee5401e4293aaf08a79a78004f0ec874d0750253b08b5155fb0fcfbf38db"
+  },
+  "source_function_id": "12947c5e1412802a5b9711fb2975670d3aed38d75aaa94744669bbe74c876200",
+  "source_result_type_id": null,
+  "source_state_root": "6a285e3d1fbe8f4c5c8fb2d5f95ceedcb2e3f83fbd1a8caf19f9d8e9d4a265b4",
+  "test_evidence": {
+    "count": 5,
+    "kind": "external_assertions_against_native_execution",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "is-negative",
+  "title": "Is Negative",
+  "purpose": "Decide whether a signed value is below zero with native less_than",
+  "parameters": [{"name": "value", "value_type": "SInt64"}],
+  "constants": [{"name": "zero", "value_type": "SInt64", "value": "0"}],
+  "result": {"kind": "primitive", "value_type": "Bool"},
+  "entry_block": "entry",
+  "blocks": [{
+    "name": "entry",
+    "operations": [
+      {"op": "constant_ref", "name": "origin", "constant": "zero"},
+      {"op": "less_than", "name": "negative", "left": "param.value", "right": "op.origin"}
+    ],
+    "terminator": {"kind": "return", "value": "op.negative"}
+  }]
+}

@@ -1,0 +1,4 @@
+.sley-tools/
+workspace/
+*.tmp
+/tmp/

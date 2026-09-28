@@ -1,0 +1,23 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "safe-add",
+  "title": "Safe Add",
+  "purpose": "Add two signed values with native checked arithmetic and report overflow",
+  "parameters": [
+    {"name": "a", "value_type": "SInt64"},
+    {"name": "b", "value_type": "SInt64"}
+  ],
+  "constants": [],
+  "result": {"kind": "record", "fields": [
+    {"name": "sum", "value_type": "CheckedSInt64"}
+  ]},
+  "entry_block": "entry",
+  "blocks": [{
+    "name": "entry",
+    "operations": [
+      {"op": "int_add_checked", "name": "total", "left": "param.a", "right": "param.b"},
+      {"op": "record_new", "name": "result", "fields": ["op.total"]}
+    ],
+    "terminator": {"kind": "return", "value": "op.result"}
+  }]
+}
