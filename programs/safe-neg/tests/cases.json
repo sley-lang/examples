@@ -1,0 +1,10 @@
+{
+  "contract": "sley-tools.graph-cases.v0",
+  "cases": [
+    {"id": "positive", "input": ["5"], "expected": {"negated": {"ok": "-5"}}},
+    {"id": "negative", "input": ["-7"], "expected": {"negated": {"ok": "7"}}},
+    {"id": "zero", "input": ["0"], "expected": {"negated": {"ok": "0"}}},
+    {"id": "overflow-min", "input": ["-9223372036854775808"], "expected": {"negated": {"error": {"code": 1}}}},
+    {"id": "negate-max", "input": ["9223372036854775807"], "expected": {"negated": {"ok": "-9223372036854775807"}}}
+  ]
+}

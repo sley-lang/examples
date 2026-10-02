@@ -138,6 +138,17 @@
       "cases": "programs/safe-mul/tests/cases.json",
       "external_assertions": 5,
       "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S12",
+      "program_id": "safe-neg",
+      "responsibility": "Negate one signed value with checked overflow report",
+      "package": "programs/safe-neg",
+      "artifact": "programs/safe-neg/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/safe-neg/tests/cases.json",
+      "external_assertions": 5,
+      "status": "verified_local_artifact_and_reimport"
     }
   ],
   "composed": [

@@ -1,0 +1,64 @@
+{
+  "cases_json": "{\n  \"contract\": \"sley-tools.graph-cases.v0\",\n  \"cases\": [\n    {\"id\": \"positive\", \"input\": [\"5\"], \"expected\": {\"negated\": {\"ok\": \"-5\"}}},\n    {\"id\": \"negative\", \"input\": [\"-7\"], \"expected\": {\"negated\": {\"ok\": \"7\"}}},\n    {\"id\": \"zero\", \"input\": [\"0\"], \"expected\": {\"negated\": {\"ok\": \"0\"}}},\n    {\"id\": \"overflow-min\", \"input\": [\"-9223372036854775808\"], \"expected\": {\"negated\": {\"error\": {\"code\": 1}}}},\n    {\"id\": \"negate-max\", \"input\": [\"9223372036854775807\"], \"expected\": {\"negated\": {\"ok\": \"-9223372036854775807\"}}}\n  ]\n}\n",
+  "cases_sha256": "f3108fb1d7c7db108f22e8f04f2159c12480a4b5b91d6288b3b4daef17b75721",
+  "contract": "sley-tools.native-graph-artifact.v1",
+  "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+  "objects": [
+    {
+      "entity_id": "2886c7e267afbbeaef6d1a891f4c1e6c4b096d96f7c95c174f0f0b43a695e550",
+      "kind": 6,
+      "object_id": "e1556a1b09a69af96799268201b26615c8d481e4af634fdcd5495a4829862318",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e550201202886c7e267afbbeaef6d1a891f4c1e6c4b096d96f7c95c174f0f0b43a695e5500230062e04012077442870f227253cd7768a50fdffff23cb93d89fe200c2cfe3aabd3de73abf350201010301000403030140e1556a1b09a69af96799268201b26615c8d481e4af634fdcd5495a4829862318"
+    },
+    {
+      "entity_id": "553de680ba9c6a94a769a931ec340fb4f8ddae1e11f4088f713a3f574b27c640",
+      "kind": 8,
+      "object_id": "787f16f9f12ccc1fa2a1aa6092e32a3a5ec469911d9c6a2d71d17a146522368e",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ece01020120553de680ba9c6a94a769a931ec340fb4f8ddae1e11f4088f713a3f574b27c64002a80108a501060120cbdde1399b64c1c2b3222f2655da880d9ae7bebb1b26cb70a784ad9700824243020101030112042a01280226020120aa059f1a91bcaf1c86fc5152c1379d825150ec7a9fcf8b7254e2cd3269c800ea020100052a01280a26020120a65097631547ba10eafff85a17e9b903b6973022e105cabd2d71684f3fdde0ac02010006220220a65097631547ba10eafff85a17e9b903b6973022e105cabd2d71684f3fdde0ac787f16f9f12ccc1fa2a1aa6092e32a3a5ec469911d9c6a2d71d17a146522368e"
+    },
+    {
+      "entity_id": "77442870f227253cd7768a50fdffff23cb93d89fe200c2cfe3aabd3de73abf35",
+      "kind": 5,
+      "object_id": "f3cf305d6fb82ab5bb473f60e12ffca063bc290fccaf1bbfcebe905c01de21a3",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eca0102012077442870f227253cd7768a50fdffff23cb93d89fe200c2cfe3aabd3de73abf3502a40105a10108010100022201202886c7e267afbbeaef6d1a891f4c1e6c4b096d96f7c95c174f0f0b43a695e55003280a26020120a65097631547ba10eafff85a17e9b903b6973022e105cabd2d71684f3fdde0ac0201000401000520cbdde1399b64c1c2b3222f2655da880d9ae7bebb1b26cb70a784ad970082424306220120cbdde1399b64c1c2b3222f2655da880d9ae7bebb1b26cb70a784ad9700824243070100080101f3cf305d6fb82ab5bb473f60e12ffca063bc290fccaf1bbfcebe905c01de21a3"
+    },
+    {
+      "entity_id": "a65097631547ba10eafff85a17e9b903b6973022e105cabd2d71684f3fdde0ac",
+      "kind": 4,
+      "object_id": "07abd600e62fa2dfc50e31184c5154120c89037594fbce8a68c2b30f1f7b58ba",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e6c020120a65097631547ba10eafff85a17e9b903b6973022e105cabd2d71684f3fdde0ac02470445040101000239013701350301200101010101010101010101010101010101010101010101010101010101010101020d0e0b020103030140020314010103010103010004010107abd600e62fa2dfc50e31184c5154120c89037594fbce8a68c2b30f1f7b58ba"
+    },
+    {
+      "entity_id": "aa059f1a91bcaf1c86fc5152c1379d825150ec7a9fcf8b7254e2cd3269c800ea",
+      "kind": 8,
+      "object_id": "05e497ade2ffb7c11f5f4f226c918fd2f706180ac03bb8aa97a97ed8cebb8bd5",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e8b01020120aa059f1a91bcaf1c86fc5152c1379d825150ec7a9fcf8b7254e2cd3269c800ea02660864060120cbdde1399b64c1c2b3222f2655da880d9ae7bebb1b26cb70a784ad97008242430201000301450424012201202886c7e267afbbeaef6d1a891f4c1e6c4b096d96f7c95c174f0f0b43a695e550050f010d0e0b02010303014002031401010602010005e497ade2ffb7c11f5f4f226c918fd2f706180ac03bb8aa97a97ed8cebb8bd5"
+    },
+    {
+      "entity_id": "cbdde1399b64c1c2b3222f2655da880d9ae7bebb1b26cb70a784ad9700824243",
+      "kind": 7,
+      "object_id": "603c18aef4ae6db1d6bbf6ac77f2af494dbfed779dd1d17760955c37ddf6786c",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ec601020120cbdde1399b64c1c2b3222f2655da880d9ae7bebb1b26cb70a784ad970082424302a001079d0105012077442870f227253cd7768a50fdffff23cb93d89fe200c2cfe3aabd3de73abf3502010003430220aa059f1a91bcaf1c86fc5152c1379d825150ec7a9fcf8b7254e2cd3269c800ea20553de680ba9c6a94a769a931ec340fb4f8ddae1e11f4088f713a3f574b27c640042d012b0101280226020120553de680ba9c6a94a769a931ec340fb4f8ddae1e11f4088f713a3f574b27c640020100050101603c18aef4ae6db1d6bbf6ac77f2af494dbfed779dd1d17760955c37ddf6786c"
+    }
+  ],
+  "program_id": "safe-neg",
+  "recipe_json": "{\n  \"contract\": \"sley-tools.graph-authoring.v0\",\n  \"program_id\": \"safe-neg\",\n  \"title\": \"Checked Signed Negation\",\n  \"purpose\": \"Negate one signed value with native checked arithmetic and report overflow\",\n  \"parameters\": [\n    {\"name\": \"value\", \"value_type\": \"SInt64\"}\n  ],\n  \"constants\": [],\n  \"result\": {\"kind\": \"record\", \"fields\": [{\"name\": \"negated\", \"value_type\": \"CheckedSInt64\"}]},\n  \"entry_block\": \"entry\",\n  \"blocks\": [{\n    \"name\": \"entry\",\n    \"operations\": [\n      {\"op\": \"int_neg_checked\", \"name\": \"negated\", \"operand\": \"param.value\"},\n      {\"op\": \"record_new\", \"name\": \"result\", \"fields\": [\"op.negated\"]}\n    ],\n    \"terminator\": {\"kind\": \"return\", \"value\": \"op.result\"}\n  }]\n}\n",
+  "recipe_sha256": "2f0c3fca31178dd1c0b93c074e795909794082b36f8488717c69c34f52aab72e",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "negated",
+      "type": "CheckedSInt64"
+    }
+  ],
+  "schema_epoch_id": "a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e",
+  "source_constant_ids": {},
+  "source_function_id": "77442870f227253cd7768a50fdffff23cb93d89fe200c2cfe3aabd3de73abf35",
+  "source_result_type_id": "a65097631547ba10eafff85a17e9b903b6973022e105cabd2d71684f3fdde0ac",
+  "source_state_root": "40bcdaee8e6cf740665f424c98d989935509e1d2ec571efc4b749dd8438ece15",
+  "test_evidence": {
+    "count": 5,
+    "kind": "external_assertions_against_native_execution",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable"
+  }
+}
