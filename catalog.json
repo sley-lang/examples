@@ -94,6 +94,17 @@
       "cases": "programs/bool-status/tests/cases.json",
       "external_assertions": 4,
       "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S08",
+      "program_id": "is-positive",
+      "responsibility": "Decide whether a signed value is above zero",
+      "package": "programs/is-positive",
+      "artifact": "programs/is-positive/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/is-positive/tests/cases.json",
+      "external_assertions": 5,
+      "status": "verified_local_artifact_and_reimport"
     }
   ],
   "composed": [
