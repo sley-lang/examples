@@ -1,0 +1,68 @@
+{
+ "af1": 1,
+ "afx": 1,
+ "types": [
+  {
+   "name": "AbsError",
+   "variant": [
+    "NegativeOverflow"
+   ]
+  }
+ ],
+ "fns": [
+  {
+   "fn": "abs_value",
+   "params": [
+    [
+     "x",
+     "i64"
+    ]
+   ],
+   "returns": "Result<i64,AbsError>",
+   "blocks": [
+    {
+     "name": "entry",
+     "ops": [
+      [
+       "neg",
+       "lt",
+       "x",
+       0
+      ]
+     ],
+     "term": [
+      "cond",
+      "neg",
+      [
+       "negate"
+      ],
+      [
+       "keep"
+      ]
+     ]
+    },
+    {
+     "name": "negate",
+     "ops": [
+      [
+       "m",
+       "neg?NegativeOverflow",
+       "x"
+      ]
+     ],
+     "term": [
+      "ok",
+      "m"
+     ]
+    },
+    {
+     "name": "keep",
+     "term": [
+      "ok",
+      "x"
+     ]
+    }
+   ]
+  }
+ ]
+}

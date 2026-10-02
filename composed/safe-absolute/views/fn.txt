@@ -1,0 +1,28 @@
+# sley view (AV1, non-canonical) root=e89fe7e2
+# focus abs_value: context, not a completeness certificate
+fn abs_value(x: i64) -> Result<i64,AbsError>   [1457f29d]
+  entry:
+    neg__a1 = const k_0 (0)
+    neg = lt x, neg__a1
+    cond neg -> negate, keep
+  negate:
+    m__r = neg x
+    switch m__r: Ok -> negate__m($), Err -> __fail_NegativeOverflow
+  keep:
+    keep__ok = ok x
+    return keep__ok
+  negate__m(m: i64):
+    negate__ok = ok m
+    return negate__ok
+  __fail_NegativeOverflow:
+    v = variant AbsError.NegativeOverflow
+    r = err v
+    return r
+types: 1
+type AbsError = NegativeOverflow
+consts: 1
+const k_0: i64 = 0
+calls: none
+callers: none
+tests: 8: abs_cases_0, abs_cases_1, abs_cases_2, abs_cases_3, abs_cases_4, abs_cases_5, abs_cases_6, abs_cases_7
+boundary: exported; effects none; namespace none; callers outside it: none

@@ -1,0 +1,162 @@
+{
+ "af1": 1,
+ "afx": 1,
+ "types": [
+  {
+   "name": "Sign",
+   "variant": [
+    "Negative",
+    "Zero",
+    "Positive"
+   ]
+  }
+ ],
+ "fns": [
+  {
+   "fn": "sign_class",
+   "params": [
+    [
+     "x",
+     "i64"
+    ]
+   ],
+   "returns": "Sign",
+   "blocks": [
+    {
+     "name": "entry",
+     "ops": [
+      [
+       "neg",
+       "lt",
+       "x",
+       0
+      ]
+     ],
+     "term": [
+      "cond",
+      "neg",
+      [
+       "is_neg"
+      ],
+      [
+       "check_zero"
+      ]
+     ]
+    },
+    {
+     "name": "check_zero",
+     "ops": [
+      [
+       "zero",
+       "eq",
+       "x",
+       0
+      ]
+     ],
+     "term": [
+      "cond",
+      "zero",
+      [
+       "is_zero"
+      ],
+      [
+       "is_pos"
+      ]
+     ]
+    },
+    {
+     "name": "is_neg",
+     "ops": [
+      [
+       "s",
+       "variant",
+       "Sign.Negative"
+      ]
+     ],
+     "term": [
+      "return",
+      "s"
+     ]
+    },
+    {
+     "name": "is_zero",
+     "ops": [
+      [
+       "s",
+       "variant",
+       "Sign.Zero"
+      ]
+     ],
+     "term": [
+      "return",
+      "s"
+     ]
+    },
+    {
+     "name": "is_pos",
+     "ops": [
+      [
+       "s",
+       "variant",
+       "Sign.Positive"
+      ]
+     ],
+     "term": [
+      "return",
+      "s"
+     ]
+    }
+   ]
+  }
+ ],
+ "test_tables": [
+  {
+   "name": "sign_cases",
+   "fn": "sign_class",
+   "cases": [
+    {
+     "args": [
+      -5
+     ],
+     "expect": "Negative"
+    },
+    {
+     "args": [
+      -1
+     ],
+     "expect": "Negative"
+    },
+    {
+     "args": [
+      -9223372036854775808
+     ],
+     "expect": "Negative"
+    },
+    {
+     "args": [
+      0
+     ],
+     "expect": "Zero"
+    },
+    {
+     "args": [
+      1
+     ],
+     "expect": "Positive"
+    },
+    {
+     "args": [
+      7
+     ],
+     "expect": "Positive"
+    },
+    {
+     "args": [
+      9223372036854775807
+     ],
+     "expect": "Positive"
+    }
+   ]
+  }
+ ]
+}

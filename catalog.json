@@ -404,6 +404,42 @@
       },
       "pack": "composed/safe-quotient/packs/quotient-committed.pack",
       "status": "workbench_verified_and_reimported"
+    },
+    {
+      "id": "C12",
+      "program_id": "safe-absolute",
+      "responsibility": "Return a signed value's magnitude, negating only negative inputs with a checked negation",
+      "package": "composed/safe-absolute",
+      "entrypoint": "abs_value",
+      "frames": "composed/safe-absolute/frames",
+      "cases": "composed/safe-absolute/tests/cases.json",
+      "workbench_checks": 8,
+      "external_assertions": 8,
+      "persistence": {
+        "combined_commit": "REFUSED_TXN_TEST_EVIDENCE_UNSUPPORTED",
+        "code_txn": "0f217af2",
+        "tests_txn": "a2d6cd98"
+      },
+      "pack": "composed/safe-absolute/packs/abs-committed.pack",
+      "status": "workbench_verified_and_reimported"
+    },
+    {
+      "id": "C13",
+      "program_id": "sign-class",
+      "responsibility": "Classify a signed value as Negative, Zero, or Positive, returning a bare variant",
+      "package": "composed/sign-class",
+      "entrypoint": "sign_class",
+      "frames": "composed/sign-class/frames",
+      "cases": "composed/sign-class/tests/cases.json",
+      "workbench_checks": 7,
+      "external_assertions": 7,
+      "persistence": {
+        "combined_commit": "REFUSED_TXN_TEST_EVIDENCE_UNSUPPORTED",
+        "code_txn": "ee5d5dc5",
+        "tests_txn": "18fffc7b"
+      },
+      "pack": "composed/sign-class/packs/sign-committed.pack",
+      "status": "workbench_verified_and_reimported"
     }
   ]
 }

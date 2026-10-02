@@ -1,0 +1,55 @@
+{
+ "contract": "sley-agent.test-cases.v1",
+ "fn": "sign_class",
+ "cases": [
+  {
+   "id": "negative",
+   "input": [
+    -5
+   ],
+   "expected": "Negative"
+  },
+  {
+   "id": "negative-one",
+   "input": [
+    -1
+   ],
+   "expected": "Negative"
+  },
+  {
+   "id": "min-is-negative",
+   "input": [
+    -9223372036854775808
+   ],
+   "expected": "Negative"
+  },
+  {
+   "id": "zero",
+   "input": [
+    0
+   ],
+   "expected": "Zero"
+  },
+  {
+   "id": "positive-one",
+   "input": [
+    1
+   ],
+   "expected": "Positive"
+  },
+  {
+   "id": "positive",
+   "input": [
+    7
+   ],
+   "expected": "Positive"
+  },
+  {
+   "id": "max-is-positive",
+   "input": [
+    9223372036854775807
+   ],
+   "expected": "Positive"
+  }
+ ]
+}

@@ -4,12 +4,12 @@ Primitive Sley examples: seventeen native `graph_authoring.v0` packages with bou
 
 This repo complements the serious adoption toolkit in `sley-lang-tools` (Rust `sley-tools` CLI, Python/TypeScript/MCP SDKs, Playground, Repair Lab, Data Pipe, importers, Review). That toolkit is the machinery; this repo holds small native programs built with it. It does not duplicate the N01–N10 catalog (release-readiness, resource-admission, benchmark trio, tier-classifier, range-predicate, bounded-clamp, quota-remaining, generated-payload-validator).
 
-Corpus: 28 native examples — the seventeen 2.0.1 primitives below plus eleven
+Corpus: 30 native examples — the seventeen 2.0.1 primitives below plus thirteen
 2.0.3 compositions in `composed/`. Version-pinned authoring inputs,
 readable views, executable artifacts, boundary checks, and one worked
 modification per composed example. Counts, kept as separate categories:
-218 external assertions across the corpus (78 primitive + 140 composed)
-and 140 advisory workbench checks in the composed collection. Native
+233 external assertions across the corpus (78 primitive + 155 composed)
+and 155 advisory workbench checks in the composed collection. Native
 test-admitted maintenance remains unavailable through the documented
 route (`PENDING_CORE_EXECUTOR` / `NOT_RUN`); the split code-then-tests
 persistence does not close that limitation.
@@ -62,9 +62,9 @@ That covers the original examples, documentation, supporting scripts, and
 project-owned artifacts, except where another license or notice is
 expressly identified. See [NOTICE](NOTICE) for attribution.
 
-## Composed examples (C01–C11, sley-agent 2.0.3)
+## Composed examples (C01–C13, sley-agent 2.0.3)
 
-Eleven composed programs authored with the official 2.0.3 `sley-agent`
+Thirteen composed programs authored with the official 2.0.3 `sley-agent`
 workbench, kept in `composed/` strictly separate from the seventeen 2.0.1
 primitives above. The 2.0.1 pin, the seventeen packages, and the rebuild script
 are unchanged by them.
@@ -82,6 +82,8 @@ are unchanged by them.
 | C09 | `composed/days-in-month` | `days_in_month` → `Result<i64,DateError>` | 15 / 15 |
 | C10 | `composed/clamp-value` | `clamp_value` → `Result<i64,ClampError>` | 10 / 10 |
 | C11 | `composed/safe-quotient` | `safe_quotient` → `Result<i64,QuotientError>` | 8 / 8 |
+| C12 | `composed/safe-absolute` | `abs_value` → `Result<i64,AbsError>` | 8 / 8 |
+| C13 | `composed/sign-class` | `sign_class` → `Sign` | 7 / 7 |
 
 Each example holds exact authoring frames as run, a contract (parameter
 semantics, error precedence), independently expected cases, an external

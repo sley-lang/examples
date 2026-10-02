@@ -1,0 +1,54 @@
+{
+ "af1": 1,
+ "afx": 1,
+ "test_tables": [
+  {
+   "name": "sign_cases",
+   "fn": "sign_class",
+   "cases": [
+    {
+     "args": [
+      -5
+     ],
+     "expect": "Negative"
+    },
+    {
+     "args": [
+      -1
+     ],
+     "expect": "Negative"
+    },
+    {
+     "args": [
+      -9223372036854775808
+     ],
+     "expect": "Negative"
+    },
+    {
+     "args": [
+      0
+     ],
+     "expect": "Zero"
+    },
+    {
+     "args": [
+      1
+     ],
+     "expect": "Positive"
+    },
+    {
+     "args": [
+      7
+     ],
+     "expect": "Positive"
+    },
+    {
+     "args": [
+      9223372036854775807
+     ],
+     "expect": "Positive"
+    }
+   ]
+  }
+ ]
+}

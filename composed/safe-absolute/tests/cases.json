@@ -1,0 +1,78 @@
+{
+ "contract": "sley-agent.test-cases.v1",
+ "fn": "abs_value",
+ "cases": [
+  {
+   "id": "positive",
+   "input": [
+    5
+   ],
+   "expected": {
+    "Ok": 5
+   }
+  },
+  {
+   "id": "zero",
+   "input": [
+    0
+   ],
+   "expected": {
+    "Ok": 0
+   }
+  },
+  {
+   "id": "one",
+   "input": [
+    1
+   ],
+   "expected": {
+    "Ok": 1
+   }
+  },
+  {
+   "id": "negative-one",
+   "input": [
+    -1
+   ],
+   "expected": {
+    "Ok": 1
+   }
+  },
+  {
+   "id": "negative",
+   "input": [
+    -7
+   ],
+   "expected": {
+    "Ok": 7
+   }
+  },
+  {
+   "id": "max-stays",
+   "input": [
+    9223372036854775807
+   ],
+   "expected": {
+    "Ok": 9223372036854775807
+   }
+  },
+  {
+   "id": "neg-max-magnitude",
+   "input": [
+    -9223372036854775807
+   ],
+   "expected": {
+    "Ok": 9223372036854775807
+   }
+  },
+  {
+   "id": "min-overflows",
+   "input": [
+    -9223372036854775808
+   ],
+   "expected": {
+    "Err": "NegativeOverflow"
+   }
+  }
+ ]
+}

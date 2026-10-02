@@ -1,0 +1,28 @@
+# sley view (AV1, non-canonical) root=ae49cbdc
+# focus sign_class: context, not a completeness certificate
+fn sign_class(x: i64) -> Sign   [50bfdff6]
+  entry:
+    neg__a1 = const k_0 (0)
+    neg = lt x, neg__a1
+    cond neg -> is_neg, check_zero
+  check_zero:
+    zero__a1 = const k_0 (0)
+    zero = eq x, zero__a1
+    cond zero -> is_zero, is_pos
+  is_neg:
+    s = variant Sign.Negative
+    return s
+  is_zero:
+    s = variant Sign.Zero
+    return s
+  is_pos:
+    s = variant Sign.Positive
+    return s
+types: 1
+type Sign = Negative | Zero | Positive
+consts: 1
+const k_0: i64 = 0
+calls: none
+callers: none
+tests: 7: sign_cases_0, sign_cases_1, sign_cases_2, sign_cases_3, sign_cases_4, sign_cases_5, sign_cases_6
+boundary: exported; effects none; namespace none; callers outside it: none

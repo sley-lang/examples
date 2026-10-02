@@ -1,0 +1,96 @@
+{
+ "af1": 1,
+ "afx": 1,
+ "types": [
+  {
+   "name": "AbsError",
+   "variant": [
+    "NegativeOverflow"
+   ]
+  }
+ ],
+ "fns": [
+  {
+   "fn": "abs_value",
+   "params": [
+    [
+     "x",
+     "i64"
+    ]
+   ],
+   "returns": "Result<i64,AbsError>",
+   "blocks": [
+    {
+     "name": "entry",
+     "ops": [
+      [
+       "m",
+       "neg?NegativeOverflow",
+       "x"
+      ]
+     ],
+     "term": [
+      "ok",
+      "m"
+     ]
+    }
+   ]
+  }
+ ],
+ "test_tables": [
+  {
+   "name": "abs_cases",
+   "fn": "abs_value",
+   "cases": [
+    {
+     "args": [
+      5
+     ],
+     "expect": {
+      "Ok": -5
+     }
+    },
+    {
+     "args": [
+      0
+     ],
+     "expect": {
+      "Ok": 0
+     }
+    },
+    {
+     "args": [
+      -7
+     ],
+     "expect": {
+      "Ok": 7
+     }
+    },
+    {
+     "args": [
+      -1
+     ],
+     "expect": {
+      "Ok": 1
+     }
+    },
+    {
+     "args": [
+      9223372036854775807
+     ],
+     "expect": {
+      "Ok": -9223372036854775807
+     }
+    },
+    {
+     "args": [
+      -9223372036854775808
+     ],
+     "expect": {
+      "Err": "NegativeOverflow"
+     }
+    }
+   ]
+  }
+ ]
+}
