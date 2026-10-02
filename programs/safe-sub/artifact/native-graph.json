@@ -1,0 +1,70 @@
+{
+  "cases_json": "{\n  \"contract\": \"sley-tools.graph-cases.v0\",\n  \"cases\": [\n    {\"id\": \"small\", \"input\": [\"5\", \"3\"], \"expected\": {\"difference\": {\"ok\": \"2\"}}},\n    {\"id\": \"cancels\", \"input\": [\"5\", \"5\"], \"expected\": {\"difference\": {\"ok\": \"0\"}}},\n    {\"id\": \"zeros\", \"input\": [\"0\", \"0\"], \"expected\": {\"difference\": {\"ok\": \"0\"}}},\n    {\"id\": \"overflow-high\", \"input\": [\"9223372036854775807\", \"-1\"], \"expected\": {\"difference\": {\"error\": {\"code\": 1}}}},\n    {\"id\": \"overflow-low\", \"input\": [\"-9223372036854775808\", \"1\"], \"expected\": {\"difference\": {\"error\": {\"code\": 1}}}}\n  ]\n}\n",
+  "cases_sha256": "69605fc4cd93bd6121795ff31522282c8499b3d8253a1027b1f5efb4472e0f44",
+  "contract": "sley-tools.native-graph-artifact.v1",
+  "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+  "objects": [
+    {
+      "entity_id": "1466046bc00620d6ade9d465f19fad6a5c6eead992289b311d7ae1bb5277da12",
+      "kind": 8,
+      "object_id": "5748fe3343674ffbbf381369bcabe6a75462dad164a80bcf170e878bd11d438f",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ece010201201466046bc00620d6ade9d465f19fad6a5c6eead992289b311d7ae1bb5277da1202a80108a5010601205ea89aa493697ea412818c45b1965d02a4db1ebc171b65c6d06f55908ce18805020101030112042a01280226020120d9c6aa6c8412b9282968559d371991bdb294c96affddc39659642ce8af9e11b1020100052a01280a260201203315749afb5d384825797783f15f2cdc28c90672b0e69656ce4edbbc0e2c1cef020100062202203315749afb5d384825797783f15f2cdc28c90672b0e69656ce4edbbc0e2c1cef5748fe3343674ffbbf381369bcabe6a75462dad164a80bcf170e878bd11d438f"
+    },
+    {
+      "entity_id": "3315749afb5d384825797783f15f2cdc28c90672b0e69656ce4edbbc0e2c1cef",
+      "kind": 4,
+      "object_id": "46db1ba79d4ffb42a894641853182df396b4916daf7d1e030fd3acf7c4e86754",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e6c0201203315749afb5d384825797783f15f2cdc28c90672b0e69656ce4edbbc0e2c1cef02470445040101000239013701350301200101010101010101010101010101010101010101010101010101010101010101020d0e0b020103030140020314010103010103010004010146db1ba79d4ffb42a894641853182df396b4916daf7d1e030fd3acf7c4e86754"
+    },
+    {
+      "entity_id": "5ea89aa493697ea412818c45b1965d02a4db1ebc171b65c6d06f55908ce18805",
+      "kind": 7,
+      "object_id": "8cfd1458519dd0e65646ee6f64949c436d49ad81049650fb306e0ee64875ffbf",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ec6010201205ea89aa493697ea412818c45b1965d02a4db1ebc171b65c6d06f55908ce1880502a001079d01050120bf52e7d9ed2066a27699544597c3f53e30dd8e2e05407e6a8a70bb95d4e1948b02010003430220d9c6aa6c8412b9282968559d371991bdb294c96affddc39659642ce8af9e11b1201466046bc00620d6ade9d465f19fad6a5c6eead992289b311d7ae1bb5277da12042d012b01012802260201201466046bc00620d6ade9d465f19fad6a5c6eead992289b311d7ae1bb5277da120201000501018cfd1458519dd0e65646ee6f64949c436d49ad81049650fb306e0ee64875ffbf"
+    },
+    {
+      "entity_id": "670be538c4b2ba28ca07715b0e2ef616f7af8a86ee2aae46fbd571f07f6aff2c",
+      "kind": 6,
+      "object_id": "62eb7d23f28745273cf42aa3535d3991600c63be9c425d45e6fd6d5af3042e79",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e55020120670be538c4b2ba28ca07715b0e2ef616f7af8a86ee2aae46fbd571f07f6aff2c0230062e040120bf52e7d9ed2066a27699544597c3f53e30dd8e2e05407e6a8a70bb95d4e1948b020101030101040303014062eb7d23f28745273cf42aa3535d3991600c63be9c425d45e6fd6d5af3042e79"
+    },
+    {
+      "entity_id": "a54de2c795b8dad33fb26afbec15be4491291454a0164d82b64665909818e15e",
+      "kind": 6,
+      "object_id": "d5be88cc0e3197e497a3828e97bcc7c248f138bad103f157b90edd9c9c05bf38",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e55020120a54de2c795b8dad33fb26afbec15be4491291454a0164d82b64665909818e15e0230062e040120bf52e7d9ed2066a27699544597c3f53e30dd8e2e05407e6a8a70bb95d4e1948b0201010301000403030140d5be88cc0e3197e497a3828e97bcc7c248f138bad103f157b90edd9c9c05bf38"
+    },
+    {
+      "entity_id": "bf52e7d9ed2066a27699544597c3f53e30dd8e2e05407e6a8a70bb95d4e1948b",
+      "kind": 5,
+      "object_id": "88b7a2fc3af1db43680c626da024c78cea19ea11b85c059199e008de79c89e7e",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eeb01020120bf52e7d9ed2066a27699544597c3f53e30dd8e2e05407e6a8a70bb95d4e1948b02c50105c2010801010002430220a54de2c795b8dad33fb26afbec15be4491291454a0164d82b64665909818e15e20670be538c4b2ba28ca07715b0e2ef616f7af8a86ee2aae46fbd571f07f6aff2c03280a260201203315749afb5d384825797783f15f2cdc28c90672b0e69656ce4edbbc0e2c1cef02010004010005205ea89aa493697ea412818c45b1965d02a4db1ebc171b65c6d06f55908ce18805062201205ea89aa493697ea412818c45b1965d02a4db1ebc171b65c6d06f55908ce1880507010008010188b7a2fc3af1db43680c626da024c78cea19ea11b85c059199e008de79c89e7e"
+    },
+    {
+      "entity_id": "d9c6aa6c8412b9282968559d371991bdb294c96affddc39659642ce8af9e11b1",
+      "kind": 8,
+      "object_id": "30251cbd82cb76d6271bba2019a969aeaf3572c3d292c9bb8b174bb918be5b8f",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eb001020120d9c6aa6c8412b9282968559d371991bdb294c96affddc39659642ce8af9e11b1028a010887010601205ea89aa493697ea412818c45b1965d02a4db1ebc171b65c6d06f55908ce18805020100030141044702220120a54de2c795b8dad33fb26afbec15be4491291454a0164d82b64665909818e15e220120670be538c4b2ba28ca07715b0e2ef616f7af8a86ee2aae46fbd571f07f6aff2c050f010d0e0b02010303014002031401010602010030251cbd82cb76d6271bba2019a969aeaf3572c3d292c9bb8b174bb918be5b8f"
+    }
+  ],
+  "program_id": "safe-sub",
+  "recipe_json": "{\n  \"contract\": \"sley-tools.graph-authoring.v0\",\n  \"program_id\": \"safe-sub\",\n  \"title\": \"Safe Sub\",\n  \"purpose\": \"Subtract two signed values with native checked arithmetic and report overflow\",\n  \"parameters\": [\n    {\"name\": \"a\", \"value_type\": \"SInt64\"},\n    {\"name\": \"b\", \"value_type\": \"SInt64\"}\n  ],\n  \"constants\": [],\n  \"result\": {\"kind\": \"record\", \"fields\": [\n    {\"name\": \"difference\", \"value_type\": \"CheckedSInt64\"}\n  ]},\n  \"entry_block\": \"entry\",\n  \"blocks\": [{\n    \"name\": \"entry\",\n    \"operations\": [\n      {\"op\": \"int_sub_checked\", \"name\": \"total\", \"left\": \"param.a\", \"right\": \"param.b\"},\n      {\"op\": \"record_new\", \"name\": \"result\", \"fields\": [\"op.total\"]}\n    ],\n    \"terminator\": {\"kind\": \"return\", \"value\": \"op.result\"}\n  }]\n}\n",
+  "recipe_sha256": "5026797c9f0ec84843d1f69519176f1a2f6e6c1d2439cebe8f6d158a3edb29d5",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "difference",
+      "type": "CheckedSInt64"
+    }
+  ],
+  "schema_epoch_id": "a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e",
+  "source_constant_ids": {},
+  "source_function_id": "bf52e7d9ed2066a27699544597c3f53e30dd8e2e05407e6a8a70bb95d4e1948b",
+  "source_result_type_id": "3315749afb5d384825797783f15f2cdc28c90672b0e69656ce4edbbc0e2c1cef",
+  "source_state_root": "d488ef478d842722c32e4a390981a7b14820f51028affaeb73d74bf0fecf2331",
+  "test_evidence": {
+    "count": 5,
+    "kind": "external_assertions_against_native_execution",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable"
+  }
+}
