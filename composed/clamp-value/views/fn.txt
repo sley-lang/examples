@@ -1,0 +1,32 @@
+# sley view (AV1, non-canonical) root=21525846
+# focus clamp_value: context, not a completeness certificate
+fn clamp_value(value: i64, lo: i64, hi: i64) -> Result<i64,ClampError>   [8207435a]
+  entry:
+    entry__if0 = gt lo, hi
+    cond entry__if0 -> __fail_BadRange, entry__if0
+  use_lo:
+    use_lo__ok = ok lo
+    return use_lo__ok
+  check_hi:
+    high = gt value, hi
+    cond high -> use_hi, use_value
+  use_hi:
+    use_hi__ok = ok hi
+    return use_hi__ok
+  use_value:
+    use_value__ok = ok value
+    return use_value__ok
+  entry__if0:
+    low = lt value, lo
+    cond low -> use_lo, check_hi
+  __fail_BadRange:
+    v = variant ClampError.BadRange
+    r = err v
+    return r
+types: 1
+type ClampError = BadRange
+consts: none
+calls: none
+callers: none
+tests: 10: clamp_cases_0, clamp_cases_1, clamp_cases_2, clamp_cases_3, clamp_cases_4, clamp_cases_5, clamp_cases_6, clamp_cases_7, clamp_cases_8, clamp_cases_9
+boundary: exported; effects none; namespace none; callers outside it: none

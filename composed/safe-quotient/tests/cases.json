@@ -1,0 +1,86 @@
+{
+ "contract": "sley-agent.test-cases.v1",
+ "fn": "safe_quotient",
+ "cases": [
+  {
+   "id": "exact",
+   "input": [
+    6,
+    3
+   ],
+   "expected": {
+    "Ok": 2
+   }
+  },
+  {
+   "id": "truncates-positive",
+   "input": [
+    7,
+    2
+   ],
+   "expected": {
+    "Ok": 3
+   }
+  },
+  {
+   "id": "truncates-negative",
+   "input": [
+    -7,
+    2
+   ],
+   "expected": {
+    "Ok": -3
+   }
+  },
+  {
+   "id": "truncates-negative-denominator",
+   "input": [
+    7,
+    -2
+   ],
+   "expected": {
+    "Ok": -3
+   }
+  },
+  {
+   "id": "zero-numerator",
+   "input": [
+    0,
+    5
+   ],
+   "expected": {
+    "Ok": 0
+   }
+  },
+  {
+   "id": "divide-by-one",
+   "input": [
+    9,
+    1
+   ],
+   "expected": {
+    "Ok": 9
+   }
+  },
+  {
+   "id": "zero-denominator",
+   "input": [
+    5,
+    0
+   ],
+   "expected": {
+    "Err": "DivByZero"
+   }
+  },
+  {
+   "id": "min-by-negative-one",
+   "input": [
+    -9223372036854775808,
+    -1
+   ],
+   "expected": {
+    "Err": "Overflow"
+   }
+  }
+ ]
+}

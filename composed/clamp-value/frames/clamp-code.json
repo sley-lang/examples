@@ -1,0 +1,106 @@
+{
+ "af1": 1,
+ "afx": 1,
+ "types": [
+  {
+   "name": "ClampError",
+   "variant": [
+    "BadRange"
+   ]
+  }
+ ],
+ "fns": [
+  {
+   "fn": "clamp_value",
+   "params": [
+    [
+     "value",
+     "i64"
+    ],
+    [
+     "lo",
+     "i64"
+    ],
+    [
+     "hi",
+     "i64"
+    ]
+   ],
+   "returns": "Result<i64,ClampError>",
+   "blocks": [
+    {
+     "name": "entry",
+     "ops": [
+      [
+       "!BadRange",
+       "if",
+       [
+        "gt",
+        "lo",
+        "hi"
+       ]
+      ],
+      [
+       "low",
+       "lt",
+       "value",
+       "lo"
+      ]
+     ],
+     "term": [
+      "cond",
+      "low",
+      [
+       "use_lo"
+      ],
+      [
+       "check_hi"
+      ]
+     ]
+    },
+    {
+     "name": "use_lo",
+     "term": [
+      "ok",
+      "lo"
+     ]
+    },
+    {
+     "name": "check_hi",
+     "ops": [
+      [
+       "high",
+       "gt",
+       "value",
+       "hi"
+      ]
+     ],
+     "term": [
+      "cond",
+      "high",
+      [
+       "use_hi"
+      ],
+      [
+       "use_value"
+      ]
+     ]
+    },
+    {
+     "name": "use_hi",
+     "term": [
+      "ok",
+      "hi"
+     ]
+    },
+    {
+     "name": "use_value",
+     "term": [
+      "ok",
+      "value"
+     ]
+    }
+   ]
+  }
+ ]
+}

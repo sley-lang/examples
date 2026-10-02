@@ -1,0 +1,116 @@
+{
+ "contract": "sley-agent.test-cases.v1",
+ "fn": "clamp_value",
+ "cases": [
+  {
+   "id": "below-range",
+   "input": [
+    2,
+    5,
+    9
+   ],
+   "expected": {
+    "Ok": 5
+   }
+  },
+  {
+   "id": "on-lower",
+   "input": [
+    5,
+    5,
+    9
+   ],
+   "expected": {
+    "Ok": 5
+   }
+  },
+  {
+   "id": "mid-range",
+   "input": [
+    7,
+    5,
+    9
+   ],
+   "expected": {
+    "Ok": 7
+   }
+  },
+  {
+   "id": "on-upper",
+   "input": [
+    9,
+    5,
+    9
+   ],
+   "expected": {
+    "Ok": 9
+   }
+  },
+  {
+   "id": "above-range",
+   "input": [
+    12,
+    5,
+    9
+   ],
+   "expected": {
+    "Ok": 9
+   }
+  },
+  {
+   "id": "pinned-point",
+   "input": [
+    4,
+    4,
+    4
+   ],
+   "expected": {
+    "Ok": 4
+   }
+  },
+  {
+   "id": "negative-range",
+   "input": [
+    -3,
+    -9,
+    -1
+   ],
+   "expected": {
+    "Ok": -3
+   }
+  },
+  {
+   "id": "negative-above",
+   "input": [
+    5,
+    -9,
+    -1
+   ],
+   "expected": {
+    "Ok": -1
+   }
+  },
+  {
+   "id": "bad-range",
+   "input": [
+    7,
+    9,
+    5
+   ],
+   "expected": {
+    "Err": "BadRange"
+   }
+  },
+  {
+   "id": "bad-range-shadows-value",
+   "input": [
+    5,
+    9,
+    5
+   ],
+   "expected": {
+    "Err": "BadRange"
+   }
+  }
+ ]
+}

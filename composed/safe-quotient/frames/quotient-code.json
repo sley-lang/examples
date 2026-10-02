@@ -1,0 +1,55 @@
+{
+ "af1": 1,
+ "afx": 1,
+ "types": [
+  {
+   "name": "QuotientError",
+   "variant": [
+    "DivByZero",
+    "Overflow"
+   ]
+  }
+ ],
+ "fns": [
+  {
+   "fn": "safe_quotient",
+   "params": [
+    [
+     "num",
+     "i64"
+    ],
+    [
+     "den",
+     "i64"
+    ]
+   ],
+   "returns": "Result<i64,QuotientError>",
+   "blocks": [
+    {
+     "name": "entry",
+     "ops": [
+      [
+       "!DivByZero",
+       "if",
+       [
+        "eq",
+        "den",
+        0
+       ]
+      ],
+      [
+       "q",
+       "div?Overflow",
+       "num",
+       "den"
+      ]
+     ],
+     "term": [
+      "ok",
+      "q"
+     ]
+    }
+   ]
+  }
+ ]
+}

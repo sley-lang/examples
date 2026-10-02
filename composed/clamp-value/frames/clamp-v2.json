@@ -1,0 +1,214 @@
+{
+ "af1": 1,
+ "afx": 1,
+ "types": [
+  {
+   "name": "ClampError",
+   "variant": [
+    "BadRange"
+   ]
+  }
+ ],
+ "fns": [
+  {
+   "fn": "clamp_value",
+   "params": [
+    [
+     "value",
+     "i64"
+    ],
+    [
+     "lo",
+     "i64"
+    ],
+    [
+     "hi",
+     "i64"
+    ]
+   ],
+   "returns": "Result<i64,ClampError>",
+   "blocks": [
+    {
+     "name": "entry",
+     "ops": [
+      [
+       "!BadRange",
+       "if",
+       [
+        "gt",
+        "lo",
+        "hi"
+       ]
+      ],
+      [
+       "low",
+       "lt",
+       "value",
+       "lo"
+      ]
+     ],
+     "term": [
+      "cond",
+      "low",
+      [
+       "use_lo"
+      ],
+      [
+       "check_hi"
+      ]
+     ]
+    },
+    {
+     "name": "use_lo",
+     "term": [
+      "ok",
+      "lo"
+     ]
+    },
+    {
+     "name": "check_hi",
+     "ops": [
+      [
+       "high",
+       "gt",
+       "value",
+       "hi"
+      ]
+     ],
+     "term": [
+      "cond",
+      "high",
+      [
+       "use_hi"
+      ],
+      [
+       "use_value"
+      ]
+     ]
+    },
+    {
+     "name": "use_hi",
+     "term": [
+      "ok",
+      "hi"
+     ]
+    },
+    {
+     "name": "use_value",
+     "term": [
+      "ok",
+      "value"
+     ]
+    }
+   ]
+  }
+ ],
+ "test_tables": [
+  {
+   "name": "clamp_cases",
+   "fn": "clamp_value",
+   "cases": [
+    {
+     "args": [
+      2,
+      5,
+      9
+     ],
+     "expect": {
+      "Ok": 5
+     }
+    },
+    {
+     "args": [
+      5,
+      5,
+      9
+     ],
+     "expect": {
+      "Ok": 5
+     }
+    },
+    {
+     "args": [
+      7,
+      5,
+      9
+     ],
+     "expect": {
+      "Ok": 7
+     }
+    },
+    {
+     "args": [
+      9,
+      5,
+      9
+     ],
+     "expect": {
+      "Ok": 9
+     }
+    },
+    {
+     "args": [
+      12,
+      5,
+      9
+     ],
+     "expect": {
+      "Ok": 9
+     }
+    },
+    {
+     "args": [
+      4,
+      4,
+      4
+     ],
+     "expect": {
+      "Ok": 4
+     }
+    },
+    {
+     "args": [
+      -3,
+      -9,
+      -1
+     ],
+     "expect": {
+      "Ok": -3
+     }
+    },
+    {
+     "args": [
+      5,
+      -9,
+      -1
+     ],
+     "expect": {
+      "Ok": -1
+     }
+    },
+    {
+     "args": [
+      7,
+      9,
+      5
+     ],
+     "expect": {
+      "Err": "BadRange"
+     }
+    },
+    {
+     "args": [
+      5,
+      9,
+      5
+     ],
+     "expect": {
+      "Err": "BadRange"
+     }
+    }
+   ]
+  }
+ ]
+}

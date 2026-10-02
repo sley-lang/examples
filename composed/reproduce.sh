@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Reproduce the nine composed 2.0.3 examples from their durable locations.
+# Reproduce the eleven composed 2.0.3 examples from their durable locations.
 # Needs only this repo plus the official 2.0.3 agent binary — no pilot dir.
 #
 #   ./reproduce.sh --agent /path/to/sley-2.0.3-linux-x86_64/bin/sley-agent
@@ -61,5 +61,7 @@ run_one window-overlap     window-overlap     packs/overlap-committed.pack    te
 run_one quorum-decision    quorum-decision    packs/quorum-committed.pack     tests/check_external.py    quorum_decision
 run_one cooldown-gate      cooldown-gate      packs/gate-committed.pack       tests/check_external.py    cooldown_gate
 run_one days-in-month      days-in-month      packs/month-committed.pack      tests/check_external.py    days_in_month
+run_one clamp-value        clamp-value        packs/clamp-committed.pack      tests/check_external.py    clamp_value
+run_one safe-quotient      safe-quotient      packs/quotient-committed.pack   tests/check_external.py    safe_quotient
 
-echo "All nine composed examples reproduced from durable locations."
+echo "All eleven composed examples reproduced from durable locations."

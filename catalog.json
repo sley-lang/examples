@@ -368,6 +368,42 @@
       },
       "pack": "composed/days-in-month/packs/month-committed.pack",
       "status": "workbench_verified_and_reimported"
+    },
+    {
+      "id": "C10",
+      "program_id": "clamp-value",
+      "responsibility": "Pin a signed value into a closed interval, with a bad-range guard that shadows in-range values",
+      "package": "composed/clamp-value",
+      "entrypoint": "clamp_value",
+      "frames": "composed/clamp-value/frames",
+      "cases": "composed/clamp-value/tests/cases.json",
+      "workbench_checks": 10,
+      "external_assertions": 10,
+      "persistence": {
+        "combined_commit": "REFUSED_TXN_TEST_EVIDENCE_UNSUPPORTED",
+        "code_txn": "e746a959",
+        "tests_txn": "339f4e52"
+      },
+      "pack": "composed/clamp-value/packs/clamp-committed.pack",
+      "status": "workbench_verified_and_reimported"
+    },
+    {
+      "id": "C11",
+      "program_id": "safe-quotient",
+      "responsibility": "Truncating integer division with the zero denominator reported as its own case ahead of arithmetic overflow",
+      "package": "composed/safe-quotient",
+      "entrypoint": "safe_quotient",
+      "frames": "composed/safe-quotient/frames",
+      "cases": "composed/safe-quotient/tests/cases.json",
+      "workbench_checks": 8,
+      "external_assertions": 8,
+      "persistence": {
+        "combined_commit": "REFUSED_TXN_TEST_EVIDENCE_UNSUPPORTED",
+        "code_txn": "80fabe7a",
+        "tests_txn": "845d1de9"
+      },
+      "pack": "composed/safe-quotient/packs/quotient-committed.pack",
+      "status": "workbench_verified_and_reimported"
     }
   ]
 }

@@ -1,0 +1,29 @@
+# sley view (AV1, non-canonical) root=495ddbc9
+# focus safe_quotient: context, not a completeness certificate
+fn safe_quotient(num: i64, den: i64) -> Result<i64,QuotientError>   [31d673e5]
+  entry:
+    entry__if0__a1 = const k_0 (0)
+    entry__if0 = eq den, entry__if0__a1
+    cond entry__if0 -> __fail_DivByZero, entry__if0
+  entry__if0:
+    q__r = div num, den
+    switch q__r: Ok -> entry__q($), Err -> __fail_Overflow
+  entry__q(q: i64):
+    entry__ok = ok q
+    return entry__ok
+  __fail_DivByZero:
+    v = variant QuotientError.DivByZero
+    r = err v
+    return r
+  __fail_Overflow:
+    v = variant QuotientError.Overflow
+    r = err v
+    return r
+types: 1
+type QuotientError = DivByZero | Overflow
+consts: 1
+const k_0: i64 = 0
+calls: none
+callers: none
+tests: 8: quotient_cases_0, quotient_cases_1, quotient_cases_2, quotient_cases_3, quotient_cases_4, quotient_cases_5, quotient_cases_6, quotient_cases_7
+boundary: exported; effects none; namespace none; callers outside it: none

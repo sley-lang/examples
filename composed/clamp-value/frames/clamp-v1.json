@@ -1,0 +1,159 @@
+{
+ "af1": 1,
+ "afx": 1,
+ "types": [
+  {
+   "name": "ClampError",
+   "variant": [
+    "BadRange",
+    "OutOfRange"
+   ]
+  }
+ ],
+ "fns": [
+  {
+   "fn": "clamp_value",
+   "params": [
+    [
+     "value",
+     "i64"
+    ],
+    [
+     "lo",
+     "i64"
+    ],
+    [
+     "hi",
+     "i64"
+    ]
+   ],
+   "returns": "Result<i64,ClampError>",
+   "blocks": [
+    {
+     "name": "entry",
+     "ops": [
+      [
+       "!BadRange",
+       "if",
+       [
+        "gt",
+        "lo",
+        "hi"
+       ]
+      ],
+      [
+       "!OutOfRange",
+       "if",
+       [
+        "lt",
+        "value",
+        "lo"
+       ]
+      ],
+      [
+       "!OutOfRange",
+       "if",
+       [
+        "gt",
+        "value",
+        "hi"
+       ]
+      ]
+     ],
+     "term": [
+      "ok",
+      "value"
+     ]
+    }
+   ]
+  }
+ ],
+ "test_tables": [
+  {
+   "name": "clamp_cases",
+   "fn": "clamp_value",
+   "cases": [
+    {
+     "args": [
+      2,
+      5,
+      9
+     ],
+     "expect": {
+      "Err": "OutOfRange"
+     }
+    },
+    {
+     "args": [
+      5,
+      5,
+      9
+     ],
+     "expect": {
+      "Ok": 5
+     }
+    },
+    {
+     "args": [
+      7,
+      5,
+      9
+     ],
+     "expect": {
+      "Ok": 7
+     }
+    },
+    {
+     "args": [
+      9,
+      5,
+      9
+     ],
+     "expect": {
+      "Ok": 9
+     }
+    },
+    {
+     "args": [
+      12,
+      5,
+      9
+     ],
+     "expect": {
+      "Err": "OutOfRange"
+     }
+    },
+    {
+     "args": [
+      4,
+      4,
+      4
+     ],
+     "expect": {
+      "Ok": 4
+     }
+    },
+    {
+     "args": [
+      7,
+      9,
+      5
+     ],
+     "expect": {
+      "Err": "BadRange"
+     }
+    },
+    {
+     "args": [
+      5,
+      9,
+      5
+     ],
+     "expect": {
+      "Err": "BadRange"
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,6 +1,6 @@
-# Composed examples (C01–C09, sley-agent 2.0.3)
+# Composed examples (C01–C11, sley-agent 2.0.3)
 
-Nine composed Sley programs authored with the official 2.0.3 `sley-agent`
+Eleven composed Sley programs authored with the official 2.0.3 `sley-agent`
 workbench, kept strictly separate from the seven 2.0.1 primitive examples
 in `programs/`. Nothing here changes the 2.0.1 pin, the seven primitives,
 or the serious toolkit — and no new framework was introduced: each example
@@ -18,6 +18,8 @@ with an exported pack for reimport.
 | C07 | `quorum-decision` | `quorum_decision(yes,no,abstain,quorum) -> Result<QuorumOutcome,QuorumError>` | 14 / 14 |
 | C08 | `cooldown-gate` | `cooldown_gate(failures,threshold,now,tripped_at,cooldown) -> Result<(GateState,i64),GateError>` | 15 / 15 |
 | C09 | `days-in-month` | `days_in_month(year,month) -> Result<i64,DateError>` | 15 / 15 |
+| C10 | `clamp-value` | `clamp_value(value,lo,hi) -> Result<i64,ClampError>` | 10 / 10 |
+| C11 | `safe-quotient` | `safe_quotient(num,den) -> Result<i64,QuotientError>` | 8 / 8 |
 
 Toolchain identity: `toolchain.json` (release archive, sha256, binary
 shas, build commit). The release documentation's own composition sketches
@@ -63,6 +65,8 @@ Each example was therefore persisted split: a code-only commit
 - C07: code `73c40f0b`, tests `0d2b561b`
 - C08: code `3be8a5b0`, tests `b4e51dd4`
 - C09: code `10e4887c`, tests `cf4e4cab`
+- C10: code `e746a959`, tests `339f4e52`
+- C11: code `80fabe7a`, tests `845d1de9`
 
 Code-only plus tests-after is two transactions, **not** a test-admitted
 atomic commit. See `admission-probe.md` for the fresh-import edit/commit
