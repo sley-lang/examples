@@ -1,0 +1,20 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "wrap-ok",
+  "title": "Wrap Checked Success",
+  "purpose": "Wrap one signed value in the checked success arm with native result_ok",
+  "parameters": [
+    {"name": "value", "value_type": "SInt64"}
+  ],
+  "constants": [],
+  "result": {"kind": "record", "fields": [{"name": "wrapped", "value_type": "CheckedSInt64"}]},
+  "entry_block": "entry",
+  "blocks": [{
+    "name": "entry",
+    "operations": [
+      {"op": "result_ok", "name": "wrapped", "operand": "param.value"},
+      {"op": "record_new", "name": "result", "fields": ["op.wrapped"]}
+    ],
+    "terminator": {"kind": "return", "value": "op.result"}
+  }]
+}

@@ -1,0 +1,61 @@
+{
+  "artifact": {
+    "contract": "sley-tools.native-graph-artifact.v1",
+    "path": "artifact/native-graph.json",
+    "sha256": "3f0713e75561de8fcc72716cd6ffd545a94a89b210718c8a5061ea539335c9b0"
+  },
+  "authoring_profile": "graph_v0",
+  "contract": "sley-tools.program.v0",
+  "core": {
+    "binary_sha256": "90f48df4d8b983d4bb643bd7c6663f990c33c5927f8ff6217db86d8275b7fd0e",
+    "commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+    "profile": "extended_v1"
+  },
+  "entrypoint": {
+    "function_id": "01cd7a639002d26a03a1b85f82bc26ab31623864e7d18d9c1f500ea592592a63",
+    "name": "evaluate",
+    "state_root": "44192031cd175447cb3a35bea1055d92b055f1d34ba7e12854785f04d087b404"
+  },
+  "graph_recipe": {
+    "path": "build/graph.json",
+    "sha256": "3709f280e1941241b409ceb71afd9af68b8d7fe9d9ca6c2c3fcbd38ebb58ee85"
+  },
+  "host_responsibility": "typed JSON input, local workspace lifecycle, and external assertions",
+  "inputs": {
+    "value": "SInt64"
+  },
+  "license_status": "Apache-2.0",
+  "native_logic": "pure typed graph declared by the bound local recipe",
+  "output": {
+    "fields": {
+      "wrapped": "CheckedSInt64"
+    },
+    "type": "Record"
+  },
+  "program_id": "wrap-ok",
+  "program_version": "0.1.0-local",
+  "purpose": "Wrap one signed value in the checked success arm with native result_ok",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "wrapped",
+      "type": "CheckedSInt64"
+    }
+  ],
+  "result_type_id": "047a834f760df98ccaebfba2df748634a6d6829f0755dd7b29ead71c9cde372d",
+  "source_provenance": {
+    "builder": "crates/backend/src/graph.rs",
+    "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24"
+  },
+  "status": "portable_native_artifact",
+  "test_cases": {
+    "external_assertions": "sley-tools test --project PROJECT",
+    "independent_oracle": "tests/cases.json",
+    "native_core_test_admission": "PENDING_CORE_EXECUTOR"
+  },
+  "title": "Wrap Checked Success",
+  "tools_contract": "sley-tools.cli.v0",
+  "worked_change": {
+    "status": "pending"
+  }
+}

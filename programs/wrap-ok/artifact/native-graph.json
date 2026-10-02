@@ -1,0 +1,64 @@
+{
+  "cases_json": "{\n  \"contract\": \"sley-tools.graph-cases.v0\",\n  \"cases\": [\n    {\"id\": \"positive\", \"input\": [\"5\"], \"expected\": {\"wrapped\": {\"ok\": \"5\"}}},\n    {\"id\": \"negative\", \"input\": [\"-7\"], \"expected\": {\"wrapped\": {\"ok\": \"-7\"}}},\n    {\"id\": \"zero\", \"input\": [\"0\"], \"expected\": {\"wrapped\": {\"ok\": \"0\"}}},\n    {\"id\": \"maximum\", \"input\": [\"9223372036854775807\"], \"expected\": {\"wrapped\": {\"ok\": \"9223372036854775807\"}}},\n    {\"id\": \"minimum\", \"input\": [\"-9223372036854775808\"], \"expected\": {\"wrapped\": {\"ok\": \"-9223372036854775808\"}}}\n  ]\n}\n",
+  "cases_sha256": "137f0439d686858932fd84534d6a238ec0434aa0b41a9622d03fdb54fe3b1edd",
+  "contract": "sley-tools.native-graph-artifact.v1",
+  "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+  "objects": [
+    {
+      "entity_id": "01cd7a639002d26a03a1b85f82bc26ab31623864e7d18d9c1f500ea592592a63",
+      "kind": 5,
+      "object_id": "bd41225ef41b763336e16e4c730a076239d592aeec643af6eac0f271b6d3ed02",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eca0102012001cd7a639002d26a03a1b85f82bc26ab31623864e7d18d9c1f500ea592592a6302a40105a10108010100022201209006612d4abdba5ad592c86429b6e7bf2001d88e92370eeff4fcdf4c5e2884cf03280a26020120047a834f760df98ccaebfba2df748634a6d6829f0755dd7b29ead71c9cde372d0201000401000520f7c03c403a677b2a89f7a618e90daf183f7c3f2a819369e102ad5cec21932a3506220120f7c03c403a677b2a89f7a618e90daf183f7c3f2a819369e102ad5cec21932a35070100080101bd41225ef41b763336e16e4c730a076239d592aeec643af6eac0f271b6d3ed02"
+    },
+    {
+      "entity_id": "047a834f760df98ccaebfba2df748634a6d6829f0755dd7b29ead71c9cde372d",
+      "kind": 4,
+      "object_id": "b81a3019b2868521229d5a899616873d9ae009a7490264d40a07ed9f6c54120e",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e6c020120047a834f760df98ccaebfba2df748634a6d6829f0755dd7b29ead71c9cde372d02470445040101000239013701350301200101010101010101010101010101010101010101010101010101010101010101020d0e0b0201030301400203140101030101030100040101b81a3019b2868521229d5a899616873d9ae009a7490264d40a07ed9f6c54120e"
+    },
+    {
+      "entity_id": "53b16423496b953f3e26fe90e17fd4f4d5f3133b00fb368528b273b7ab1ee8b3",
+      "kind": 8,
+      "object_id": "d5acc767036d567a340594b06da48ccf4fbf0b59c5f5601b1deb361b5051e192",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e8c0102012053b16423496b953f3e26fe90e17fd4f4d5f3133b00fb368528b273b7ab1ee8b302670865060120f7c03c403a677b2a89f7a618e90daf183f7c3f2a819369e102ad5cec21932a35020100030282010424012201209006612d4abdba5ad592c86429b6e7bf2001d88e92370eeff4fcdf4c5e2884cf050f010d0e0b020103030140020314010106020100d5acc767036d567a340594b06da48ccf4fbf0b59c5f5601b1deb361b5051e192"
+    },
+    {
+      "entity_id": "897286d7cb813501ac7b770168ae4332d0d7763b1e7fb60af1817a5c7cce8be9",
+      "kind": 8,
+      "object_id": "1325ad11a50120c4fc451880fb29d07940ae0595f11e4ac84393c771076d8084",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ece01020120897286d7cb813501ac7b770168ae4332d0d7763b1e7fb60af1817a5c7cce8be902a80108a501060120f7c03c403a677b2a89f7a618e90daf183f7c3f2a819369e102ad5cec21932a35020101030112042a0128022602012053b16423496b953f3e26fe90e17fd4f4d5f3133b00fb368528b273b7ab1ee8b3020100052a01280a26020120047a834f760df98ccaebfba2df748634a6d6829f0755dd7b29ead71c9cde372d02010006220220047a834f760df98ccaebfba2df748634a6d6829f0755dd7b29ead71c9cde372d1325ad11a50120c4fc451880fb29d07940ae0595f11e4ac84393c771076d8084"
+    },
+    {
+      "entity_id": "9006612d4abdba5ad592c86429b6e7bf2001d88e92370eeff4fcdf4c5e2884cf",
+      "kind": 6,
+      "object_id": "b81eae223a3ef9a2266a867bad141909b3c1751af7053cdf45763968891ea9f3",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e550201209006612d4abdba5ad592c86429b6e7bf2001d88e92370eeff4fcdf4c5e2884cf0230062e04012001cd7a639002d26a03a1b85f82bc26ab31623864e7d18d9c1f500ea592592a630201010301000403030140b81eae223a3ef9a2266a867bad141909b3c1751af7053cdf45763968891ea9f3"
+    },
+    {
+      "entity_id": "f7c03c403a677b2a89f7a618e90daf183f7c3f2a819369e102ad5cec21932a35",
+      "kind": 7,
+      "object_id": "13ac48affe7006e401c4a86a6d7c823686c4d1436fad0134c48d27f0aa0b4a0c",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ec601020120f7c03c403a677b2a89f7a618e90daf183f7c3f2a819369e102ad5cec21932a3502a001079d0105012001cd7a639002d26a03a1b85f82bc26ab31623864e7d18d9c1f500ea592592a630201000343022053b16423496b953f3e26fe90e17fd4f4d5f3133b00fb368528b273b7ab1ee8b320897286d7cb813501ac7b770168ae4332d0d7763b1e7fb60af1817a5c7cce8be9042d012b0101280226020120897286d7cb813501ac7b770168ae4332d0d7763b1e7fb60af1817a5c7cce8be902010005010113ac48affe7006e401c4a86a6d7c823686c4d1436fad0134c48d27f0aa0b4a0c"
+    }
+  ],
+  "program_id": "wrap-ok",
+  "recipe_json": "{\n  \"contract\": \"sley-tools.graph-authoring.v0\",\n  \"program_id\": \"wrap-ok\",\n  \"title\": \"Wrap Checked Success\",\n  \"purpose\": \"Wrap one signed value in the checked success arm with native result_ok\",\n  \"parameters\": [\n    {\"name\": \"value\", \"value_type\": \"SInt64\"}\n  ],\n  \"constants\": [],\n  \"result\": {\"kind\": \"record\", \"fields\": [{\"name\": \"wrapped\", \"value_type\": \"CheckedSInt64\"}]},\n  \"entry_block\": \"entry\",\n  \"blocks\": [{\n    \"name\": \"entry\",\n    \"operations\": [\n      {\"op\": \"result_ok\", \"name\": \"wrapped\", \"operand\": \"param.value\"},\n      {\"op\": \"record_new\", \"name\": \"result\", \"fields\": [\"op.wrapped\"]}\n    ],\n    \"terminator\": {\"kind\": \"return\", \"value\": \"op.result\"}\n  }]\n}\n",
+  "recipe_sha256": "3709f280e1941241b409ceb71afd9af68b8d7fe9d9ca6c2c3fcbd38ebb58ee85",
+  "result_fields": [
+    {
+      "member_id": "0101010101010101010101010101010101010101010101010101010101010101",
+      "name": "wrapped",
+      "type": "CheckedSInt64"
+    }
+  ],
+  "schema_epoch_id": "a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e",
+  "source_constant_ids": {},
+  "source_function_id": "01cd7a639002d26a03a1b85f82bc26ab31623864e7d18d9c1f500ea592592a63",
+  "source_result_type_id": "047a834f760df98ccaebfba2df748634a6d6829f0755dd7b29ead71c9cde372d",
+  "source_state_root": "44192031cd175447cb3a35bea1055d92b055f1d34ba7e12854785f04d087b404",
+  "test_evidence": {
+    "count": 5,
+    "kind": "external_assertions_against_native_execution",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable"
+  }
+}

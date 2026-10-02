@@ -1,0 +1,7 @@
+{
+  "contract": "sley-tools.graph-cases.v0",
+  "cases": [
+    {"id": "true", "input": [true], "expected": false},
+    {"id": "false", "input": [false], "expected": true}
+  ]
+}

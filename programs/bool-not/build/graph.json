@@ -1,0 +1,17 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "bool-not",
+  "title": "Boolean Negation",
+  "purpose": "Negate one Boolean value with native bool_not",
+  "parameters": [{"name": "flag", "value_type": "Bool"}],
+  "constants": [],
+  "result": {"kind": "primitive", "value_type": "Bool"},
+  "entry_block": "entry",
+  "blocks": [{
+    "name": "entry",
+    "operations": [
+      {"op": "bool_not", "name": "denied", "operand": "param.flag"}
+    ],
+    "terminator": {"kind": "return", "value": "op.denied"}
+  }]
+}

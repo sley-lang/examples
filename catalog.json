@@ -182,6 +182,28 @@
       "cases": "programs/at-or-above/tests/cases.json",
       "external_assertions": 5,
       "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S16",
+      "program_id": "bool-not",
+      "responsibility": "Negate one Boolean value",
+      "package": "programs/bool-not",
+      "artifact": "programs/bool-not/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/bool-not/tests/cases.json",
+      "external_assertions": 2,
+      "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S17",
+      "program_id": "wrap-ok",
+      "responsibility": "Wrap one signed value in the checked success arm",
+      "package": "programs/wrap-ok",
+      "artifact": "programs/wrap-ok/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/wrap-ok/tests/cases.json",
+      "external_assertions": 5,
+      "status": "verified_local_artifact_and_reimport"
     }
   ],
   "composed": [

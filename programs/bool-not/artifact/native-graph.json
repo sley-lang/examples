@@ -1,0 +1,46 @@
+{
+  "cases_json": "{\n  \"contract\": \"sley-tools.graph-cases.v0\",\n  \"cases\": [\n    {\"id\": \"true\", \"input\": [true], \"expected\": false},\n    {\"id\": \"false\", \"input\": [false], \"expected\": true}\n  ]\n}\n",
+  "cases_sha256": "a3bc3fc057f7e9efe65f32fe905540f5db9a8761e469a804dd9467bb74f8ce57",
+  "contract": "sley-tools.native-graph-artifact.v1",
+  "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+  "objects": [
+    {
+      "entity_id": "7b8087be7041af8f91d86e304e2e0ac9450ca75d95808a855c5781c1fd018711",
+      "kind": 7,
+      "object_id": "f2e7e4f11493a4c36702ae33403e253ba4f93f15606d631d62b005ffc1640df5",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ea3010201207b8087be7041af8f91d86e304e2e0ac9450ca75d95808a855c5781c1fd018711027e077c050120ec0cb8a8798f671a18c798926aadd5085afad2adb20e69a667b46098a283a91b02010003220120cf6f2ec737b51e6740d83a32ba5ab8ed190baf16fc61433997606d68660e6c92042d012b0101280226020120cf6f2ec737b51e6740d83a32ba5ab8ed190baf16fc61433997606d68660e6c92020100050101f2e7e4f11493a4c36702ae33403e253ba4f93f15606d631d62b005ffc1640df5"
+    },
+    {
+      "entity_id": "89aadf875c84432fb3adaf5cf0a664884532d4bdf9d09781d307a9b055e491c0",
+      "kind": 6,
+      "object_id": "45e0ad4bb6389f6726d9eaf1d3076339fd561f7606bdc61499a799df751dd934",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e5402012089aadf875c84432fb3adaf5cf0a664884532d4bdf9d09781d307a9b055e491c0022f062d040120ec0cb8a8798f671a18c798926aadd5085afad2adb20e69a667b46098a283a91b0201010301000402020045e0ad4bb6389f6726d9eaf1d3076339fd561f7606bdc61499a799df751dd934"
+    },
+    {
+      "entity_id": "cf6f2ec737b51e6740d83a32ba5ab8ed190baf16fc61433997606d68660e6c92",
+      "kind": 8,
+      "object_id": "c5bc6be79ec1caf4a8f03e846d12b43ca2f205217984ac595dd983cc87326320",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e8001020120cf6f2ec737b51e6740d83a32ba5ab8ed190baf16fc61433997606d68660e6c92025b08590601207b8087be7041af8f91d86e304e2e0ac9450ca75d95808a855c5781c1fd01871102010003016604240122012089aadf875c84432fb3adaf5cf0a664884532d4bdf9d09781d307a9b055e491c005040102020006020100c5bc6be79ec1caf4a8f03e846d12b43ca2f205217984ac595dd983cc87326320"
+    },
+    {
+      "entity_id": "ec0cb8a8798f671a18c798926aadd5085afad2adb20e69a667b46098a283a91b",
+      "kind": 5,
+      "object_id": "39d1ed57680245320cb4ed1b18b3aaf2757bd6dccdd9f38dc12ae7c388a79f39",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ea201020120ec0cb8a8798f671a18c798926aadd5085afad2adb20e69a667b46098a283a91b027d057b080101000222012089aadf875c84432fb3adaf5cf0a664884532d4bdf9d09781d307a9b055e491c00302020004010005207b8087be7041af8f91d86e304e2e0ac9450ca75d95808a855c5781c1fd018711062201207b8087be7041af8f91d86e304e2e0ac9450ca75d95808a855c5781c1fd01871107010008010139d1ed57680245320cb4ed1b18b3aaf2757bd6dccdd9f38dc12ae7c388a79f39"
+    }
+  ],
+  "program_id": "bool-not",
+  "recipe_json": "{\n  \"contract\": \"sley-tools.graph-authoring.v0\",\n  \"program_id\": \"bool-not\",\n  \"title\": \"Boolean Negation\",\n  \"purpose\": \"Negate one Boolean value with native bool_not\",\n  \"parameters\": [{\"name\": \"flag\", \"value_type\": \"Bool\"}],\n  \"constants\": [],\n  \"result\": {\"kind\": \"primitive\", \"value_type\": \"Bool\"},\n  \"entry_block\": \"entry\",\n  \"blocks\": [{\n    \"name\": \"entry\",\n    \"operations\": [\n      {\"op\": \"bool_not\", \"name\": \"denied\", \"operand\": \"param.flag\"}\n    ],\n    \"terminator\": {\"kind\": \"return\", \"value\": \"op.denied\"}\n  }]\n}\n",
+  "recipe_sha256": "07c77f0faaeb6817f1372095dd06ec51a3fd374396a23519235a3ef2cadb2b1c",
+  "result_fields": [],
+  "schema_epoch_id": "a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e",
+  "source_constant_ids": {},
+  "source_function_id": "ec0cb8a8798f671a18c798926aadd5085afad2adb20e69a667b46098a283a91b",
+  "source_result_type_id": null,
+  "source_state_root": "cf6da3fe75e60b009fd4a27bb0ea686003848d8780ee47602d7857c9e0608cdb",
+  "test_evidence": {
+    "count": 2,
+    "kind": "external_assertions_against_native_execution",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable"
+  }
+}
