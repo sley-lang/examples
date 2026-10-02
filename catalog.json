@@ -160,6 +160,28 @@
       "cases": "programs/not-equal/tests/cases.json",
       "external_assertions": 5,
       "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S14",
+      "program_id": "at-or-below",
+      "responsibility": "Decide whether a signed value is at or below zero",
+      "package": "programs/at-or-below",
+      "artifact": "programs/at-or-below/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/at-or-below/tests/cases.json",
+      "external_assertions": 5,
+      "status": "verified_local_artifact_and_reimport"
+    },
+    {
+      "id": "S15",
+      "program_id": "at-or-above",
+      "responsibility": "Decide whether a signed value is at or above zero",
+      "package": "programs/at-or-above",
+      "artifact": "programs/at-or-above/artifact/native-graph.json",
+      "entrypoint": "evaluate",
+      "cases": "programs/at-or-above/tests/cases.json",
+      "external_assertions": 5,
+      "status": "verified_local_artifact_and_reimport"
     }
   ],
   "composed": [

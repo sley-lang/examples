@@ -1,20 +1,20 @@
 # Sley Simple Tools
 
-Primitive Sley examples: thirteen native `graph_authoring.v0` packages with bound portable artifacts and independently expected cases. These are primitive examples of single operations and small compositions — not substantial end-user tools. They exist to pin the verified 2.0.1 authoring baseline: one readable recipe per program, one executable artifact, and a round-trip check each.
+Primitive Sley examples: fifteen native `graph_authoring.v0` packages with bound portable artifacts and independently expected cases. These are primitive examples of single operations and small compositions — not substantial end-user tools. They exist to pin the verified 2.0.1 authoring baseline: one readable recipe per program, one executable artifact, and a round-trip check each.
 
 This repo complements the serious adoption toolkit in `sley-lang-tools` (Rust `sley-tools` CLI, Python/TypeScript/MCP SDKs, Playground, Repair Lab, Data Pipe, importers, Review). That toolkit is the machinery; this repo holds small native programs built with it. It does not duplicate the N01–N10 catalog (release-readiness, resource-admission, benchmark trio, tier-classifier, range-predicate, bounded-clamp, quota-remaining, generated-payload-validator).
 
-Corpus: 22 native examples — the thirteen 2.0.1 primitives below plus nine
+Corpus: 24 native examples — the fifteen 2.0.1 primitives below plus nine
 2.0.3 compositions in `composed/`. Version-pinned authoring inputs,
 readable views, executable artifacts, boundary checks, and one worked
 modification per composed example. Counts, kept as separate categories:
-183 external assertions across the corpus (61 primitive + 122 composed)
+193 external assertions across the corpus (71 primitive + 122 composed)
 and 122 advisory workbench checks in the composed collection. Native
 test-admitted maintenance remains unavailable through the documented
 route (`PENDING_CORE_EXECUTOR` / `NOT_RUN`); the split code-then-tests
 persistence does not close that limitation.
 
-## Primitive examples (13 total, 61 external assertions)
+## Primitive examples (15 total, 71 external assertions)
 
 | ID | Program | What runs natively | Cases |
 |----|---------|-------------------|-------|
@@ -31,6 +31,8 @@ persistence does not close that limitation.
 | S11 | `programs/safe-mul` | `int_mul_checked` → `{product: CheckedSInt64}` | 5 |
 | S12 | `programs/safe-neg` | `int_neg_checked` → `{negated: CheckedSInt64}` | 5 |
 | S13 | `programs/not-equal` | `not_equal` vs 42 → `Bool` | 5 |
+| S14 | `programs/at-or-below` | `less_equal` vs 0 → `Bool` | 5 |
+| S15 | `programs/at-or-above` | `greater_equal` vs 0 → `Bool` | 5 |
 
 Each package holds `build/graph.json` (authoring recipe), `tests/cases.json` (independently expected), `program.json` (manifest bound to the artifact by `sley-tools artifact export --bind-manifest`), and `artifact/native-graph.json` (portable native graph). Sley has no source syntax: the accepted SSMC1 graph is the program; the recipe is only the authoring input.
 
@@ -38,7 +40,7 @@ Each package holds `build/graph.json` (authoring recipe), `tests/cases.json` (in
 
 - Core: Sley `2.0.1` (`sley-2.0.1-linux-x86_64.tar.gz`, commit `c748dda`), binary sha `90f48df4…`.
 - Builder: `sley-lang-tools` `sley-tools` backend, `graph_authoring.v0`.
-- External execution assertions: 61 total across the thirteen programs, all PASS at build time; every artifact reimports into a fresh workspace and re-passes.
+- External execution assertions: 71 total across the fifteen programs, all PASS at build time; every artifact reimports into a fresh workspace and re-passes.
 - Native test admission: `PENDING_CORE_EXECUTOR` on the selected 2.0.1 core (`NOT_RUN: production native executor unavailable`). This is reported separately and is not covered by the assertion counts above.
 
 ## Rebuild everything
@@ -49,7 +51,7 @@ Each package holds `build/graph.json` (authoring recipe), `tests/cases.json` (in
   --core /tmp/sley-simple-core/sley-2.0.1-linux-x86_64/bin/sley
 ```
 
-The script re-runs `init` + `test` + bound `artifact export` + fresh-workspace `artifact import` + re-`test` for all thirteen programs and refreshes `program.json` and `artifact/native-graph.json` in place. It refuses to run with uncommitted changes unless `--allow-dirty` is passed.
+The script re-runs `init` + `test` + bound `artifact export` + fresh-workspace `artifact import` + re-`test` for all fifteen programs and refreshes `program.json` and `artifact/native-graph.json` in place. It refuses to run with uncommitted changes unless `--allow-dirty` is passed.
 
 ## License
 
@@ -61,8 +63,8 @@ expressly identified. See [NOTICE](NOTICE) for attribution.
 ## Composed examples (C01–C09, sley-agent 2.0.3)
 
 Nine composed programs authored with the official 2.0.3 `sley-agent`
-workbench, kept in `composed/` strictly separate from the thirteen 2.0.1
-primitives above. The 2.0.1 pin, the thirteen packages, and the rebuild script
+workbench, kept in `composed/` strictly separate from the fifteen 2.0.1
+primitives above. The 2.0.1 pin, the fifteen packages, and the rebuild script
 are unchanged by them.
 
 | ID | Example | Function | Workbench checks / External |

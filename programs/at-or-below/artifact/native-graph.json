@@ -1,0 +1,60 @@
+{
+  "cases_json": "{\n  \"contract\": \"sley-tools.graph-cases.v0\",\n  \"cases\": [\n    {\"id\": \"minus-one\", \"input\": [\"-1\"], \"expected\": true},\n    {\"id\": \"minimum\", \"input\": [\"-9223372036854775808\"], \"expected\": true},\n    {\"id\": \"zero\", \"input\": [\"0\"], \"expected\": true},\n    {\"id\": \"one\", \"input\": [\"1\"], \"expected\": false},\n    {\"id\": \"maximum\", \"input\": [\"9223372036854775807\"], \"expected\": false}\n  ]\n}\n",
+  "cases_sha256": "9eeb89d846bbc294a13cf3bf8d514a28f1d972fb669d2fd8f7dbd8433bd1c3b1",
+  "contract": "sley-tools.native-graph-artifact.v1",
+  "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+  "objects": [
+    {
+      "entity_id": "54e0a72732b6407c10ed5af445dea03026ba34ae7371794421943d6c99de2d8c",
+      "kind": 8,
+      "object_id": "8446ca75196314694e0b73eb849aaaa93973b0bbdf3d57ddeeed7d86d3a95165",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7e02012054e0a72732b6407c10ed5af445dea03026ba34ae7371794421943d6c99de2d8c02590857060120eba3aad4794c8f25f02aaa4ab77f3cf2d16e202e17c38b214062b17751f1c9470201000301010401000505010303014006220220b83cf1bbf4112091bba9a14cf3fc452d6182dbbebb0aadb1eea6f60c40df27908446ca75196314694e0b73eb849aaaa93973b0bbdf3d57ddeeed7d86d3a95165"
+    },
+    {
+      "entity_id": "8471e9791d40575df49b8802c26a61f75189bde3bbea97d06e65ed0d2f120cd4",
+      "kind": 8,
+      "object_id": "8fab0b80d5c83a0248266f870059e65d1122ed5e12152ea1d75327a54fba7146",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eab010201208471e9791d40575df49b8802c26a61f75189bde3bbea97d06e65ed0d2f120cd4028501088201060120eba3aad4794c8f25f02aaa4ab77f3cf2d16e202e17c38b214062b17751f1c947020101030163044d02220120f48193c32cd99e0ec603ccb084d9d5566dce1584bee56174d98d0144e653fe9128022602012054e0a72732b6407c10ed5af445dea03026ba34ae7371794421943d6c99de2d8c020100050401020200060201008fab0b80d5c83a0248266f870059e65d1122ed5e12152ea1d75327a54fba7146"
+    },
+    {
+      "entity_id": "b347c48ba3d5e98423a1376d00474d2b311c90399c263df2f687ba9009208a4f",
+      "kind": 5,
+      "object_id": "590c199b8afed0822526acb20be33034337ba1ff568069bcbf623bef10bedbda",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ea201020120b347c48ba3d5e98423a1376d00474d2b311c90399c263df2f687ba9009208a4f027d057b0801010002220120f48193c32cd99e0ec603ccb084d9d5566dce1584bee56174d98d0144e653fe91030202000401000520eba3aad4794c8f25f02aaa4ab77f3cf2d16e202e17c38b214062b17751f1c94706220120eba3aad4794c8f25f02aaa4ab77f3cf2d16e202e17c38b214062b17751f1c947070100080101590c199b8afed0822526acb20be33034337ba1ff568069bcbf623bef10bedbda"
+    },
+    {
+      "entity_id": "b83cf1bbf4112091bba9a14cf3fc452d6182dbbebb0aadb1eea6f60c40df2790",
+      "kind": 9,
+      "object_id": "e8df920f690286afa97c4ba773349485812312cc6b08d1d20211049f3ca2607c",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e35020120b83cf1bbf4112091bba9a14cf3fc452d6182dbbebb0aadb1eea6f60c40df27900210090e01010b0201030301400203030100e8df920f690286afa97c4ba773349485812312cc6b08d1d20211049f3ca2607c"
+    },
+    {
+      "entity_id": "eba3aad4794c8f25f02aaa4ab77f3cf2d16e202e17c38b214062b17751f1c947",
+      "kind": 7,
+      "object_id": "65ed74ba26b6d3b4f5dc4ee63e3c1138ac63831260efdbee87da52a346edcc3a",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ec601020120eba3aad4794c8f25f02aaa4ab77f3cf2d16e202e17c38b214062b17751f1c94702a001079d01050120b347c48ba3d5e98423a1376d00474d2b311c90399c263df2f687ba9009208a4f0201000343022054e0a72732b6407c10ed5af445dea03026ba34ae7371794421943d6c99de2d8c208471e9791d40575df49b8802c26a61f75189bde3bbea97d06e65ed0d2f120cd4042d012b01012802260201208471e9791d40575df49b8802c26a61f75189bde3bbea97d06e65ed0d2f120cd402010005010165ed74ba26b6d3b4f5dc4ee63e3c1138ac63831260efdbee87da52a346edcc3a"
+    },
+    {
+      "entity_id": "f48193c32cd99e0ec603ccb084d9d5566dce1584bee56174d98d0144e653fe91",
+      "kind": 6,
+      "object_id": "658f0168aeba11f430a7a05af757c32070e58806098e15368abe774ba3901c18",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e55020120f48193c32cd99e0ec603ccb084d9d5566dce1584bee56174d98d0144e653fe910230062e040120b347c48ba3d5e98423a1376d00474d2b311c90399c263df2f687ba9009208a4f0201010301000403030140658f0168aeba11f430a7a05af757c32070e58806098e15368abe774ba3901c18"
+    }
+  ],
+  "program_id": "at-or-below",
+  "recipe_json": "{\n  \"contract\": \"sley-tools.graph-authoring.v0\",\n  \"program_id\": \"at-or-below\",\n  \"title\": \"At Or Below Zero\",\n  \"purpose\": \"Decide whether a signed value is at or below zero with native less_equal\",\n  \"parameters\": [{\"name\": \"value\", \"value_type\": \"SInt64\"}],\n  \"constants\": [{\"name\": \"zero\", \"value_type\": \"SInt64\", \"value\": \"0\"}],\n  \"result\": {\"kind\": \"primitive\", \"value_type\": \"Bool\"},\n  \"entry_block\": \"entry\",\n  \"blocks\": [{\n    \"name\": \"entry\",\n    \"operations\": [\n      {\"op\": \"constant_ref\", \"name\": \"origin\", \"constant\": \"zero\"},\n      {\"op\": \"less_equal\", \"name\": \"bounded\", \"left\": \"param.value\", \"right\": \"op.origin\"}\n    ],\n    \"terminator\": {\"kind\": \"return\", \"value\": \"op.bounded\"}\n  }]\n}\n",
+  "recipe_sha256": "1b65ca508e8e3c98d419daa4556842b375a502366dff2ed5861da4394076c990",
+  "result_fields": [],
+  "schema_epoch_id": "a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e",
+  "source_constant_ids": {
+    "zero": "b83cf1bbf4112091bba9a14cf3fc452d6182dbbebb0aadb1eea6f60c40df2790"
+  },
+  "source_function_id": "b347c48ba3d5e98423a1376d00474d2b311c90399c263df2f687ba9009208a4f",
+  "source_result_type_id": null,
+  "source_state_root": "4813d1efad46747e5388acca887f07308cd112a3b23d61cac413a6473bcc64ad",
+  "test_evidence": {
+    "count": 5,
+    "kind": "external_assertions_against_native_execution",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable"
+  }
+}

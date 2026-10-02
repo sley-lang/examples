@@ -1,0 +1,18 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "at-or-above",
+  "title": "At Or Above Zero",
+  "purpose": "Decide whether a signed value is at or above zero with native greater_equal",
+  "parameters": [{"name": "value", "value_type": "SInt64"}],
+  "constants": [{"name": "zero", "value_type": "SInt64", "value": "0"}],
+  "result": {"kind": "primitive", "value_type": "Bool"},
+  "entry_block": "entry",
+  "blocks": [{
+    "name": "entry",
+    "operations": [
+      {"op": "constant_ref", "name": "origin", "constant": "zero"},
+      {"op": "greater_equal", "name": "bounded", "left": "param.value", "right": "op.origin"}
+    ],
+    "terminator": {"kind": "return", "value": "op.bounded"}
+  }]
+}

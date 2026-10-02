@@ -1,0 +1,10 @@
+{
+  "contract": "sley-tools.graph-cases.v0",
+  "cases": [
+    {"id": "minus-one", "input": ["-1"], "expected": true},
+    {"id": "minimum", "input": ["-9223372036854775808"], "expected": true},
+    {"id": "zero", "input": ["0"], "expected": true},
+    {"id": "one", "input": ["1"], "expected": false},
+    {"id": "maximum", "input": ["9223372036854775807"], "expected": false}
+  ]
+}
