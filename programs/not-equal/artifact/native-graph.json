@@ -1,0 +1,60 @@
+{
+  "cases_json": "{\n  \"contract\": \"sley-tools.graph-cases.v0\",\n  \"cases\": [\n    {\"id\": \"answer\", \"input\": [\"42\"], \"expected\": false},\n    {\"id\": \"below\", \"input\": [\"41\"], \"expected\": true},\n    {\"id\": \"above\", \"input\": [\"43\"], \"expected\": true},\n    {\"id\": \"zero\", \"input\": [\"0\"], \"expected\": true},\n    {\"id\": \"negated\", \"input\": [\"-42\"], \"expected\": true}\n  ]\n}\n",
+  "cases_sha256": "4633b1dc1d0f410204a4c75df10647ad944540353d004b4af8efd3fbf7cc348f",
+  "contract": "sley-tools.native-graph-artifact.v1",
+  "core_commit": "c748dda18c1276687cc3b0d1ef9b7f257eb09b24",
+  "objects": [
+    {
+      "entity_id": "a4972e8987cda5543c9219e894e6768f1dc538c609f2ee0e14a9aec70ffc6d17",
+      "kind": 6,
+      "object_id": "ffffcee2cbe962eba0152ab1118845858a7d6dee5767a84af0ea3b8bcba069b6",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e55020120a4972e8987cda5543c9219e894e6768f1dc538c609f2ee0e14a9aec70ffc6d170230062e040120acd5a745c5b191c8f357932f914074bc4ccdaddb186aa5bc6c121c619ecbbc2f0201010301000403030140ffffcee2cbe962eba0152ab1118845858a7d6dee5767a84af0ea3b8bcba069b6"
+    },
+    {
+      "entity_id": "a4a48a7adafd8f0a36886086766a87b32beb3949e750a9d630f79ad96b9f8599",
+      "kind": 7,
+      "object_id": "07981c830328103e326bc61f113536fbbf359f365172abea3b284f7a2183c589",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ec601020120a4a48a7adafd8f0a36886086766a87b32beb3949e750a9d630f79ad96b9f859902a001079d01050120acd5a745c5b191c8f357932f914074bc4ccdaddb186aa5bc6c121c619ecbbc2f02010003430220c8228b6e126c044b9885aff6759254128e99529e8b21c58d4cb0e262a324f13c20f26327e9d5ba24fbf76f097fbc56ef1c699324f2b8b825dc7cca8ef4dbc3316c042d012b0101280226020120f26327e9d5ba24fbf76f097fbc56ef1c699324f2b8b825dc7cca8ef4dbc3316c02010005010107981c830328103e326bc61f113536fbbf359f365172abea3b284f7a2183c589"
+    },
+    {
+      "entity_id": "acd5a745c5b191c8f357932f914074bc4ccdaddb186aa5bc6c121c619ecbbc2f",
+      "kind": 5,
+      "object_id": "2f0a84b91bb81c7feaa7ed75fc87c33d0fa5cfbc1f1bdcb5685e892faf878a26",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870ea201020120acd5a745c5b191c8f357932f914074bc4ccdaddb186aa5bc6c121c619ecbbc2f027d057b0801010002220120a4972e8987cda5543c9219e894e6768f1dc538c609f2ee0e14a9aec70ffc6d17030202000401000520a4a48a7adafd8f0a36886086766a87b32beb3949e750a9d630f79ad96b9f859906220120a4a48a7adafd8f0a36886086766a87b32beb3949e750a9d630f79ad96b9f85990701000801012f0a84b91bb81c7feaa7ed75fc87c33d0fa5cfbc1f1bdcb5685e892faf878a26"
+    },
+    {
+      "entity_id": "c06be9823e42adce460eb7d8e68b95457abfc6a83c3000b6e1f8897fe64d435a",
+      "kind": 9,
+      "object_id": "bfa17dc44beadf387f58f43f81324fab0ad99b47cdf1e0cec23c984c5b4cf18d",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e35020120c06be9823e42adce460eb7d8e68b95457abfc6a83c3000b6e1f8897fe64d435a0210090e01010b0201030301400203030154bfa17dc44beadf387f58f43f81324fab0ad99b47cdf1e0cec23c984c5b4cf18d"
+    },
+    {
+      "entity_id": "c8228b6e126c044b9885aff6759254128e99529e8b21c58d4cb0e262a324f13c",
+      "kind": 8,
+      "object_id": "220a3b864217647da17ef35b4fbc1eebb4290814f07eec572cca23c0bfdb29a4",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e7e020120c8228b6e126c044b9885aff6759254128e99529e8b21c58d4cb0e262a324f13c02590857060120a4a48a7adafd8f0a36886086766a87b32beb3949e750a9d630f79ad96b9f85990201000301010401000505010303014006220220c06be9823e42adce460eb7d8e68b95457abfc6a83c3000b6e1f8897fe64d435a220a3b864217647da17ef35b4fbc1eebb4290814f07eec572cca23c0bfdb29a4"
+    },
+    {
+      "entity_id": "f26327e9d5ba24fbf76f097fbc56ef1c699324f2b8b825dc7cca8ef4dbc3316c",
+      "kind": 8,
+      "object_id": "f2d85126f3aefdeff426b34fc92fc20c8bda6ce3e1744379ef74b465ca18171b",
+      "stored_hex": "534c45595343423101c801a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870eab01020120f26327e9d5ba24fbf76f097fbc56ef1c699324f2b8b825dc7cca8ef4dbc3316c028501088201060120a4a48a7adafd8f0a36886086766a87b32beb3949e750a9d630f79ad96b9f8599020101030161044d02220120a4972e8987cda5543c9219e894e6768f1dc538c609f2ee0e14a9aec70ffc6d17280226020120c8228b6e126c044b9885aff6759254128e99529e8b21c58d4cb0e262a324f13c02010005040102020006020100f2d85126f3aefdeff426b34fc92fc20c8bda6ce3e1744379ef74b465ca18171b"
+    }
+  ],
+  "program_id": "not-equal",
+  "recipe_json": "{\n  \"contract\": \"sley-tools.graph-authoring.v0\",\n  \"program_id\": \"not-equal\",\n  \"title\": \"Differs From Answer\",\n  \"purpose\": \"Decide whether a signed value differs from 42 with native not_equal\",\n  \"parameters\": [{\"name\": \"value\", \"value_type\": \"SInt64\"}],\n  \"constants\": [{\"name\": \"answer\", \"value_type\": \"SInt64\", \"value\": \"42\"}],\n  \"result\": {\"kind\": \"primitive\", \"value_type\": \"Bool\"},\n  \"entry_block\": \"entry\",\n  \"blocks\": [{\n    \"name\": \"entry\",\n    \"operations\": [\n      {\"op\": \"constant_ref\", \"name\": \"target\", \"constant\": \"answer\"},\n      {\"op\": \"not_equal\", \"name\": \"differs\", \"left\": \"param.value\", \"right\": \"op.target\"}\n    ],\n    \"terminator\": {\"kind\": \"return\", \"value\": \"op.differs\"}\n  }]\n}\n",
+  "recipe_sha256": "51acfd7aac44308e237385cc336857c9cf6ef1915c64571fd20c4283b787c774",
+  "result_fields": [],
+  "schema_epoch_id": "a7fcf97a85d41ef9b1c89394a324f2dc7ec875b9ded48a783104314857dc870e",
+  "source_constant_ids": {
+    "answer": "c06be9823e42adce460eb7d8e68b95457abfc6a83c3000b6e1f8897fe64d435a"
+  },
+  "source_function_id": "acd5a745c5b191c8f357932f914074bc4ccdaddb186aa5bc6c121c619ecbbc2f",
+  "source_result_type_id": null,
+  "source_state_root": "0bfb802fab204c8277089ab4bbedc8bf4ce17c60d912a9571fd36e86c08d56c7",
+  "test_evidence": {
+    "count": 5,
+    "kind": "external_assertions_against_native_execution",
+    "native_core_test_admission": "NOT_RUN: production native executor unavailable"
+  }
+}

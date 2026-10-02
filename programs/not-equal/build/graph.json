@@ -1,0 +1,18 @@
+{
+  "contract": "sley-tools.graph-authoring.v0",
+  "program_id": "not-equal",
+  "title": "Differs From Answer",
+  "purpose": "Decide whether a signed value differs from 42 with native not_equal",
+  "parameters": [{"name": "value", "value_type": "SInt64"}],
+  "constants": [{"name": "answer", "value_type": "SInt64", "value": "42"}],
+  "result": {"kind": "primitive", "value_type": "Bool"},
+  "entry_block": "entry",
+  "blocks": [{
+    "name": "entry",
+    "operations": [
+      {"op": "constant_ref", "name": "target", "constant": "answer"},
+      {"op": "not_equal", "name": "differs", "left": "param.value", "right": "op.target"}
+    ],
+    "terminator": {"kind": "return", "value": "op.differs"}
+  }]
+}

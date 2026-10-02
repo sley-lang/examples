@@ -1,0 +1,10 @@
+{
+  "contract": "sley-tools.graph-cases.v0",
+  "cases": [
+    {"id": "answer", "input": ["42"], "expected": false},
+    {"id": "below", "input": ["41"], "expected": true},
+    {"id": "above", "input": ["43"], "expected": true},
+    {"id": "zero", "input": ["0"], "expected": true},
+    {"id": "negated", "input": ["-42"], "expected": true}
+  ]
+}
