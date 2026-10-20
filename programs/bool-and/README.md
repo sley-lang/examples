@@ -5,8 +5,8 @@ Conjoins two `Bool` inputs with one native `bool_and` operation.
 Reproduce against the pinned core:
 
 ```sh
-TOOLS=~/Work/workspaces/sley-lang-tools/target/debug/sley-tools
-CORE=/tmp/sley-simple-core/sley-2.0.1-linux-x86_64/bin/sley
+TOOLS=/path/to/sley-tools   # the sley-tools CLI from github.com/sley-lang/tools
+CORE=/path/to/sley-2.0.1-linux-x86_64/bin/sley   # the pinned 2.0.1 core
 "$TOOLS" init /tmp/sst-bool-and \
   --graph programs/bool-and/build/graph.json \
   --tests programs/bool-and/tests/cases.json --core "$CORE"

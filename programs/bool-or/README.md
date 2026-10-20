@@ -5,8 +5,8 @@ Disjoins two `Bool` inputs with one native `bool_or` operation.
 Reproduce against the pinned core:
 
 ```sh
-TOOLS=~/Work/workspaces/sley-lang-tools/target/debug/sley-tools
-CORE=/tmp/sley-simple-core/sley-2.0.1-linux-x86_64/bin/sley
+TOOLS=/path/to/sley-tools   # the sley-tools CLI from github.com/sley-lang/tools
+CORE=/path/to/sley-2.0.1-linux-x86_64/bin/sley   # the pinned 2.0.1 core
 "$TOOLS" init /tmp/sst-bool-or \
   --graph programs/bool-or/build/graph.json \
   --tests programs/bool-or/tests/cases.json --core "$CORE"

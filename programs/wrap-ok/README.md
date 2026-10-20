@@ -5,8 +5,8 @@ Wraps one `SInt64` value in the checked success arm with native `result_ok` and 
 Reproduce:
 
 ```sh
-TOOLS=~/Work/workspaces/sley-lang-tools/target/debug/sley-tools
-CORE=/tmp/sley-simple-core/sley-2.0.1-linux-x86_64/bin/sley
+TOOLS=/path/to/sley-tools   # the sley-tools CLI from github.com/sley-lang/tools
+CORE=/path/to/sley-2.0.1-linux-x86_64/bin/sley   # the pinned 2.0.1 core
 "$TOOLS" init /tmp/sst-wrap-ok \
   --graph programs/wrap-ok/build/graph.json \
   --tests programs/wrap-ok/tests/cases.json --core "$CORE"

@@ -5,8 +5,8 @@ Decides whether an unsigned `level` meets the configured minimum of `5` with nat
 Reproduce:
 
 ```sh
-TOOLS=~/Work/workspaces/sley-lang-tools/target/debug/sley-tools
-CORE=/tmp/sley-simple-core/sley-2.0.1-linux-x86_64/bin/sley
+TOOLS=/path/to/sley-tools   # the sley-tools CLI from github.com/sley-lang/tools
+CORE=/path/to/sley-2.0.1-linux-x86_64/bin/sley   # the pinned 2.0.1 core
 "$TOOLS" init /tmp/sst-uint32-minimum \
   --graph programs/uint32-minimum/build/graph.json \
   --tests programs/uint32-minimum/tests/cases.json --core "$CORE"
