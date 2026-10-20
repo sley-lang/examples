@@ -5,8 +5,8 @@ Decides whether a signed value equals `42` with native `equal`.
 Reproduce:
 
 ```sh
-TOOLS=~/Work/workspaces/sley-lang-tools/target/debug/sley-tools
-CORE=/tmp/sley-simple-core/sley-2.0.1-linux-x86_64/bin/sley
+TOOLS=/path/to/sley-tools   # the sley-tools CLI from github.com/sley-lang/tools
+CORE=/path/to/sley-2.0.1-linux-x86_64/bin/sley   # the pinned 2.0.1 core
 "$TOOLS" init /tmp/sst-equals-answer \
   --graph programs/equals-answer/build/graph.json \
   --tests programs/equals-answer/tests/cases.json --core "$CORE"

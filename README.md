@@ -2,7 +2,7 @@
 
 Primitive Sley examples: seventeen native `graph_authoring.v0` packages with bound portable artifacts and independently expected cases. These are primitive examples of single operations and small compositions — not substantial end-user tools. They exist to pin the verified 2.0.1 authoring baseline: one readable recipe per program, one executable artifact, and a round-trip check each.
 
-This repo complements the serious adoption toolkit in `sley-lang-tools` (Rust `sley-tools` CLI, Python/TypeScript/MCP SDKs, Playground, Repair Lab, Data Pipe, importers, Review). That toolkit is the machinery; this repo holds small native programs built with it. It does not duplicate the N01–N10 catalog (release-readiness, resource-admission, benchmark trio, tier-classifier, range-predicate, bounded-clamp, quota-remaining, generated-payload-validator).
+This repo complements the adoption toolkit in [`sley-lang/tools`](https://github.com/sley-lang/tools) (Rust `sley-tools` CLI, Python/TypeScript/MCP SDKs, Playground, Repair Lab, Data Pipe, importers, Review). That toolkit is the machinery; this repo holds small native programs built with it. It does not duplicate the N01–N10 catalog (release-readiness, resource-admission, benchmark trio, tier-classifier, range-predicate, bounded-clamp, quota-remaining, generated-payload-validator).
 
 Corpus: 30 native examples — the seventeen 2.0.1 primitives below plus thirteen
 2.0.3 compositions in `composed/`. Version-pinned authoring inputs,
@@ -36,12 +36,12 @@ persistence does not close that limitation.
 | S16 | `programs/bool-not` | `bool_not` → `Bool` | 2 |
 | S17 | `programs/wrap-ok` | `result_ok` → `{wrapped: CheckedSInt64}` | 5 |
 
-Each package holds `build/graph.json` (authoring recipe), `tests/cases.json` (independently expected), `program.json` (manifest bound to the artifact by `sley-tools artifact export --bind-manifest`), and `artifact/native-graph.json` (portable native graph). Sley has no source syntax: the accepted SSMC1 graph is the program; the recipe is only the authoring input.
+Each package holds `build/graph.json` (authoring recipe), `tests/cases.json` (independently expected), `program.json` (manifest bound to the artifact by `sley-tools artifact export --bind-manifest`), and `artifact/native-graph.json` (portable native graph). The accepted SSMC1 graph is the program; the recipe is only the authoring input. Sley has no canonical source text. Later cores also accept optional text authoring (the familiar frontend from 2.0.5, the Python dialect from 2.1.1), which compiles to the same graph; these examples do not use it.
 
 ## Toolchain pin
 
 - Core: Sley `2.0.1` (`sley-2.0.1-linux-x86_64.tar.gz`, commit `c748dda`), binary sha `90f48df4…`.
-- Builder: `sley-lang-tools` `sley-tools` backend, `graph_authoring.v0`.
+- Builder: [`sley-lang/tools`](https://github.com/sley-lang/tools) `sley-tools` backend, `graph_authoring.v0`.
 - External execution assertions: 78 total across the seventeen programs, all PASS at build time; every artifact reimports into a fresh workspace and re-passes.
 - Native test admission: `PENDING_CORE_EXECUTOR` on the selected 2.0.1 core (`NOT_RUN: production native executor unavailable`). This is reported separately and is not covered by the assertion counts above.
 
@@ -49,8 +49,8 @@ Each package holds `build/graph.json` (authoring recipe), `tests/cases.json` (in
 
 ```sh
 ./scripts/rebuild.sh \
-  --tools ~/Work/workspaces/sley-lang-tools/target/debug/sley-tools \
-  --core /tmp/sley-simple-core/sley-2.0.1-linux-x86_64/bin/sley
+  --tools /path/to/sley-tools \
+  --core /path/to/sley-2.0.1-linux-x86_64/bin/sley
 ```
 
 The script re-runs `init` + `test` + bound `artifact export` + fresh-workspace `artifact import` + re-`test` for all seventeen programs and refreshes `program.json` and `artifact/native-graph.json` in place. It refuses to run with uncommitted changes unless `--allow-dirty` is passed.
