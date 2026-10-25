@@ -20,15 +20,17 @@ trap 'rm -rf "$WORK"' EXIT
 
 while [ $# -gt 0 ]; do
   case "$1" in
-    --agent) AGENT="$2"; shift 2;;
-    --dist) DIST="$2"; shift 2;;
+    --agent|--dist)
+      [ $# -ge 2 ] || { echo "$1 needs a path" >&2; exit 2; }
+      if [ "$1" = --agent ]; then AGENT="$2"; else DIST="$2"; fi
+      shift 2;;
     *) echo "unknown arg: $1 (want --agent PATH or --dist TARBALL)" >&2; exit 2;;
   esac
 done
 
 if [ -n "$DIST" ]; then
   [ -f "$DIST" ] || { echo "dist not found: $DIST" >&2; exit 2; }
-  WANT="$(python3 -c "import json; print(json.load(open('$REPO/toolchain.json'))['release']['archive_sha256'])")"
+  WANT="$(python3 -c 'import json, sys; print(json.load(open(sys.argv[1]))["release"]["archive_sha256"])' "$REPO/toolchain.json")"
   GOT="$(sha256sum "$DIST" | cut -d' ' -f1)"
   [ "$GOT" = "$WANT" ] || { echo "sha256 mismatch: got $GOT want $WANT" >&2; exit 1; }
   echo "dist sha256 OK"
