@@ -9,22 +9,17 @@ CORE=""
 ALLOW_DIRTY=0
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-for arg in "$@"; do
-  case "$arg" in
-    --tools=*) TOOLS="${arg#--tools=}";;
-    --tools) shift;;
-    --core=*) CORE="${arg#--core=}";;
-    --core) shift;;
-    --allow-dirty) ALLOW_DIRTY=1;;
-  esac
-done
-# Support space-separated form too.
+# Accepts both "--tools PATH" and "--tools=PATH" (same for --core).
 while [ $# -gt 0 ]; do
   case "$1" in
-    --tools) TOOLS="$2"; shift 2;;
-    --core) CORE="$2"; shift 2;;
+    --tools=*) TOOLS="${1#--tools=}"; shift;;
+    --core=*) CORE="${1#--core=}"; shift;;
+    --tools|--core)
+      [ $# -ge 2 ] || { echo "$1 needs a path" >&2; exit 2; }
+      if [ "$1" = --tools ]; then TOOLS="$2"; else CORE="$2"; fi
+      shift 2;;
     --allow-dirty) ALLOW_DIRTY=1; shift;;
-    *) shift;;
+    *) echo "unknown argument: $1 (want --tools PATH --core PATH [--allow-dirty])" >&2; exit 2;;
   esac
 done
 
