@@ -49,11 +49,37 @@ Each package holds `build/graph.json` (authoring recipe), `tests/cases.json` (in
 
 ```sh
 ./scripts/rebuild.sh \
-  --tools /path/to/sley-tools \
+  --tools /path/to/sley-tools-v0.0.1-rc.5/bin/sley-tools \
   --core /path/to/sley-2.0.1-linux-x86_64/bin/sley
 ```
 
-The script re-runs `init` + `test` + bound `artifact export` + fresh-workspace `artifact import` + re-`test` for all seventeen programs and refreshes `program.json` and `artifact/native-graph.json` in place. It refuses to run with uncommitted changes unless `--allow-dirty` is passed.
+Use `sley-tools` [`v0.0.1-rc.5`](https://github.com/sley-lang/tools/releases/tag/v0.0.1-rc.5)
+for the 2.0.1 pin: each `sley-tools` release targets one core, and rc.5 is
+the release built for 2.0.1 (`sley-tools --version` prints the tested core
+commit, `c748dda…`). `--tools=PATH` and `--core=PATH` are accepted too.
+
+The script re-runs `init` + `test` + bound `artifact export` + fresh-workspace `artifact import` + re-`test` for all seventeen programs and refreshes `program.json` and `artifact/native-graph.json` in place. It refuses to run with uncommitted changes unless `--allow-dirty` is passed. Entity and object ids are assigned per workspace, so every rebuild rewrites the artifacts and manifests even when the recipes are unchanged; review a rebuild diff for changes to the core pin, interface or cases rather than ids.
+
+## Running with newer Sley releases
+
+The checked-in examples also run on current releases without changes
+(checked 2026-10-24):
+
+- **Composed (C01–C13):** `./composed/reproduce.sh --agent` with the Sley
+  2.1.5 `sley-agent` reproduces all thirteen examples: 155/155 workbench
+  checks, 155/155 external assertions, and identical `views/fn.txt`. Every
+  per-example reproduce block in `composed/*/README.md` passes the same way.
+  `--dist` verifies only the pinned 2.0.3 archive, so pass `--agent` for a
+  newer release.
+- **Primitives (S01–S17):** `sley-tools`
+  [`v0.0.1-rc.6`](https://github.com/sley-lang/tools/releases/tag/v0.0.1-rc.6)
+  targets the Sley 2.1.1 core and imports the checked-in 2.0.1 artifacts
+  directly: `sley-tools artifact import programs/<id>/artifact/native-graph.json
+  PROJECT --core /path/to/sley-2.1.1-linux-x86_64/bin/sley`, then
+  `sley-tools test --project PROJECT`, re-passes all 78 assertions, and every
+  input/output example in `programs/*/README.md` returns the documented value
+  under `sley-tools run`. Running `rebuild.sh` with rc.6 and the 2.1.1 core
+  also passes, and rebinds the artifacts to 2.1.1.
 
 ## License
 

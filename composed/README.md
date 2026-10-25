@@ -2,7 +2,7 @@
 
 Thirteen composed Sley programs authored with the official 2.0.3 `sley-agent`
 workbench, kept strictly separate from the seventeen 2.0.1 primitive examples
-in `programs/`. Nothing here changes the 2.0.1 pin, the seven primitives,
+in `programs/`. Nothing here changes the 2.0.1 pin, the seventeen primitives,
 or the serious toolkit — and no new framework was introduced: each example
 is authoring frames in, workbench checks plus external assertions out,
 with an exported pack for reimport.
