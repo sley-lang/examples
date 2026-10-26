@@ -5,7 +5,7 @@ Invokes `sley-agent call` per case in tests/cases.json against the given
 workspace and compares against the independently listed expectations.
 Exits nonzero on any mismatch.
 
-Origin: pilot checker check_invoice_v2.py; cases identical to
+Origin: authoring checker check_invoice_v2.py; cases identical to
 frames/invoice-tests.json as committed (transaction 81a8a6da).
 """
 import argparse

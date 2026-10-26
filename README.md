@@ -118,10 +118,8 @@ map, and a before/after record of one genuine program modification.
 `composed/corrections.md` retains one repaired authoring error and two
 independently justified expectation corrections.
 `composed/admission-probe.md` records the fresh-import edit/commit probe.
-`composed/pilot.md` records the example-assisted learning smoke test
-(methodology and aggregates only).
 
-Reproduce without the pilot directory (needs the 2.0.3 agent binary):
+Reproduce (needs the 2.0.3 agent binary):
 
 ```sh
 ./composed/reproduce.sh --agent /path/to/sley-2.0.3-linux-x86_64/bin/sley-agent
@@ -135,9 +133,7 @@ no path is hardcoded and no cleanup infrastructure is provided.
 Authoring workflow: `composed/authoring.md` is the default — pinned guide
 plus the frozen serializer/parse/recovery appendix first, with targeted
 consultation of a small relevant example only when a specific problem
-warrants it. `composed/pilot.md` preserves the learning smoke test
-including its unfavorable preload result (supplying examples raised
-input-token spend and did not help).
+warrants it.
 
 Persistence limitation: a combined code+tests `commit` is refused
 (`TXN_TEST_EVIDENCE_UNSUPPORTED`), so each example was committed split —

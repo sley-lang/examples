@@ -34,7 +34,7 @@ copy): pinned guide plus the frozen serializer/parse/recovery appendix
 first, no preloaded example packages; a small relevant example is
 consulted only when a specific unresolved problem warrants it.
 
-## Reproduce (no pilot directory needed)
+## Reproduce
 
 ```sh
 ./reproduce.sh --agent /path/to/sley-2.0.3-linux-x86_64/bin/sley-agent
@@ -97,6 +97,4 @@ Each example mirrors the `programs/` package shape where practical:
 (independently expected cases) + `tests/check_external.py`, `views/`
 (readable workbench view), `packs/` (export + name map), `modifications.md`
 (before/after inputs and observed results), `README.md`. `corrections.md`
-collects the retained corrections with their justifications. `pilot.md`
-records the example-assisted learning smoke test (methodology and
-aggregates only; held-out material stays out of the repo).
+collects the retained corrections with their justifications.

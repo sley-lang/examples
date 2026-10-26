@@ -2,8 +2,7 @@
 
 Authoritative copy of the frame-authoring discipline. Agent-facing
 instructions elsewhere (e.g. `README.md`) point here; the text below is
-the single source, not duplicated. `pilot.md` and its recorded results
-are historical and unchanged by this file.
+the single source, not duplicated.
 
 ## Default workflow
 

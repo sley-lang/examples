@@ -1,4 +1,4 @@
-# Corrections retained from the pilot
+# Corrections retained from authoring
 
 Three corrections were made during authoring. Each is kept with its
 evidence and its independent justification. None of them weakens a guard,

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Reproduce the thirteen composed 2.0.3 examples from their durable locations.
-# Needs only this repo plus the official 2.0.3 agent binary — no pilot dir.
+# Needs only this repo plus the official 2.0.3 agent binary.
 #
 #   ./reproduce.sh --agent /path/to/sley-2.0.3-linux-x86_64/bin/sley-agent
 #   ./reproduce.sh --dist  /path/to/sley-2.0.3-linux-x86_64.tar.gz

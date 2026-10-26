@@ -5,7 +5,7 @@ Invokes `sley-agent call` per case in tests/cases.json against the given
 workspace and compares against the independently listed expectations.
 Exits nonzero on any mismatch.
 
-Origin: pilot checker check_retry_v2.py; cases identical to
+Origin: authoring checker check_retry_v2.py; cases identical to
 frames/retry-tests.json as committed (transaction 8e8e8384).
 """
 import argparse
