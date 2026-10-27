@@ -1,18 +1,37 @@
-# Sley Simple Tools
+# Sley Examples
 
-Primitive Sley examples: seventeen native `graph_authoring.v0` packages with bound portable artifacts and independently expected cases. These are primitive examples of single operations and small compositions — not substantial end-user tools. They exist to pin the verified 2.0.1 authoring baseline: one readable recipe per program, one executable artifact, and a round-trip check each.
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-3b82f6)](LICENSE)
+[![sleylang.org](https://img.shields.io/badge/sleylang.org-website-22d3ee)](https://sleylang.org)
+[![Follow @SleyLanguage](https://img.shields.io/badge/@SleyLanguage-000000?logo=x&logoColor=white)](https://x.com/SleyLanguage)
 
-This repo complements the adoption toolkit in [`sley-lang/tools`](https://github.com/sley-lang/tools) (Rust `sley-tools` CLI, Python/TypeScript/MCP SDKs, Playground, Repair Lab, Data Pipe, importers, Review). That toolkit is the machinery; this repo holds small native programs built with it. It does not duplicate the N01–N10 catalog (release-readiness, resource-admission, benchmark trio, tier-classifier, range-predicate, bounded-clamp, quota-remaining, generated-payload-validator).
+Thirty small [Sley](https://github.com/sley-lang/sley) programs you can run, test and change.
+Seventeen primitives each exercise one to three native operations, such as checked addition or a Boolean
+combinator. Thirteen composed programs solve everyday problems: retry decisions, invoice line
+totals, page windows, ledger posting, quorum decisions, days in a month. Every example ships its
+authoring input, a portable executable artifact, independently expected cases and a script that
+rebuilds or reimports it and checks the results.
 
-Corpus: 30 native examples — the seventeen 2.0.1 primitives below plus thirteen
-2.0.3 compositions in `composed/`. Version-pinned authoring inputs,
-readable views, executable artifacts, boundary checks, and one worked
-modification per composed example. Counts, kept as separate categories:
-233 external assertions across the corpus (78 primitive + 155 composed)
-and 155 advisory workbench checks in the composed collection. Native
-test-admitted maintenance remains unavailable through the documented
-route (`PENDING_CORE_EXECUTOR` / `NOT_RUN`); the split code-then-tests
-persistence does not close that limitation.
+Counts, kept as separate categories: 233 external assertions across the corpus (78 primitive +
+155 composed) and 155 advisory workbench checks in the composed collection.
+
+## Run the composed examples
+
+With the [Sley 2.1.6 release](https://github.com/sley-lang/sley#quickstart) unpacked next to this
+checkout:
+
+```sh
+git clone https://github.com/sley-lang/examples.git && cd examples
+./composed/reproduce.sh --agent ../sley-2.1.6-linux-x86_64/bin/sley-agent
+```
+
+The script imports each example's checked-in pack into a fresh workspace, runs its workbench
+tests and its external checker, and refreshes `views/fn.txt`, which comes out identical.
+
+New programs are easiest to write in Sley's typed Python dialect (`sley-agent try --familiar`);
+the [Sley Quickstart](https://github.com/sley-lang/sley#write-and-test-your-first-program) starts
+there. The [sley-lang/tools](https://github.com/sley-lang/tools) toolkit (the `sley-tools` CLI,
+Python/TypeScript/MCP SDKs, Playground, Repair Lab, Data Pipe, importers and Review) built the
+primitives below. Its own N01–N10 catalog of ready-to-run programs is not duplicated here.
 
 ## Primitive examples (17 total, 78 external assertions)
 
@@ -62,13 +81,14 @@ The script re-runs `init` + `test` + bound `artifact export` + fresh-workspace `
 
 ## Running with newer Sley releases
 
-The checked-in examples also run on current releases without changes
-(checked 2026-10-24):
+The checked-in examples also run on current releases without changes:
 
 - **Composed (C01–C13):** `./composed/reproduce.sh --agent` with the Sley
-  2.1.5 `sley-agent` reproduces all thirteen examples: 155/155 workbench
-  checks, 155/155 external assertions, and identical `views/fn.txt`. Every
-  per-example reproduce block in `composed/*/README.md` passes the same way.
+  2.1.6 `sley-agent` reproduces all thirteen examples: 155/155 workbench
+  checks, 155/155 external assertions, and identical `views/fn.txt`
+  (checked 2026-10-26; 2.1.5 gave the same on 2026-10-24). Every
+  per-example reproduce block in `composed/*/README.md` passed the same way
+  with 2.1.5.
   `--dist` verifies only the pinned 2.0.3 archive, so pass `--agent` for a
   newer release.
 - **Primitives (S01–S17):** `sley-tools`
@@ -80,13 +100,6 @@ The checked-in examples also run on current releases without changes
   input/output example in `programs/*/README.md` returns the documented value
   under `sley-tools run`. Running `rebuild.sh` with rc.6 and the 2.1.1 core
   also passes, and rebinds the artifacts to 2.1.1.
-
-## License
-
-This repository is licensed under the [Apache License, Version 2.0](LICENSE).
-That covers the original examples, documentation, supporting scripts, and
-project-owned artifacts, except where another license or notice is
-expressly identified. See [NOTICE](NOTICE) for attribution.
 
 ## Composed examples (C01–C13, sley-agent 2.0.3)
 
@@ -141,3 +154,24 @@ code-only, then tests-after (transactions in `catalog.json`). Code-only
 plus tests-after is two transactions, not a test-admitted atomic commit.
 Native test admission is not run — unavailable in 2.0 — and no count in
 `composed/` is test admission.
+
+## More Sley
+
+- [sleylang.org](https://sleylang.org): documentation, the Python dialect and the walkthrough.
+- [Sley Arena](https://sleylang.org/arena): write a bot in Sley and climb a public ladder.
+- [sley-lang/tools](https://github.com/sley-lang/tools): the toolkit that built the primitives.
+
+## License
+
+This repository is licensed under the [Apache License, Version 2.0](LICENSE).
+That covers the original examples, documentation, supporting scripts, and
+project-owned artifacts, except where another license or notice is
+expressly identified. See [NOTICE](NOTICE) for attribution.
+
+---
+
+<p align="center">
+  <b>Found a useful pattern?</b> <a href="https://github.com/sley-lang/examples">Star Sley Examples on GitHub</a> · <a href="https://x.com/SleyLanguage">Follow @SleyLanguage</a> · <a href="https://sleylang.org">sleylang.org</a>
+</p>
+
+<p align="center"><sub>Built by <a href="https://greyforge.tech">Greyforge Labs</a></sub></p>
